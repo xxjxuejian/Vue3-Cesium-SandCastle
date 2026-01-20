@@ -1,6 +1,6 @@
 // src/config/menu.ts
 
-export interface MenuMeta {
+export interface MenuMeta extends Record<PropertyKey, unknown> {
   title: string;
   icon?: string;
 }
@@ -11,17 +11,19 @@ export interface MenuItem {
   meta?: MenuMeta;
   component?: string; // 具体的 vue 文件路径 (相对 src/views)
   children?: MenuItem[]; // 子菜单
+  redirect?: string;
 }
 
 const menuConfig: MenuItem[] = [
   {
     path: "show-cases", // 建议：小写+短横线
     name: "ShowCases",
-
     meta: {
       title: "基础案例",
       icon: "Location",
     },
+    // component: "ParentView", // /show-cases下面的容器组件，children路由渲染位置
+    redirect: "/show-cases/3d-tiles-gaussian-splatting", // 默认打开第一个子菜单
     children: [
       {
         path: "3d-tiles-gaussian-splatting",
@@ -42,6 +44,8 @@ const menuConfig: MenuItem[] = [
     path: "2d-view", // 修正：去掉了空格
     name: "2DView",
     meta: { title: "2D 视图", icon: "Monitor" },
+    // component: "ParentView",
+    redirect: "/2d-view/multiple-synced-views",
     children: [
       {
         path: "multiple-synced-views",
