@@ -29,9 +29,10 @@
   )
 ); */
 
-/*  CSS 变量  */
+/*  CSS 变量 :定义了以后，就可以在其它的Vue组件的scoped中使用 */
 :root {
   --menu-background: #fff; // 菜单背景色
+  --test-color: red;
 }
 
 /** 暗黑主题 */
@@ -42,4 +43,4 @@ html.dark {
 /* scss 变量 */
 $sidebar-width: 210px; // 侧边栏宽度
 $sidebar-width-collapsed: 54px; // 侧边栏收缩宽度
-$navbar-height: 50px; // 导航栏高度
+$navbar-height: 80px; // 导航栏高度
