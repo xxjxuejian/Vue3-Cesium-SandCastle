@@ -26,6 +26,13 @@ const menuConfig: MenuItem[] = [
     redirect: "/show-cases/3d-tiles-gaussian-splatting", // 默认打开第一个子菜单
     children: [
       {
+        path: "hello-world",
+        name: "HelloWorld",
+        meta: { title: "Hello World案例" },
+        // 注意：确保你的文件真实路径是 src/views/ShowCases/3DTilesGaussianSplatting.vue
+        component: "ShowCases/HelloWorld.vue",
+      },
+      {
         path: "3d-tiles-gaussian-splatting",
         name: "3DTilesGaussianSplatting",
         meta: { title: "3D瓦片高斯贴图" },
@@ -35,7 +42,7 @@ const menuConfig: MenuItem[] = [
       {
         path: "mesh-comparison",
         name: "MeshComparison",
-        meta: { title: "网格比较" },
+        meta: { title: "3D瓦片高斯贴图-网格比较" },
         component: "ShowCases/3DTilesGaussianSplattingMeshComparison.vue",
       },
     ],

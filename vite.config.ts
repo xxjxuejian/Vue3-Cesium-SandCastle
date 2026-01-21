@@ -10,6 +10,8 @@ import vueDevTools from "vite-plugin-vue-devtools";
 
 import UnoCSS from "unocss/vite";
 
+import cesium from "vite-plugin-cesium";
+
 // https://vite.dev/config/
 export default defineConfig({
   css: {
@@ -51,6 +53,7 @@ export default defineConfig({
       // dts: false,
       dts: "src/types/components.d.ts",
     }),
+    cesium(), // 自动处理 Cesium 的构建和 worker 配置
   ],
   resolve: {
     alias: {

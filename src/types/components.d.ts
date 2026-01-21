@@ -9,6 +9,7 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppMain: typeof import('./../layout/components/AppMain/index.vue')['default']
+    CesiumViewer: typeof import('./../components/Cesium/CesiumViewer.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElLink: typeof import('element-plus/es')['ElLink']
     ElMenu: typeof import('element-plus/es')['ElMenu']
