@@ -6,14 +6,16 @@ const handleMapLoaded = async (viewer: Cesium.Viewer) => {
   console.log("Cesium 实例已获取:", viewer);
 
   try {
-    const tileset = await Cesium.Cesium3DTileset.fromIonAssetId(3667783);
-    viewer.scene.primitives.add(tileset);
-    viewer.zoomTo(
-      tileset,
-      new Cesium.HeadingPitchRange(Cesium.Math.toRadians(0.0), Cesium.Math.toRadians(-15.0), 200.0)
-    );
+    const resource = await Cesium.IonResource.fromAssetId(2895174);
+    const entity = viewer.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(0, 0, 100),
+      model: {
+        uri: resource,
+      },
+    });
+    viewer.trackedEntity = entity;
   } catch (error) {
-    console.log(`Error loading tileset: ${error}`);
+    console.log(error);
   }
 };
 </script>

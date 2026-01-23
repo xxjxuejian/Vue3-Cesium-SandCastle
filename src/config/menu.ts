@@ -60,6 +60,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "多个同步视图" },
         component: "2DViews/MultipleSyncedViews.vue", // 假设在 src/views/MultipleSyncedViews.vue
       },
+      {
+        path: "rotatable-2d-map",
+        name: "Rotatable2DMap",
+        meta: { title: "可旋转的二维地图" },
+        component: "2DViews/Rotatable2DMap.vue", // 假设在 src/views/MultipleSyncedViews.vue
+      },
     ],
   },
 ];

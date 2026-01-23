@@ -37,7 +37,7 @@ export function useCesium(): UseCesiumReturn {
     });
 
     // 隐藏版权信息（开发时可隐藏，生产环境请保留）
-    (v.cesiumWidget.creditContainer as HTMLElement).style.display = "none";
+    // (v.cesiumWidget.creditContainer as HTMLElement).style.display = "none";
 
     viewer.value = v;
     return v;
