@@ -84,6 +84,22 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // 3D 模型
+  {
+    path: "3d-models", // 修正：去掉了空格
+    name: "3DModels",
+    meta: { title: "3D 模型", icon: "Monitor" },
+    // component: "ParentView",
+    redirect: "/3d-models/gltf-models",
+    children: [
+      {
+        path: "gltf-models",
+        name: "GltfModels",
+        meta: { title: "gltf 模型" },
+        component: "3DModels/GltfModels.vue", // 假设在 src/views/MultipleSyncedViews.vue
+      },
+    ],
+  },
 ];
 
 export default menuConfig;

@@ -36,7 +36,8 @@ const handleResetTime = () => {
   // 获取创建时钟时的开始时间
   const resetTime = viewerRef.value?.clockViewModel.startTime;
   viewerRef.value.clockViewModel.currentTime = resetTime;
-  viewerRef.value.timeline.updateFromClock();
+  //   老版本 中需要这一行
+  //   viewerRef.value.timeline.updateFromClock();
 };
 const handleSlowClock = () => {
   if (!viewerRef.value) return;
