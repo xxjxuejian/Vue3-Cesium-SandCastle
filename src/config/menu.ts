@@ -68,6 +68,22 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // 动画
+  {
+    path: "animation", // 修正：去掉了空格
+    name: "Animation",
+    meta: { title: "动画", icon: "Monitor" },
+    // component: "ParentView",
+    redirect: "/animation/clock",
+    children: [
+      {
+        path: "clock",
+        name: "Clock",
+        meta: { title: "时钟" },
+        component: "Animation/Clock.vue", // 假设在 src/views/MultipleSyncedViews.vue
+      },
+    ],
+  },
 ];
 
 export default menuConfig;

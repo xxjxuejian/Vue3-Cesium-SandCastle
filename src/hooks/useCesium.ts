@@ -23,16 +23,16 @@ export function useCesium(): UseCesiumReturn {
     // Cesium.Ion.defaultAccessToken = 'xxx';
 
     const v = new Cesium.Viewer(containerId, {
-      animation: false, // 隐藏动画控件
-      timeline: false, // 隐藏时间轴
-      baseLayerPicker: false, // 隐藏底图选择器
-      fullscreenButton: false,
-      geocoder: false,
-      homeButton: false,
-      infoBox: false,
-      sceneModePicker: false,
-      selectionIndicator: false,
-      navigationHelpButton: false,
+      // animation: false, // 隐藏动画控件
+      // timeline: false, // 隐藏时间轴
+      // baseLayerPicker: false, // 隐藏底图选择器
+      // fullscreenButton: false,
+      // geocoder: false, // 隐藏查询控件
+      // homeButton: false, // 隐藏HomeButton控件
+      infoBox: false, // 禁用信息框，不然控制台报错：Blocked script execution in ‘about:blank‘ ......
+      // sceneModePicker: false,
+      // selectionIndicator: false,
+      // navigationHelpButton: false,
       ...options, // 允许覆盖默认配置
     });
 
