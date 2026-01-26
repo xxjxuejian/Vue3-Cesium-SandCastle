@@ -28,12 +28,12 @@ function createModel(url: string, height: number) {
     position: position,
     orientation: orientation,
     model: {
-      uri: url,
-      minimumPixelSize: 128,
-      maximumScale: 20000,
+      uri: url, // glTF/GLB 文件路径
+      minimumPixelSize: 128, // 最小屏幕像素尺寸： 就算你把相机拉得很远，模型在屏幕上也至少有 128px 大小
+      maximumScale: 20000, // 最大放大倍数
     },
   });
-  viewer.trackedEntity = entity;
+  viewer.trackedEntity = entity; // 让相机自动跟随这个实体（要么手动flyTo）
 }
 
 // glb / gltf 本身是可以自带动画的
