@@ -13,13 +13,51 @@ export interface MenuItem {
   children?: MenuItem[]; // 子菜单
   redirect?: string;
 }
-
+//todo: 约定：如果含有子级路由，但是没有设置component，在路由注册时，会自动注册ParentView作为容器
+// todo: Vue Router 在内部是用 name 做唯一索引 的，必须全局唯一
 const menuConfig: MenuItem[] = [
+  // getting started : 快速开始
+  {
+    path: "getting-started", // 建议：小写+短横线
+    name: "GettingStarted",
+    meta: {
+      title: "快速开始",
+      icon: "el-icon-Collection",
+    },
+    // component: "ParentView",
+    redirect: "/getting-started/offline",
+    children: [
+      {
+        path: "hello-world",
+        name: "gs-HelloWorld",
+        meta: { title: "Hello World案例" },
+        component: "GettingStarted/HelloWorld.vue",
+      },
+      {
+        path: "html-overlays",
+        name: "HtmlOverlays",
+        meta: { title: "HTML 覆盖层" },
+        component: "GettingStarted/HtmlOverlays.vue",
+      },
+      {
+        path: "offline",
+        name: "Offline",
+        meta: { title: "离线案例" },
+        component: "GettingStarted/Offline.vue",
+      },
+      {
+        path: "resolution-scale",
+        name: "ResolutionScale",
+        meta: { title: "缩放分辨率" },
+        component: "GettingStarted/ResolutionScale.vue",
+      },
+    ],
+  },
   {
     path: "show-cases", // 建议：小写+短横线
     name: "ShowCases",
     meta: {
-      title: "基础案例",
+      title: "案例展示",
       icon: "el-icon-Collection",
     },
     // component: "ParentView", // /show-cases下面的容器组件，children路由渲染位置
