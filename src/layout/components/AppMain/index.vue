@@ -18,7 +18,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgb(240, 240, 240);
+  background-color: var(--el-bg-color-page);
 }
 
 /* 简单的淡入淡出路由动画 */

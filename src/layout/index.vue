@@ -2,11 +2,14 @@
 import SideBar from "./components/SideBar/index.vue";
 import AppMain from "./components/AppMain/index.vue";
 import NavBar from "./components/NavBar/index.vue";
+
+import { useAppStore } from "@/stores/modules/app.store";
+const appStore = useAppStore();
 </script>
 
 <template>
   <div class="layout">
-    <aside class="layout_sidebar">
+    <aside class="layout_sidebar" :class="appStore.isCollapse ? 'hideSidebar' : ''">
       <SideBar></SideBar>
     </aside>
 

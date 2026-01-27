@@ -21,7 +21,7 @@ export const constantRoutes: RouteRecordRaw[] = [
         component: () => import("@/views/Home/index.vue"),
         meta: {
           title: "home",
-          icon: "home",
+          icon: "el-icon-HomeFilled",
         },
       },
     ],

@@ -20,7 +20,7 @@ const menuConfig: MenuItem[] = [
     name: "ShowCases",
     meta: {
       title: "基础案例",
-      icon: "Location",
+      icon: "el-icon-Collection",
     },
     // component: "ParentView", // /show-cases下面的容器组件，children路由渲染位置
     redirect: "/show-cases/3d-tiles-gaussian-splatting", // 默认打开第一个子菜单
@@ -50,7 +50,7 @@ const menuConfig: MenuItem[] = [
   {
     path: "2d-view", // 修正：去掉了空格
     name: "2DView",
-    meta: { title: "2D 视图", icon: "Monitor" },
+    meta: { title: "2D 视图", icon: "el-icon-MapLocation" },
     // component: "ParentView",
     redirect: "/2d-view/multiple-synced-views",
     children: [
@@ -72,7 +72,7 @@ const menuConfig: MenuItem[] = [
   {
     path: "animation", // 修正：去掉了空格
     name: "Animation",
-    meta: { title: "动画", icon: "Monitor" },
+    meta: { title: "动画", icon: "el-icon-VideoPlay" },
     // component: "ParentView",
     redirect: "/animation/clock",
     children: [
@@ -88,7 +88,7 @@ const menuConfig: MenuItem[] = [
   {
     path: "3d-models", // 修正：去掉了空格
     name: "3DModels",
-    meta: { title: "3D 模型", icon: "Monitor" },
+    meta: { title: "3D 模型", icon: "el-icon-Box" },
     // component: "ParentView",
     redirect: "/3d-models/gltf-models",
     children: [

@@ -17,6 +17,7 @@
     "lint:stylelint": "stylelint  \"**/*.{css,scss,vue,html}\" --fix"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
     "axios": "^1.13.2",
     "cesium": "^1.137.0",
     "element-plus": "^2.11.2",
