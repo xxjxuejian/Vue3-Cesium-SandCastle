@@ -39,7 +39,7 @@ function isElIcon() {
     </div>
   </template> -->
 
-  <span v-if="title">{{ title }}</span>
+  <span v-if="title" class="truncate" :title="title">{{ title }}</span>
 </template>
 
 <style scoped lang="scss">

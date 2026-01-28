@@ -37,7 +37,27 @@ const menuConfig: MenuItem[] = [
         path: "html-overlays",
         name: "HtmlOverlays",
         meta: { title: "HTML 覆盖层" },
-        component: "GettingStarted/HtmlOverlays.vue",
+        // component: "GettingStarted/HtmlOverlays.vue",
+        children: [
+          {
+            path: "native-demo",
+            name: "NativeDemo",
+            meta: { title: "HTML 覆盖层 官网demo" },
+            component: "GettingStarted/HtmlOverlays/NativeDemo.vue",
+          },
+          {
+            path: "optimization-demo",
+            name: "OptimizationDemo",
+            meta: { title: "HTML 覆盖层 优化官网demo" },
+            component: "GettingStarted/HtmlOverlays/OptimizationDemo.vue",
+          },
+          {
+            path: "billboard-overlay",
+            name: "BillboardOverlay",
+            meta: { title: "billboard 实现覆盖层" },
+            component: "GettingStarted/HtmlOverlays/BillboardOverlay.vue",
+          },
+        ],
       },
       {
         path: "offline",
