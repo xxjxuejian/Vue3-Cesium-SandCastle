@@ -12,7 +12,7 @@ const mapConfig: Cesium.Viewer.ConstructorOptions = {
 };
 
 const htmlElRef = ref<HTMLImageElement>();
-let removePreRenderListener: any = null; // 用于存储移除事件的函数
+let removePreRenderListener: Cesium.Event.RemoveCallback | null = null; // 用于存储移除事件的函数
 let viewerInstance: Cesium.Viewer | null = null; // 暂存 viewer 实例
 const isExpandTips = ref(false);
 // 动态计算容器的 Class
@@ -100,11 +100,16 @@ const handleToggleTips = () => {
 
 // 4. 组件销毁前清理事件，防止内存泄漏和报错
 onUnmounted(() => {
-  if (removePreRenderListener) {
-    removePreRenderListener(); // 执行移除函数
-    removePreRenderListener = null;
+  if (viewerInstance && !viewerInstance.isDestroyed()) {
+    // 移除preRender 事件
+    if (removePreRenderListener) {
+      removePreRenderListener(); // 执行移除函数
+      removePreRenderListener = null;
+    }
+
+    // 清空引用
+    viewerInstance = null;
   }
-  viewerInstance = null;
 });
 </script>
 
@@ -165,8 +170,4 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style scoped lang="scss">
-.hidden-tips {
-  width: 0;
-}
-</style>
+<style scoped lang="scss"></style>

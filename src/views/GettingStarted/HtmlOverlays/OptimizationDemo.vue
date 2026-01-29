@@ -8,7 +8,7 @@ const mapConfig: Cesium.Viewer.ConstructorOptions = {
 };
 
 const htmlElRef = ref<HTMLImageElement>();
-let removePreRenderListener: any = null; // 用于存储移除事件的函数
+let removePreRenderListener: Cesium.Event.RemoveCallback | undefined; // 用于存储移除事件的函数
 let viewerInstance: Cesium.Viewer | null = null; // 暂存 viewer 实例
 
 //，频繁创建对象（new Object）是有代价的，尤其是在 preRender 这种每秒执行 60 次的高频循环中。
@@ -55,11 +55,16 @@ const handleMapLoaded = (viewer: Cesium.Viewer) => {
 
 // 4. 组件销毁前清理事件，防止内存泄漏和报错
 onUnmounted(() => {
-  if (removePreRenderListener) {
-    removePreRenderListener(); // 执行移除函数
-    removePreRenderListener = null;
+  if (viewerInstance && !viewerInstance.isDestroyed()) {
+    // 移除preRender 事件
+    if (removePreRenderListener) {
+      removePreRenderListener(); // 执行移除函数
+      removePreRenderListener = undefined;
+    }
+
+    // 清空引用
+    viewerInstance = null;
   }
-  viewerInstance = null;
 });
 </script>
 
