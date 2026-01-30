@@ -4,12 +4,16 @@ import SideBarMenu from "./components/SideBarMenu.vue";
 </script>
 
 <template>
-  <div>
+  <div class="h-full">
     <SideBarLogo />
-    <el-scrollbar>
+    <el-scrollbar class="menu-scrollbar">
       <SideBarMenu />
     </el-scrollbar>
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.menu-scrollbar {
+  max-height: calc(100% - $navbar-height);
+}
+</style>

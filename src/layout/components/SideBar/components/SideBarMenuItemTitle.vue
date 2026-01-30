@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useAppStore } from "@/stores/modules/app.store";
+import { translateRouteTitle } from "@/lang/utils";
 const appStore = useAppStore();
 
 const props = defineProps<{
@@ -39,7 +40,9 @@ function isElIcon() {
     </div>
   </template> -->
 
-  <span v-if="title" class="truncate" :title="title">{{ title }}</span>
+  <span v-if="title" class="truncate" :title="translateRouteTitle(title)">
+    {{ translateRouteTitle(title) }}
+  </span>
 </template>
 
 <style scoped lang="scss">

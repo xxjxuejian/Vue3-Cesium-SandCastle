@@ -7,11 +7,17 @@ export const useAppStore = defineStore("app", () => {
   const sidebarStatus = ref("expand");
   const isCollapse = computed(() => sidebarStatus.value === "collapse");
 
+  // 展开/收起 侧边栏
   function toggleSidebar() {
     sidebarStatus.value = sidebarStatus.value === "collapse" ? "expand" : "collapse";
   }
 
-  return { language, sidebarStatus, isCollapse, toggleSidebar };
+  // 语言切换
+  function changeLanguage(val: string) {
+    language.value = val;
+  }
+
+  return { language, sidebarStatus, isCollapse, toggleSidebar, changeLanguage };
 });
 
 export function useAppStoreHook() {

@@ -21,7 +21,7 @@ const menuConfig: MenuItem[] = [
     path: "getting-started", // 建议：小写+短横线
     name: "GettingStarted",
     meta: {
-      title: "快速开始",
+      title: "gettingStarted", // 快速开始
       icon: "el-icon-Collection",
     },
     // component: "ParentView",
@@ -30,31 +30,31 @@ const menuConfig: MenuItem[] = [
       {
         path: "hello-world",
         name: "gs-HelloWorld",
-        meta: { title: "Hello World案例" },
+        meta: { title: "gettingStarted-helloWorld" }, // Hello World 案例
         component: "GettingStarted/HelloWorld.vue",
       },
       {
         path: "html-overlays",
         name: "HtmlOverlays",
-        meta: { title: "HTML 覆盖层" },
+        meta: { title: "gettingStarted-htmlOverlay" }, // HTML 覆盖层
         // component: "GettingStarted/HtmlOverlays.vue",
         children: [
           {
             path: "native-demo",
             name: "NativeDemo",
-            meta: { title: "HTML 覆盖层 官网demo" },
+            meta: { title: "gettingStarted-htmlOverlay-officialDemo" }, // HTML 覆盖层 官网 Demo
             component: "GettingStarted/HtmlOverlays/NativeDemo.vue",
           },
           {
             path: "optimization-demo",
             name: "OptimizationDemo",
-            meta: { title: "HTML 覆盖层 优化官网demo" },
+            meta: { title: "gettingStarted-htmlOverlay-optimizedDemo" }, // HTML 覆盖层 优化官网 Demo
             component: "GettingStarted/HtmlOverlays/OptimizationDemo.vue",
           },
           {
             path: "billboard-overlay",
             name: "BillboardOverlay",
-            meta: { title: "billboard 实现覆盖层" },
+            meta: { title: "gettingStarted-htmlOverlay-billboard" }, // billboard 实现覆盖层
             component: "GettingStarted/HtmlOverlays/BillboardOverlay.vue",
           },
         ],
@@ -62,13 +62,13 @@ const menuConfig: MenuItem[] = [
       {
         path: "offline",
         name: "Offline",
-        meta: { title: "离线案例" },
+        meta: { title: "gettingStarted-offline" }, // 离线案例
         component: "GettingStarted/Offline.vue",
       },
       {
         path: "resolution-scale",
         name: "ResolutionScale",
-        meta: { title: "缩放分辨率" },
+        meta: { title: "gettingStarted-resolutionScale" }, // 缩放分辨率
         component: "GettingStarted/ResolutionScale.vue",
       },
     ],
@@ -77,7 +77,7 @@ const menuConfig: MenuItem[] = [
     path: "show-cases", // 建议：小写+短横线
     name: "ShowCases",
     meta: {
-      title: "案例展示",
+      title: "showCases", // 案例展示
       icon: "el-icon-Collection",
     },
     // component: "ParentView", // /show-cases下面的容器组件，children路由渲染位置
@@ -86,21 +86,21 @@ const menuConfig: MenuItem[] = [
       {
         path: "hello-world",
         name: "HelloWorld",
-        meta: { title: "Hello World案例" },
+        meta: { title: "showCases-helloWorld" }, // Hello World案例
         // 注意：确保你的文件真实路径是 src/views/ShowCases/3DTilesGaussianSplatting.vue
         component: "ShowCases/HelloWorld.vue",
       },
       {
         path: "3d-tiles-gaussian-splatting",
         name: "3DTilesGaussianSplatting",
-        meta: { title: "3D瓦片高斯贴图" },
+        meta: { title: "showCases-gaussianSplatting" }, // 3D 瓦片高斯贴图
         // 注意：确保你的文件真实路径是 src/views/ShowCases/3DTilesGaussianSplatting.vue
         component: "ShowCases/3DTilesGaussianSplatting.vue",
       },
       {
         path: "mesh-comparison",
         name: "MeshComparison",
-        meta: { title: "3D瓦片高斯贴图-网格比较" },
+        meta: { title: "showCases-gaussianSplattingMesh" }, // 3D 瓦片高斯贴图 - 网格比较
         component: "ShowCases/3DTilesGaussianSplattingMeshComparison.vue",
       },
     ],
@@ -108,20 +108,20 @@ const menuConfig: MenuItem[] = [
   {
     path: "2d-view", // 修正：去掉了空格
     name: "2DView",
-    meta: { title: "2D 视图", icon: "el-icon-MapLocation" },
+    meta: { title: "2dView", icon: "el-icon-MapLocation" }, // 2D 视图
     // component: "ParentView",
     redirect: "/2d-view/multiple-synced-views",
     children: [
       {
         path: "multiple-synced-views",
         name: "MultipleSyncedViews",
-        meta: { title: "多个同步视图" },
+        meta: { title: "2dView-multiSynced" }, // 多个同步视图
         component: "2DViews/MultipleSyncedViews.vue", // 假设在 src/views/MultipleSyncedViews.vue
       },
       {
         path: "rotatable-2d-map",
         name: "Rotatable2DMap",
-        meta: { title: "可旋转的二维地图" },
+        meta: { title: "2dView-rotatableMap" }, // 可旋转的二维地图
         component: "2DViews/Rotatable2DMap.vue", // 假设在 src/views/MultipleSyncedViews.vue
       },
     ],
@@ -130,14 +130,14 @@ const menuConfig: MenuItem[] = [
   {
     path: "animation", // 修正：去掉了空格
     name: "Animation",
-    meta: { title: "动画", icon: "el-icon-VideoPlay" },
+    meta: { title: "animation", icon: "el-icon-VideoPlay" }, // 动画
     // component: "ParentView",
     redirect: "/animation/clock",
     children: [
       {
         path: "clock",
         name: "Clock",
-        meta: { title: "时钟" },
+        meta: { title: "animation-clock" }, // 时钟
         component: "Animation/Clock.vue", // 假设在 src/views/MultipleSyncedViews.vue
       },
     ],
@@ -146,14 +146,14 @@ const menuConfig: MenuItem[] = [
   {
     path: "3d-models", // 修正：去掉了空格
     name: "3DModels",
-    meta: { title: "3D 模型", icon: "el-icon-Box" },
+    meta: { title: "3dModels", icon: "el-icon-Box" }, // 3D 模型
     // component: "ParentView",
     redirect: "/3d-models/gltf-models",
     children: [
       {
         path: "gltf-models",
         name: "GltfModels",
-        meta: { title: "gltf 模型" },
+        meta: { title: "3dModels-gltf" }, // glTF 模型
         component: "3DModels/GltfModels.vue", // 假设在 src/views/MultipleSyncedViews.vue
       },
     ],

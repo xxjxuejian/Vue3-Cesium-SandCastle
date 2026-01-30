@@ -17,7 +17,7 @@ const staticMenu: MenuItem = {
   path: "home",
   name: "Home",
   meta: {
-    title: "首页",
+    title: "home",
     icon: "el-icon-HomeFilled",
   },
 };

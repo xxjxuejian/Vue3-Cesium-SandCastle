@@ -4,7 +4,7 @@ const { isFullscreen, toggle } = useFullscreen();
 </script>
 
 <template>
-  <div class="flex-center" @click="toggle">
+  <div class="flex-center wh-full" @click="toggle">
     <div :class="`i-svg:` + (isFullscreen ? 'fullscreen-exit' : 'fullscreen')" />
   </div>
 </template>
