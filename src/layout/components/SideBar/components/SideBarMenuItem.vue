@@ -61,4 +61,10 @@ const resolvePath = (routePath: string) => {
   </template>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.el-sub-menu.is-active {
+  & > :deep(.el-sub-menu__title) {
+    color: var(--el-menu-active-color);
+  }
+}
+</style>

@@ -41,12 +41,12 @@ const allMenuList = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.el-menu {
-  /* 解决子路由激活时，父级路由样式失效问题 */
+/* 解决子路由激活时，父级路由样式失效问题 */
+/* .el-menu {
   :deep(.el-sub-menu.is-active) {
-    .el-sub-menu__title {
+    & > .el-sub-menu__title {
       color: var(--el-menu-active-color);
     }
   }
-}
+} */
 </style>
