@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import Hamburger from "@/components/Hamburger/index.vue";
+import NavBarRight from "./components/NavBarRight.vue";
 </script>
 
 <template>
   <div class="navbar">
-    <div class="navbar_left">
+    <!-- 左侧 -->
+    <div class="navbar_left bg-red-100">
       <Hamburger />
     </div>
-    <div class="navbar_right bg-green-300">navbar_right</div>
+    <!-- 右侧 -->
+    <div class="navbar_right h-full">
+      <NavBarRight />
+    </div>
   </div>
 </template>
 
