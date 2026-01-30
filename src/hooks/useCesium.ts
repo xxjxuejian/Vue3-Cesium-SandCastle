@@ -1,9 +1,8 @@
-import { onUnmounted, shallowRef, type Ref } from "vue";
 import * as Cesium from "cesium";
 
 // 定义 Hook 的返回类型
 interface UseCesiumReturn {
-  viewer: Ref<Cesium.Viewer | undefined>;
+  viewer: ShallowRef<Cesium.Viewer | undefined>;
   initViewer: (containerId: string, options?: Cesium.Viewer.ConstructorOptions) => Cesium.Viewer;
 }
 
