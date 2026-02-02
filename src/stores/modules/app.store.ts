@@ -2,9 +2,9 @@ import store from "../index";
 
 export const useAppStore = defineStore("app", () => {
   // 语言
-  const language = ref("zh-cn");
+  const language = useStorage("app:language", "zh-cn");
   // 侧边栏状态
-  const sidebarStatus = ref("expand");
+  const sidebarStatus = useStorage("app:sidebar_status", "expand");
   const isCollapse = computed(() => sidebarStatus.value === "collapse");
 
   // 展开/收起 侧边栏

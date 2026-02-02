@@ -29,7 +29,7 @@ export default defineConfig({
     vueDevTools(),
     AutoImport({
       // 导入 Vue 函数，如：ref, reactive, toRef 等
-      imports: ["vue", "pinia", "vue-router"],
+      imports: ["vue", "pinia", "vue-router", "@vueuse/core"],
       // 导入 Element Plus函数，如：ElMessage, ElMessageBox 等
       resolvers: [ElementPlusResolver()],
 
