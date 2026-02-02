@@ -1,3 +1,4 @@
+// 命令式hook
 import * as Cesium from "cesium";
 
 // 定义 Hook 的返回类型
@@ -37,8 +38,8 @@ export function useCesium(): UseCesiumReturn {
 
     // 隐藏版权信息（开发时可隐藏，生产环境请保留）
     // (v.cesiumWidget.creditContainer as HTMLElement).style.display = "none";
-
-    viewer.value = v;
+    //  markRaw(v):永远不要把这个对象变成响应式代理
+    viewer.value = markRaw(v);
     return v;
   };
 

@@ -7,5 +7,8 @@ export function useTips() {
       : "w-8 h-8"; // 收起时的尺寸 (形成一个小方块按钮)
   });
 
-  return { isExpandTips, tipsContainerClasses };
+  const toggleTips = () => {
+    isExpandTips.value = !isExpandTips.value;
+  };
+  return { isExpandTips, tipsContainerClasses, toggleTips };
 }
