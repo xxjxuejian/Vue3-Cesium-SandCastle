@@ -10,6 +10,7 @@ export default {
     "gettingStarted-htmlOverlay-billboard": "billboard 实现覆盖层",
     "gettingStarted-offline": "离线模式",
     "gettingStarted-resolutionScale": "分辨率缩放",
+    "gettingStarted-cesiumWidget": "Cesium Widget基础渲染组件",
 
     // Show Cases
     showCases: "案例展示",

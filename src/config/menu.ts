@@ -71,6 +71,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "gettingStarted-resolutionScale" }, // 缩放分辨率
         component: "GettingStarted/ResolutionScale.vue",
       },
+      {
+        path: "cesium-widget",
+        name: "CesiumWidget",
+        meta: { title: "gettingStarted-cesiumWidget" }, // 缩放分辨率
+        component: "GettingStarted/CesiumWidget.vue",
+      },
     ],
   },
   {

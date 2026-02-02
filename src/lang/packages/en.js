@@ -10,6 +10,7 @@ export default {
     "gettingStarted-htmlOverlay-billboard": "Billboard-based Overlay",
     "gettingStarted-offline": "Offline Example",
     "gettingStarted-resolutionScale": "Resolution Scaling",
+    "gettingStarted-cesiumWidget": "Cesium Widget",
 
     // Show Cases
     showCases: "Show Cases",
