@@ -6,7 +6,7 @@ import NavBarRight from "./components/NavBarRight.vue";
 <template>
   <div class="navbar">
     <!-- 左侧 -->
-    <div class="navbar_left bg-red-100">
+    <div class="navbar_left">
       <Hamburger />
     </div>
     <!-- 右侧 -->

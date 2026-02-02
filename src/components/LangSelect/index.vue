@@ -33,7 +33,7 @@ function handleLanguageChange(lang: string) {
 
 <template>
   <el-dropdown trigger="click" @command="handleLanguageChange">
-    <div class="wh-full flex-center bg-red-200">
+    <div class="wh-full flex-center">
       <div class="i-svg:language" :class="size" />
     </div>
     <template #dropdown>
