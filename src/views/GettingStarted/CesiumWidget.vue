@@ -11,23 +11,36 @@ const mapConfig = {
 
 /*
     CesiumWidget 是 Cesium 的“核心渲染内核 + 场景管理”，但不包含任何 UI 控件。
+    Cesium.CesiumWidget 与 Cesium.Viewer 类似，但功能更精简。
+    它只是一个用于显示 3D 地球的组件；
+    不包含动画、影像选择等其他控件，
+    也不依赖第三方的 Knockout 库。
 */
 
 const { widget } = useCesiumWidget(mapRef, mapConfig);
 const { isExpandTips, tipsContainerClasses, toggleTips } = useTips();
+
 /**
  *  加载模型
  */
-function loadModel(v: Cesium.CesiumWidget) {
+function loadModel(v: Cesium.CesiumWidget | Cesium.Viewer) {
+  // 以 position 为原点的 ENU 坐标系
   const position = Cesium.Cartesian3.fromDegrees(-123.0744619, 44.0503706, 500);
+  // 创建 ENU 旋转,模型自身的坐标系, E:East(X轴), N:North (Y轴), U:Up(Z轴)
+  // heading ，模型的朝向，0度朝北，90度朝东，顺时针旋转，调整heading，相当于模型绕Z轴旋转，也就是U轴旋转
   const heading = Cesium.Math.toRadians(135);
-  const pitch = 0;
-  const roll = 0;
+  // pitch ，模型的俯仰角，0度平视，90度。调整pitch，相当于模型绕East（X）轴旋转
+  const pitch = Cesium.Math.toRadians(0);
+  // roll ，模型的偏航角，0度，90度 绕 North（Y）轴旋转
+  const roll = Cesium.Math.toRadians(0);
   const hpr = new Cesium.HeadingPitchRoll(heading, pitch, roll);
+  // Cesium 先在 position 处建立一个 ENU 局部坐标系
   const orientation = Cesium.Transforms.headingPitchRollQuaternion(position, hpr);
 
   const entity = v.entities.add({
+    // 实体的位置
     position,
+    // 实体的旋转
     orientation: orientation,
     model: {
       uri: "/SampleData/models/CesiumAir/Cesium_Air.glb",
