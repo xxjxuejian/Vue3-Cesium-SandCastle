@@ -14,6 +14,7 @@ import cesium from "vite-plugin-cesium";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/Vue3-Cesium-SandCastle/",
   css: {
     preprocessorOptions: {
       // 定义全局 SCSS 变量
