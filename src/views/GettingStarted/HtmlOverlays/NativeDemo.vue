@@ -64,6 +64,7 @@ function updateOverlayPosition(viewer: Cesium.Viewer) {
     // B. 处理“地球背面遮挡”问题
     // 如果不加这个判断，当点转到地球背面时，图片依然会显示在地球表面，看起来很怪
     const cameraPosition = viewer.camera.position;
+    // @ts-ignore
     const ellipsoidalOccluder = new Cesium.EllipsoidalOccluder(
       viewer.scene.globe.ellipsoid,
       cameraPosition

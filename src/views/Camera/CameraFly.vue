@@ -2,8 +2,6 @@
 import * as Cesium from "cesium";
 import CesiumViewer from "@/components/Cesium/CesiumViewer.vue";
 
-import type { CameraFlyOptions } from "@/types/cesium";
-
 let mapViewer: Cesium.Viewer | null;
 let scene: Cesium.Scene | null;
 let camera: Cesium.Camera | null;
@@ -96,7 +94,7 @@ function flyToHeadingPitchRoll() {
 
 function flyToLocation() {
   // Create callback for browser's geolocation
-  function fly(position) {
+  function fly(position: any) {
     if (!camera) return;
     camera.flyTo({
       destination: Cesium.Cartesian3.fromDegrees(
@@ -107,7 +105,7 @@ function flyToLocation() {
     });
   }
 
-  function error(err) {
+  function error(err: any) {
     console.warn(`错误（${err.code}）：${err.message}`);
   }
   //  获取我的位置 成功或者失败的 回调
@@ -273,7 +271,9 @@ function losAngelesToTokyo(isAdjustPitch: boolean = false) {
   };
 
   if (isAdjustPitch) {
+    // @ts-ignore
     tokyoOptions.pitchAdjustHeight = 1000;
+    // @ts-ignore
     laOptions.pitchAdjustHeight = 1000;
   }
 
@@ -298,7 +298,7 @@ function reset() {
   // 移除 Primitive（非 Entity）
   scene.primitives.remove(referenceFramePrimitive);
   // 移除所有 Tween 动画，
-  scene.tweens.removeAll();
+  (scene as any).tweens.removeAll();
 
   if (Cesium.defined(removeCameraMoveStart)) {
     removeCameraMoveStart();

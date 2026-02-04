@@ -120,7 +120,7 @@ function handleModelChange(value: string) {
   const option = options.find((item) => item.value === value);
   if (!option) return;
   // 检查当前浏览器 + GPU + WebGL 环境，是否支持「Basis Universal（KTX2）」压缩纹理。
-  if (option.needBasisCheck) {
+  if (option.needBasisCheck && viewerRef.value) {
     if (!Cesium.FeatureDetection.supportsBasis(viewerRef.value.scene)) {
       ElMessage.warning("This browser does not support Basis Universal compressed textures");
       return;
