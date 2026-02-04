@@ -164,6 +164,21 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // Camera 相机
+  {
+    path: "camera",
+    name: "Camera",
+    meta: { title: "camera", icon: "el-icon-Camera" },
+    redirect: "/camera/camera-fly",
+    children: [
+      {
+        path: "camera-fly",
+        name: "CameraFly",
+        meta: { title: "camera-cameraFly" },
+        component: "Camera/CameraFly.vue",
+      },
+    ],
+  },
 ];
 
 export default menuConfig;

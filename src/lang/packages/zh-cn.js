@@ -30,6 +30,10 @@ export default {
     // 3D Models
     "3dModels": "3D 模型",
     "3dModels-gltf": "glTF 模型",
+
+    // 相机 Camera
+    camera: "相机",
+    "camera-cameraFly": "相机飞行",
   },
   langSelect: {
     message: {
