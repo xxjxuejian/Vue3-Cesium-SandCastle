@@ -2,6 +2,7 @@
 import CesiumViewer from "@/components/Cesium/CesiumViewer.vue";
 import * as Cesium from "cesium";
 
+import { getPublicAssets } from "@/utils/assets";
 // 加载模型的函数
 function createModel(url: string, height: number) {
   const viewer = viewerRef.value;
@@ -28,7 +29,7 @@ function createModel(url: string, height: number) {
     position: position,
     orientation: orientation,
     model: {
-      uri: url, // glTF/GLB 文件路径
+      uri: getPublicAssets(url), // glTF/GLB 文件路径
       minimumPixelSize: 128, // 最小屏幕像素尺寸： 就算你把相机拉得很远，模型在屏幕上也至少有 128px 大小
       maximumScale: 20000, // 最大放大倍数
     },
