@@ -1,50 +1,57 @@
-name: Vue3 Cesium SandCastle
+name: Deploy to GitHub Pages
 
 on:
-    push:
-        branches:
-            - main
+  push:
+    branches: [main] # 确保这里也是你的分支名
 
 permissions:
-    contents: read
-    pages: write
-    id-token: write
+  contents: read
+  pages: write
+  id-token: write
 
+# 允许并发控制：如果上次还在跑，这次又提交了，取消上次，跑这次（节省资源）
 concurrency:
-    group: "pages"
-    cancel-in-progress: true
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
+      # --- 关键修改开始：安装 pnpm ---
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10 # 指定你本地使用的 pnpm 大版本
+      # --- 关键修改结束 ---
 
-            - name: Setup Node
-              uses: actions/setup-node@v4
-              with:
-                  node-version: 20
-                  cache: pnpm
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "pnpm" # 开启 pnpm 缓存，让下次构建更快
 
-            # 👉 关键步骤：用 Node 20 自带的 corepack 启用 pnpm
-            - name: Enable pnpm via corepack
-              run: |
-                  corepack enable
-                  corepack prepare pnpm@9 --activate
-                  pnpm -v
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile # 严格按照 lock 文件安装，防止版本不一致
 
-            - name: Install dependencies
-              run: pnpm install --frozen-lockfile
+      - name: Build
+        run: pnpm run build
 
-            - name: Build
-              run: pnpm run build
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
-            - name: Upload Pages artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: dist
-
-            - name: Deploy to GitHub Pages
-              uses: actions/deploy-pages@v4
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
