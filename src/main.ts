@@ -5,6 +5,8 @@ import App from "./App.vue";
 import "./styles/index.scss";
 import "virtual:uno.css";
 
+import "cesium/Build/Cesium/Widgets/widgets.css";
+
 import setupPlugins from "@/plugins";
 
 // 【核心步骤】配置 Cesium Token

@@ -10,11 +10,21 @@ import vueDevTools from "vite-plugin-vue-devtools";
 
 import UnoCSS from "unocss/vite";
 
-import cesium from "vite-plugin-cesium";
+// 1. 引入静态复制插件
+import { viteStaticCopy } from "vite-plugin-static-copy";
+
+// 定义源路径和目标文件夹名
+const cesiumSource = "node_modules/cesium/Build/Cesium";
+const cesiumDest = "cesium-static"; // 在 dist 中叫什么名字，尽量别叫 cesium 避免混淆，这里叫 cesium-static
 
 // https://vite.dev/config/
 export default defineConfig({
   base: "/Vue3-Cesium-SandCastle/",
+  define: {
+    // 2. 关键配置：告诉 Cesium 库，静态资源在 "域名/仓库名/cesium-static/" 下
+    // 注意：这里必须包含 /仓库名/
+    CESIUM_BASE_URL: JSON.stringify(`/Vue3-Cesium-SandCastle/${cesiumDest}/`),
+  },
   css: {
     preprocessorOptions: {
       // 定义全局 SCSS 变量
@@ -54,7 +64,16 @@ export default defineConfig({
       // dts: false,
       dts: "src/types/components.d.ts",
     }),
-    cesium(), // 自动处理 Cesium 的构建和 worker 配置
+    // 3. 关键配置：手动把 node_modules 里的文件复制到 dist/cesium-static
+    // 注意：dest 不需要写仓库名，它会自动基于 dist 根目录
+    viteStaticCopy({
+      targets: [
+        { src: `${cesiumSource}/Workers`, dest: cesiumDest },
+        { src: `${cesiumSource}/ThirdParty`, dest: cesiumDest },
+        { src: `${cesiumSource}/Assets`, dest: cesiumDest },
+        { src: `${cesiumSource}/Widgets`, dest: cesiumDest },
+      ],
+    }),
   ],
   resolve: {
     alias: {
