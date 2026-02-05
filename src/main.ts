@@ -11,6 +11,8 @@ import setupPlugins from "@/plugins";
 
 // 【核心步骤】配置 Cesium Token
 // ----------------------------------------------------
+// @ts-ignore
+window.CESIUM_BASE_URL = import.meta.env.BASE_URL + import.meta.env.VITE_CESIUM_STATIC_TARGET_URL;
 const token = import.meta.env.VITE_CESIUM_TOKEN;
 if (token) {
   Cesium.Ion.defaultAccessToken = token;
