@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import { getSandCastleListApi } from "@/api/home";
+
+function getSandCastleList() {
+  getSandCastleListApi().then((res) => {
+    console.log("list data", res);
+  });
+}
+// getSandCastleList();
+
 import { Search } from "@element-plus/icons-vue";
 const searchValue = ref("");
 const selectValue = ref("");
