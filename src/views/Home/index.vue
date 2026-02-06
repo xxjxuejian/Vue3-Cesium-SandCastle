@@ -38,11 +38,13 @@ const options = [
     label: "Option 6",
   },
 ];
+
+const input = ref("");
 </script>
 
 <template>
   <div class="p-4">
-    <!-- 按标签搜素 -->
+    <!-- 按标签搜索-->
     <div class="flex items-center gap-x-4 max-w-lg">
       <span class="font-700 text-xl">Gallery</span>
       <el-input v-model="searchValue" placeholder="Search gallery" :prefix-icon="Search" />
@@ -57,6 +59,24 @@ const options = [
     </div>
 
     <!-- 主内容 -->
-    <div></div>
+    <div class="parent">
+      <el-input v-model="input" style="width: 240px" placeholder="Please input" />
+    </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+/* .parent {
+  .el-input {
+    border: 1px solid red;
+  }
+} */
+
+.parent {
+  .el-input {
+    :deep(.el-input__inner) {
+      background-color: blueviolet;
+    }
+  }
+}
+</style>
