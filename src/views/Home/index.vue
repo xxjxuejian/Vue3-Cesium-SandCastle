@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { getSandCastleListApi } from "@/api/home";
-
-function getSandCastleList() {
-  getSandCastleListApi().then((res) => {
-    console.log("list data", res);
-  });
+import { transformGalleryDataToMap } from "@/utils/transformGalleryData";
+async function getSandCastleList() {
+  const res = await fetch(import.meta.env.BASE_URL + "public/mock/galleryList.json");
+  const data = await res.json();
+  const entries = data.entries;
+  let map = transformGalleryDataToMap(entries);
+  console.log("hashMap", map);
 }
-// getSandCastleList();
 
 import { Search } from "@element-plus/icons-vue";
 const searchValue = ref("");
@@ -40,6 +40,10 @@ const options = [
 ];
 
 const input = ref("");
+
+onMounted(() => {
+  getSandCastleList();
+});
 </script>
 
 <template>
