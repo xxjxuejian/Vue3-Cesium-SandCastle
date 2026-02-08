@@ -1,43 +1,46 @@
 export default {
   route: {
-    home: "home",
+    home: "Home",
+
     // Getting Started
-    gettingStarted: "Getting Started",
-    "gettingStarted-helloWorld": "Hello World Example",
-    "gettingStarted-htmlOverlay": "HTML Overlays",
-    "gettingStarted-htmlOverlay-officialDemo": "HTML Overlay Official Demo",
-    "gettingStarted-htmlOverlay-optimizedDemo": "Optimized HTML Overlay Demo",
-    "gettingStarted-htmlOverlay-billboard": "Billboard-based Overlay",
-    "gettingStarted-offline": "Offline Example",
-    "gettingStarted-resolutionScale": "Resolution Scaling",
-    "gettingStarted-cesiumWidget": "Cesium Widget",
+    "getting-started": "Getting Started",
+    "getting-started_hello-world": "Hello World Example",
+    "getting-started_html-overlays": "HTML Overlays",
+    "getting-started_html-overlays_official-demo": "HTML Overlays Official Demo",
+    "getting-started_html-overlays_optimization-demo": "HTML Overlays Optimized Demo",
+    "getting-started_html-overlays_billboard-demo": "Billboard-based Overlay",
+    "getting-started_offline": "Offline Mode",
+    "getting-started_resolution-scale": "Resolution Scale",
+    "getting-started_cesium-widget": "Cesium Widget Basics",
 
     // Show Cases
-    showCases: "Show Cases",
-    "showCases-helloWorld": "Hello World Example",
-    "showCases-gaussianSplatting": "3D Tiles Gaussian Splatting",
-    "showCases-gaussianSplattingMesh": "Gaussian Splatting vs Mesh",
+    "show-cases": "Showcases",
+    "show-cases_hello-world": "Hello World Showcase",
+    "show-cases_3d-tiles-gaussian-splatting": "3D Tiles Gaussian Splatting",
+    "show-cases_3d-tiles-gaussian-splatting-comparison":
+      "3D Tiles Gaussian Splatting – Mesh Comparison",
 
     // 2D View
-    "2dView": "2D View",
-    "2dView-multiSynced": "Multiple Synced Views",
-    "2dView-rotatableMap": "Rotatable 2D Map",
+    "2d-view": "2D View",
+    "2d-view_multiple-synced-views": "Multiple Synced Views",
+    "2d-view_rotatable-2d-map": "Rotatable 2D Map",
 
     // Animation
     animation: "Animation",
-    "animation-clock": "Clock",
+    animation_clock: "Clock",
 
     // 3D Models
-    "3dModels": "3D Models",
-    "3dModels-gltf": "glTF Models",
+    "3d-models": "3D Models",
+    "3d-models_gltf-models": "glTF Models",
 
-    // 相机 Camera
+    // Camera
     camera: "Camera",
-    "camera-cameraFly": "Camera Fly",
+    "camera_camera-fly": "Camera Fly",
   },
+
   langSelect: {
     message: {
-      success: "Switch Language Success!",
+      success: "Language switched successfully!",
     },
   },
 };
