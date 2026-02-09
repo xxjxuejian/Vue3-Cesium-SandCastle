@@ -1,16 +1,22 @@
 <script setup lang="ts">
-import { transformGalleryDataToMap } from "@/utils/transformGalleryData";
+import { transformGalleryDataToMap, generateHomeListData } from "@/utils/transformGalleryData";
+import type { galleryData } from "@/types/api/home";
+import { translateRouteTitle } from "@/lang/utils";
+import Card from "./components/Card.vue";
 async function getSandCastleList() {
   const res = await fetch(import.meta.env.BASE_URL + "public/mock/galleryList.json");
   const data = await res.json();
   const entries = data.entries;
   let map = transformGalleryDataToMap(entries);
-  console.log("hashMap", map);
+  let r = generateHomeListData(map);
+  homeList.value = r;
+  console.log(r);
 }
 
 import { Search } from "@element-plus/icons-vue";
 const searchValue = ref("");
 const selectValue = ref("");
+const homeList = shallowRef<Record<string, galleryData[]>>();
 
 const options = [
   {
@@ -39,15 +45,13 @@ const options = [
   },
 ];
 
-const input = ref("");
-
 onMounted(() => {
   getSandCastleList();
 });
 </script>
 
 <template>
-  <div class="p-4">
+  <div class="p-4 wh-full overflow-auto">
     <!-- 按标签搜索-->
     <div class="flex items-center gap-x-4 max-w-lg">
       <span class="font-700 text-xl">Gallery</span>
@@ -63,8 +67,19 @@ onMounted(() => {
     </div>
 
     <!-- 主内容 -->
-    <div class="parent">
+    <!-- <div class="parent">
       <el-input v-model="input" style="width: 240px" placeholder="Please input" />
+    </div> -->
+
+    <div>
+      <section v-for="(value, key) in homeList" :key="key" class="mb-4">
+        <h2 class="mb-4 text-lg font-semibold text-gray-800">
+          {{ translateRouteTitle(key) }}
+        </h2>
+        <div class="grid gap-6 grid-cols-[repeat(auto-fit,minmax(225px,1fr))]">
+          <Card v-for="item in value" :key="item.id" :case-info="item" />
+        </div>
+      </section>
     </div>
   </div>
 </template>

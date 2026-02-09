@@ -7,4 +7,5 @@ export interface galleryData {
   lineCount: number;
   description: string;
   labels: Array<string>;
+  path?: string;
 }
