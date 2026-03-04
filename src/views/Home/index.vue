@@ -3,6 +3,7 @@ import { transformGalleryDataToMap, generateHomeListData } from "@/utils/transfo
 import type { galleryData } from "@/types/api/home";
 import { translateRouteTitle } from "@/lang/utils";
 import Card from "./components/Card.vue";
+import { Search } from "@element-plus/icons-vue";
 
 interface SelectOption {
   label: string;
@@ -13,9 +14,11 @@ async function getSandCastleList() {
   const res = await fetch(import.meta.env.BASE_URL + "public/mock/galleryList.json");
   const data = await res.json();
   const entries = data.entries;
-  let map = transformGalleryDataToMap(entries);
-  let r = generateHomeListData(map);
-  const keys = Object.keys(r);
+  // 处理原始数据
+  const dataMap = transformGalleryDataToMap(entries);
+  // 给数据添加 path属性, 方便后续跳转
+  const dataList = generateHomeListData(dataMap);
+  const keys = Object.keys(dataList);
   // 生成select的options
   options.value = keys.map((key) => {
     return {
@@ -24,12 +27,11 @@ async function getSandCastleList() {
     };
   });
   // 保存源数据和 主页展示的数据
-  originData = r;
-  homeData.value = r;
-  console.log(r);
+  originData = dataList;
+  homeData.value = dataList;
+  console.log(dataList);
 }
 
-import { Search } from "@element-plus/icons-vue";
 const searchValue = ref(""); // 搜索框的输入值
 const selectValue = ref(""); // select选择器的选中值
 let originData: Record<string, galleryData[]>; // 主页原始数据
@@ -85,8 +87,8 @@ onMounted(() => {
       <el-select
         v-model="selectValue"
         placeholder="Labels"
-        @change="handleLabelChange"
         style="width: 100px"
+        @change="handleLabelChange"
       >
         <el-option label="All" value="all" />
         <el-option
@@ -104,9 +106,10 @@ onMounted(() => {
         <h2 class="mb-4 text-lg font-semibold text-gray-800">
           {{ translateRouteTitle(key) }}
         </h2>
-        <!-- class="grid gap-6 grid-cols-[repeat(auto-fit,minmax(225px,250px))] bg-red-100" -->
+
         <div>
-          <div class="w-243 mx-auto bg-green-100 grid gap-6 grid-cols-[repeat(auto-fit,225px)]">
+          <!-- class="w-243 mx-auto grid gap-6 grid-cols-[repeat(auto-fit,225px)]" -->
+          <div class="grid gap-6 grid-cols-[repeat(auto-fit,225px)] justify-start px-4">
             <Card v-for="item in value" :key="item.id" :case-info="item" />
           </div>
         </div>

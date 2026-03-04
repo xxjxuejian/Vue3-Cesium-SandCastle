@@ -6,7 +6,8 @@ const handleMapLoaded = async (viewer: Cesium.Viewer) => {
   console.log("Cesium 实例已获取:", viewer);
 
   try {
-    const resource = await Cesium.IonResource.fromAssetId(2895174);
+    // Cesium.Cesium3DTileset 和Cesium.IonResource 等有什么区别？
+    const resource = await Cesium.IonResource.fromAssetId(4498728);
     const entity = viewer.entities.add({
       position: Cesium.Cartesian3.fromDegrees(0, 0, 100),
       model: {
