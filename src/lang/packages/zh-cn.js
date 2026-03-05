@@ -13,10 +13,10 @@ export default {
     "getting-started_cesium-widget": "Cesium Widget基础渲染组件",
 
     // Show Cases
-    "show-cases": "案例展示",
-    "show-cases_hello-world": "Hello World 案例",
-    "show-cases_3d-tiles-gaussian-splatting": "3D 瓦片高斯贴图",
-    "show-cases_3d-tiles-gaussian-splatting-comparison": "3D 瓦片高斯贴图 _ 网格比较",
+    showcases: "案例展示",
+    "showcases_hello-world": "Hello World 案例",
+    "showcases_3d-tiles-gaussian-splatting": "3D 瓦片高斯贴图",
+    "showcases_3d-tiles-gaussian-splatting-—-mesh-comparison": "3D 瓦片高斯贴图 _ 网格比较",
 
     // 2D View
     "2d-view": "2D 视图",

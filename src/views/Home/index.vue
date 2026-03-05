@@ -87,7 +87,7 @@ onMounted(() => {
       <el-select
         v-model="selectValue"
         placeholder="Labels"
-        style="width: 100px"
+        style="width: 150px"
         @change="handleLabelChange"
       >
         <el-option label="All" value="all" />

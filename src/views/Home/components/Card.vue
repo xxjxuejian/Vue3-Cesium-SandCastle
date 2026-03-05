@@ -20,7 +20,10 @@ const imgBaseUrl = "https://sandcastle.cesium.com/";
     class="rounded-lg bg-white shadow-sm overflow-hidden cursor-pointer transition-transform duration-300 ease-out hover:scale-105 hover:shadow-lg"
     @click="handleClick"
   >
-    <div class="py-2 px-2 text-center text-sm font-medium text-gray-700 truncate">
+    <div
+      class="py-2 px-2 text-center text-sm font-medium text-gray-700 truncate"
+      :title="translateRouteTitle(caseInfo.title)"
+    >
       {{ translateRouteTitle(caseInfo.title) }}
     </div>
     <div class="w-full h-[150px] bg-gray-100">

@@ -79,34 +79,35 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // showcases : 案例展示
   {
-    path: "show-cases", // 建议：小写+短横线
-    name: "show-cases",
+    path: "showcases", // 建议：小写+短横线
+    name: "showcases",
     meta: {
-      title: "show-cases", // 案例展示
+      title: "showcases", // 案例展示
       icon: "el-icon-Collection",
     },
     // component: "ParentView", // /show-cases下面的容器组件，children路由渲染位置
-    redirect: "/show-cases/3d-tiles-gaussian-splatting", // 默认打开第一个子菜单
+    redirect: "/showcases/3d-tiles-gaussian-splatting", // 默认打开第一个子菜单
     children: [
       {
         path: "hello-world",
         name: "sc_hello-world",
-        meta: { title: "show-cases_hello-world" }, // Hello World案例
+        meta: { title: "showcases_hello-world" }, // Hello World案例
         // 注意：确保你的文件真实路径是 src/views/ShowCases/3DTilesGaussianSplatting.vue
         component: "ShowCases/HelloWorld.vue",
       },
       {
         path: "3d-tiles-gaussian-splatting",
         name: "sc_3d-tiles-gaussian-splatting",
-        meta: { title: "show-cases_3d-tiles-gaussian-splatting" }, // 3D 瓦片高斯贴图
+        meta: { title: "showcases_3d-tiles-gaussian-splatting" }, // 3D 瓦片高斯贴图
         // 注意：确保你的文件真实路径是 src/views/ShowCases/3DTilesGaussianSplatting.vue
         component: "ShowCases/3DTilesGaussianSplatting.vue",
       },
       {
         path: "3d-tiles-gaussian-splatting-comparison",
         name: "sc_3d-tiles-gaussian-splatting-comparison",
-        meta: { title: "show-cases_3d-tiles-gaussian-splatting-comparison" }, // 3D 瓦片高斯贴图 - 网格比较
+        meta: { title: "showcases_3d-tiles-gaussian-splatting-—-mesh-comparison" }, // 3D 瓦片高斯贴图 - 网格比较
         component: "ShowCases/3DTilesGaussianSplattingMeshComparison.vue",
       },
     ],

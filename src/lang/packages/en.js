@@ -14,10 +14,10 @@ export default {
     "getting-started_cesium-widget": "Cesium Widget Basics",
 
     // Show Cases
-    "show-cases": "Showcases",
-    "show-cases_hello-world": "Hello World Showcase",
-    "show-cases_3d-tiles-gaussian-splatting": "3D Tiles Gaussian Splatting",
-    "show-cases_3d-tiles-gaussian-splatting-comparison":
+    showcases: "Showcases",
+    "showcases_hello-world": "Hello World Showcase",
+    "showcases_3d-tiles-gaussian-splatting": "3D Tiles Gaussian Splatting",
+    "showcases_3d-tiles-gaussian-splatting-—-mesh-comparison":
       "3D Tiles Gaussian Splatting – Mesh Comparison",
 
     // 2D View
