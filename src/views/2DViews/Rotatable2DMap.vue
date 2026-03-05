@@ -22,7 +22,7 @@ const handleMapLoaded = (viewer: Cesium.Viewer) => {
 
 <template>
   <div class="wh-full overflow-hidden">
-    <CesiumViewer :config="mapConfig" @loaded="handleMapLoaded" />
+    <CesiumViewer :config="mapConfig" @map-loaded="handleMapLoaded" />
   </div>
 </template>
 

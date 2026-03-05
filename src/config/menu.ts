@@ -110,6 +110,18 @@ const menuConfig: MenuItem[] = [
         meta: { title: "showcases_3d-tiles-gaussian-splatting-—-mesh-comparison" }, // 3D 瓦片高斯贴图 - 网格比较
         component: "ShowCases/3DTilesGaussianSplattingMeshComparison.vue",
       },
+      {
+        path: "vertical-exaggeration-with-3d-tiles",
+        name: "sc_vertical-exaggeration-with-3d-tiles",
+        meta: { title: "showcases_vertical-exaggeration-with-3d-tiles" }, // 3D 瓦片垂直拉伸
+        component: "ShowCases/VerticalExaggerationWith3dTiles.vue",
+      },
+      {
+        path: "google-photorealistic-3d-tiles",
+        name: "sc_google-photorealistic-3d-tiles",
+        meta: { title: "showcases_google-photorealistic-3d-tiles" }, // Google 照片级真实三维瓦片数据
+        component: "ShowCases/GooglePhotorealistic3dTiles.vue",
+      },
     ],
   },
   {

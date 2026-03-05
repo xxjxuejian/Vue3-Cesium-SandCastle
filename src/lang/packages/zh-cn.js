@@ -17,6 +17,8 @@ export default {
     "showcases_hello-world": "Hello World 案例",
     "showcases_3d-tiles-gaussian-splatting": "3D 瓦片高斯贴图",
     "showcases_3d-tiles-gaussian-splatting-—-mesh-comparison": "3D 瓦片高斯贴图 _ 网格比较",
+    "showcases_vertical-exaggeration-with-3d-tiles": "3D 瓦片垂直拉伸",
+    "showcases_google-photorealistic-3d-tiles": "Google照片级真实感3D Tiles数据",
 
     // 2D View
     "2d-view": "2D 视图",
