@@ -10,7 +10,8 @@
             "description": "Add clipping planes to a mesh 3D Tileset, point cloud 3D Tileset, and glTF model. Useful for exploring interiors or cutting away parts of geometry.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-clipping-planes"
         },
         {
             "url": "gallery/3d-tiles-compare",
@@ -22,7 +23,8 @@
             "description": "Compare 3D Tiles tilesets by showing different ones on different sides of the screen.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-compare"
         },
         {
             "url": "gallery/3d-tiles-feature-picking",
@@ -36,7 +38,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-feature-picking"
         },
         {
             "url": "gallery/3d-tiles-feature-styling",
@@ -49,7 +52,8 @@
             "labels": [
                 "3d-tiles",
                 "styling"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-feature-styling"
         },
         {
             "url": "gallery/3d-tiles-formats",
@@ -61,7 +65,8 @@
             "description": "Showcase of different 3D Tiles formats.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-formats"
         },
         {
             "url": "gallery/3d-tiles-gaussian-splatting",
@@ -74,7 +79,8 @@
             "labels": [
                 "showcases",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-gaussian-splatting"
         },
         {
             "url": "gallery/3d-tiles-gaussian-splatting-comparison",
@@ -87,7 +93,8 @@
             "labels": [
                 "showcases",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-gaussian-splatting-—-mesh-comparison"
         },
         {
             "url": "gallery/3d-tiles-inspector",
@@ -100,7 +107,8 @@
             "labels": [
                 "3d-tiles",
                 "widgets"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-inspector"
         },
         {
             "url": "gallery/3d-tiles-interactivity",
@@ -112,7 +120,8 @@
             "description": "Interaction examples with 3D Tiles.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-interactivity"
         },
         {
             "url": "gallery/3d-tiles-interior",
@@ -124,7 +133,8 @@
             "description": "A sample interior rendered with 3D Tiles.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-interior"
         },
         {
             "url": "gallery/3d-tiles-nga-gpm-visualization",
@@ -136,7 +146,8 @@
             "description": "An example for the visualization of NGA_gpm_local extension data",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-nga-gpm-visualization"
         },
         {
             "url": "gallery/3d-tiles-photogrammetry",
@@ -149,7 +160,8 @@
             "labels": [
                 "3d-tiles",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-photogrammetry"
         },
         {
             "url": "gallery/3d-tiles-1.1-photogrammetry-classification",
@@ -166,7 +178,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-photogrammetry-classification",
@@ -179,7 +192,8 @@
             "labels": [
                 "3d-tiles",
                 "classification"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-1.1-photogrammetry",
@@ -193,7 +207,8 @@
                 "3d-tiles",
                 "photogrammetry",
                 "performance"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-photogrammetry-with-ktx2"
         },
         {
             "url": "gallery/3d-tiles-point-cloud",
@@ -206,7 +221,8 @@
             "labels": [
                 "3d-tiles",
                 "point-clouds"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-point-cloud"
         },
         {
             "url": "gallery/3d-tiles-point-cloud-classification",
@@ -222,7 +238,8 @@
                 "classification",
                 "picking",
                 "styling"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-point-cloud-classification"
         },
         {
             "url": "gallery/3d-tiles-point-cloud-shading",
@@ -234,7 +251,8 @@
             "description": "Point Cloud Attenuation and Eye Dome Lighting example.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-point-cloud-shading"
         },
         {
             "url": "gallery/3d-tiles-point-cloud-styling",
@@ -246,7 +264,8 @@
             "description": "Example styles for a point cloud tileset.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-point-cloud-styling"
         },
         {
             "url": "gallery/3d-tiles-batch-table-hierarchy",
@@ -260,7 +279,8 @@
                 "3d-tiles",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-styling"
         },
         {
             "url": "gallery/3d-tiles-terrain-classification",
@@ -274,7 +294,8 @@
                 "3d-tiles",
                 "classification",
                 "terrain"
-            ]
+            ],
+            "path": "/3d-tiles/3d-tiles-terrain-classification"
         },
         {
             "url": "gallery/aerometrex-san-francisco",
@@ -288,7 +309,8 @@
                 "3d-tiles",
                 "photogrammetry",
                 "ion-assets"
-            ]
+            ],
+            "path": "/3d-tiles/aerometrex-san-francisco"
         },
         {
             "url": "gallery/3d-tiles-bim",
@@ -302,7 +324,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/3d-tiles/bim-design-model-with-3d-tiles"
         },
         {
             "url": "gallery/3d-tiles-1.1-cdb-yemen",
@@ -317,7 +340,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/3d-tiles/cdb-metadata-in-3d-tiles"
         },
         {
             "url": "gallery/cesium-osm-buildings",
@@ -330,7 +354,8 @@
             "labels": [
                 "3d-tiles",
                 "ion-assets"
-            ]
+            ],
+            "path": "/3d-tiles/cesium-osm-buildings"
         },
         {
             "url": "gallery/clamp-entities-to-ground",
@@ -345,7 +370,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/3d-tiles/clamp-entities-to-ground"
         },
         {
             "url": "gallery/clamp-model-to-ground",
@@ -360,7 +386,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/3d-tiles/clamp-model-to-ground"
         },
         {
             "url": "gallery/classification",
@@ -374,7 +401,8 @@
                 "3d-tiles",
                 "classification",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/3d-tiles/classification"
         },
         {
             "url": "gallery/classification-types",
@@ -388,7 +416,8 @@
                 "3d-tiles",
                 "classification",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/3d-tiles/classification-types"
         },
         {
             "url": "gallery/clipping-regions",
@@ -401,7 +430,8 @@
             "labels": [
                 "terrain",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/clipping-regions"
         },
         {
             "url": "gallery/custom-shaders-3d-tiles",
@@ -413,7 +443,8 @@
             "description": "Create 3D models using glTF.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/custom-shaders-3d-tiles"
         },
         {
             "url": "gallery/custom-shaders-models",
@@ -425,7 +456,8 @@
             "description": "Create 3D models using glTF.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/custom-shaders-models"
         },
         {
             "url": "gallery/custom-shaders-property-textures",
@@ -437,7 +469,8 @@
             "description": "Create 3D models using glTF.",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/custom-shaders-property-textures"
         },
         {
             "url": "gallery/aec-isolate-by-category",
@@ -451,7 +484,8 @@
                 "showcases",
                 "3d-tiles",
                 "metadata"
-            ]
+            ],
+            "path": "/3d-tiles/design-model-–-category-filtering"
         },
         {
             "url": "gallery/aec-architectural-design",
@@ -466,7 +500,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/3d-tiles/design-model-–-layer-control-and-metadata-picking"
         },
         {
             "url": "gallery/aec-metadata-styling",
@@ -481,7 +516,8 @@
                 "3d-tiles",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/3d-tiles/design-model-–-metadata-styling"
         },
         {
             "url": "gallery/aec-clipping",
@@ -496,7 +532,8 @@
                 "showcases",
                 "clipping",
                 "terrain"
-            ]
+            ],
+            "path": "/3d-tiles/design-model-–-terrain-inset"
         },
         {
             "url": "gallery/globe-materials-3d-tiles-terrain",
@@ -510,7 +547,8 @@
                 "3d-tiles",
                 "terrain",
                 "showcases"
-            ]
+            ],
+            "path": "/3d-tiles/globe-materials-–-3d-tiles-terrain"
         },
         {
             "url": "gallery/google-photorealistic-3d-tiles",
@@ -523,7 +561,8 @@
             "labels": [
                 "3d-tiles",
                 "showcases"
-            ]
+            ],
+            "path": "/3d-tiles/google-photorealistic-3d-tiles"
         },
         {
             "url": "gallery/google-photorealistic-3d-tiles-with-building-insert",
@@ -536,7 +575,8 @@
             "labels": [
                 "3d-tiles",
                 "classification"
-            ]
+            ],
+            "path": "/3d-tiles/google-photorealistic-3d-tiles-with-building-insert"
         },
         {
             "url": "gallery/imodel-mesh-export-service",
@@ -549,7 +589,8 @@
             "labels": [
                 "showcases",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/imodel-mesh-export-service"
         },
         {
             "url": "gallery/japan-buildings",
@@ -563,7 +604,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/japan-buildings"
         },
         {
             "url": "gallery/mars",
@@ -577,7 +619,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/mars"
         },
         {
             "url": "gallery/moon",
@@ -591,7 +634,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/moon"
         },
         {
             "url": "gallery/3d-tiles-adjust-height",
@@ -604,7 +648,8 @@
             "labels": [
                 "3d-tiles",
                 "transformations"
-            ]
+            ],
+            "path": "/3d-tiles/offset-3d-tileset-height"
         },
         {
             "url": "gallery/drape-imagery-on-3d-tiles",
@@ -619,7 +664,8 @@
                 "showcases",
                 "3d-tiles",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/3d-tiles/overlay-imagery-on-3d-tiles"
         },
         {
             "url": "gallery/polylines-on-3d-tiles",
@@ -631,7 +677,8 @@
             "description": "Display polylines on BIM and Photogrammetry 3D Tiles",
             "labels": [
                 "3d-tiles"
-            ]
+            ],
+            "path": "/3d-tiles/polylines-on-3d-tiles"
         },
         {
             "url": "gallery/3d-tiles-1.1-s2-globe",
@@ -644,7 +691,8 @@
             "labels": [
                 "3d-tiles",
                 "terrain"
-            ]
+            ],
+            "path": "/3d-tiles/s2-globe-with-3d-tiles"
         },
         {
             "url": "gallery/sample-height-from-3d-tiles",
@@ -657,7 +705,8 @@
             "labels": [
                 "3d-tiles",
                 "picking"
-            ]
+            ],
+            "path": "/3d-tiles/sample-height-from-3d-tiles"
         },
         {
             "url": "gallery/time-dynamic-point-cloud",
@@ -670,7 +719,8 @@
             "labels": [
                 "3d-tiles",
                 "point-clouds"
-            ]
+            ],
+            "path": "/3d-tiles/time-dynamic-point-cloud"
         },
         {
             "url": "gallery/3d-tiles-vertical-exaggeration",
@@ -683,7 +733,8 @@
             "labels": [
                 "3d-tiles",
                 "showcases"
-            ]
+            ],
+            "path": "/3d-tiles/vertical-exaggeration-with-3d-tiles"
         },
         {
             "url": "gallery/voxels-in-3d-tiles",
@@ -698,7 +749,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/3d-tiles/voxels-in-3d-tiles"
         }
     ],
     "metadata": [
@@ -714,7 +766,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/metadata/3d-tiles-feature-picking"
         },
         {
             "url": "gallery/3d-tiles-1.1-photogrammetry-classification",
@@ -731,7 +784,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/metadata/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-batch-table-hierarchy",
@@ -745,7 +799,8 @@
                 "3d-tiles",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/metadata/3d-tiles-styling"
         },
         {
             "url": "gallery/3d-tiles-bim",
@@ -759,7 +814,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/metadata/bim-design-model-with-3d-tiles"
         },
         {
             "url": "gallery/3d-tiles-1.1-cdb-yemen",
@@ -774,7 +830,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/metadata/cdb-metadata-in-3d-tiles"
         },
         {
             "url": "gallery/aec-isolate-by-category",
@@ -788,7 +845,8 @@
                 "showcases",
                 "3d-tiles",
                 "metadata"
-            ]
+            ],
+            "path": "/metadata/design-model-–-category-filtering"
         },
         {
             "url": "gallery/aec-architectural-design",
@@ -803,7 +861,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/metadata/design-model-–-layer-control-and-metadata-picking"
         },
         {
             "url": "gallery/aec-metadata-styling",
@@ -818,7 +877,8 @@
                 "3d-tiles",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/metadata/design-model-–-metadata-styling"
         },
         {
             "url": "gallery/voxel-picking",
@@ -833,7 +893,8 @@
                 "picking",
                 "styling",
                 "metadata"
-            ]
+            ],
+            "path": "/metadata/voxel-picking"
         },
         {
             "url": "gallery/voxels",
@@ -848,7 +909,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/metadata/voxel-rendering"
         },
         {
             "url": "gallery/voxels-in-3d-tiles",
@@ -863,7 +925,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/metadata/voxels-in-3d-tiles"
         }
     ],
     "picking": [
@@ -879,7 +942,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/picking/3d-tiles-feature-picking"
         },
         {
             "url": "gallery/3d-tiles-1.1-photogrammetry-classification",
@@ -896,7 +960,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/picking/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-point-cloud-classification",
@@ -912,7 +977,8 @@
                 "classification",
                 "picking",
                 "styling"
-            ]
+            ],
+            "path": "/picking/3d-tiles-point-cloud-classification"
         },
         {
             "url": "gallery/3d-tiles-bim",
@@ -926,7 +992,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/picking/bim-design-model-with-3d-tiles"
         },
         {
             "url": "gallery/3d-tiles-1.1-cdb-yemen",
@@ -941,7 +1008,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/picking/cdb-metadata-in-3d-tiles"
         },
         {
             "url": "gallery/aec-architectural-design",
@@ -956,7 +1024,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/picking/design-model-–-layer-control-and-metadata-picking"
         },
         {
             "url": "gallery/picking",
@@ -968,7 +1037,8 @@
             "description": "Use the mouse to select and manipulate objects in the scene.",
             "labels": [
                 "picking"
-            ]
+            ],
+            "path": "/picking/picking"
         },
         {
             "url": "gallery/sample-height-from-3d-tiles",
@@ -981,7 +1051,8 @@
             "labels": [
                 "3d-tiles",
                 "picking"
-            ]
+            ],
+            "path": "/picking/sample-height-from-3d-tiles"
         },
         {
             "url": "gallery/voxel-picking",
@@ -996,7 +1067,8 @@
                 "picking",
                 "styling",
                 "metadata"
-            ]
+            ],
+            "path": "/picking/voxel-picking"
         }
     ],
     "styling": [
@@ -1011,7 +1083,8 @@
             "labels": [
                 "3d-tiles",
                 "styling"
-            ]
+            ],
+            "path": "/styling/3d-tiles-feature-styling"
         },
         {
             "url": "gallery/3d-tiles-1.1-photogrammetry-classification",
@@ -1028,7 +1101,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/styling/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-point-cloud-classification",
@@ -1044,7 +1118,8 @@
                 "classification",
                 "picking",
                 "styling"
-            ]
+            ],
+            "path": "/styling/3d-tiles-point-cloud-classification"
         },
         {
             "url": "gallery/3d-tiles-batch-table-hierarchy",
@@ -1058,7 +1133,8 @@
                 "3d-tiles",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/styling/3d-tiles-styling"
         },
         {
             "url": "gallery/ambient-occlusion",
@@ -1072,7 +1148,8 @@
                 "styling",
                 "post-processing",
                 "graphics"
-            ]
+            ],
+            "path": "/styling/ambient-occlusion"
         },
         {
             "url": "gallery/3d-tiles-1.1-cdb-yemen",
@@ -1087,7 +1164,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/styling/cdb-metadata-in-3d-tiles"
         },
         {
             "url": "gallery/3d-models-coloring",
@@ -1101,7 +1179,8 @@
                 "3d-models",
                 "entities",
                 "styling"
-            ]
+            ],
+            "path": "/styling/coloring-and-styling-gltf-models"
         },
         {
             "url": "gallery/aec-metadata-styling",
@@ -1116,7 +1195,8 @@
                 "3d-tiles",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/styling/design-model-–-metadata-styling"
         },
         {
             "url": "gallery/distance-display-conditions",
@@ -1130,7 +1210,8 @@
                 "entities",
                 "styling",
                 "labels"
-            ]
+            ],
+            "path": "/styling/distance-display-conditions"
         },
         {
             "url": "gallery/elevation-band-material",
@@ -1143,7 +1224,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/styling/elevation-band-material"
         },
         {
             "url": "gallery/geojson-simplestyle",
@@ -1156,7 +1238,8 @@
             "labels": [
                 "styling",
                 "entities"
-            ]
+            ],
+            "path": "/styling/geojson-simplestyle"
         },
         {
             "url": "gallery/globe-materials",
@@ -1169,7 +1252,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/styling/globe-materials"
         },
         {
             "url": "gallery/globe-materials-water-mask-elevation-map",
@@ -1182,7 +1266,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/styling/globe-materials-–-water-mask-elevation-map"
         },
         {
             "url": "gallery/globe-translucency",
@@ -1195,7 +1280,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/styling/globe-translucency"
         },
         {
             "url": "gallery/imagery-adjustment",
@@ -1208,7 +1294,8 @@
             "labels": [
                 "imagery",
                 "styling"
-            ]
+            ],
+            "path": "/styling/imagery-adjustment"
         },
         {
             "url": "gallery/map-pins",
@@ -1221,7 +1308,8 @@
             "labels": [
                 "entities",
                 "styling"
-            ]
+            ],
+            "path": "/styling/map-pins"
         },
         {
             "url": "gallery/voxel-picking",
@@ -1236,7 +1324,8 @@
                 "picking",
                 "styling",
                 "metadata"
-            ]
+            ],
+            "path": "/styling/voxel-picking"
         },
         {
             "url": "gallery/voxels",
@@ -1251,7 +1340,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/styling/voxel-rendering"
         },
         {
             "url": "gallery/voxels-in-3d-tiles",
@@ -1266,7 +1356,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/styling/voxels-in-3d-tiles"
         }
     ],
     "showcases": [
@@ -1281,7 +1372,8 @@
             "labels": [
                 "showcases",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/showcases/3d-tiles-gaussian-splatting"
         },
         {
             "url": "gallery/3d-tiles-gaussian-splatting-comparison",
@@ -1294,7 +1386,8 @@
             "labels": [
                 "showcases",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/showcases/3d-tiles-gaussian-splatting-—-mesh-comparison"
         },
         {
             "url": "gallery/aec-isolate-by-category",
@@ -1308,7 +1401,8 @@
                 "showcases",
                 "3d-tiles",
                 "metadata"
-            ]
+            ],
+            "path": "/showcases/design-model-–-category-filtering"
         },
         {
             "url": "gallery/aec-architectural-design",
@@ -1323,7 +1417,8 @@
                 "3d-tiles",
                 "metadata",
                 "picking"
-            ]
+            ],
+            "path": "/showcases/design-model-–-layer-control-and-metadata-picking"
         },
         {
             "url": "gallery/aec-metadata-styling",
@@ -1338,7 +1433,8 @@
                 "3d-tiles",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/showcases/design-model-–-metadata-styling"
         },
         {
             "url": "gallery/aec-clipping",
@@ -1353,7 +1449,8 @@
                 "showcases",
                 "clipping",
                 "terrain"
-            ]
+            ],
+            "path": "/showcases/design-model-–-terrain-inset"
         },
         {
             "url": "gallery/bathymetry",
@@ -1367,7 +1464,8 @@
                 "showcases",
                 "ion-assets",
                 "terrain"
-            ]
+            ],
+            "path": "/showcases/global-bathymetry"
         },
         {
             "url": "gallery/globe-materials-3d-tiles-terrain",
@@ -1381,7 +1479,8 @@
                 "3d-tiles",
                 "terrain",
                 "showcases"
-            ]
+            ],
+            "path": "/showcases/globe-materials-–-3d-tiles-terrain"
         },
         {
             "url": "gallery/gltf-pbr-extensions",
@@ -1394,7 +1493,8 @@
             "labels": [
                 "showcases",
                 "3d-models"
-            ]
+            ],
+            "path": "/showcases/gltf-pbr-next"
         },
         {
             "url": "gallery/google-2d-tiles",
@@ -1407,7 +1507,8 @@
             "labels": [
                 "imagery",
                 "showcases"
-            ]
+            ],
+            "path": "/showcases/google-2d-tiles"
         },
         {
             "url": "gallery/google-2d-tiles-with-custom-styles",
@@ -1420,7 +1521,8 @@
             "labels": [
                 "imagery",
                 "showcases"
-            ]
+            ],
+            "path": "/showcases/google-2d-tiles-with-custom-styles"
         },
         {
             "url": "gallery/google-photorealistic-3d-tiles",
@@ -1433,7 +1535,8 @@
             "labels": [
                 "3d-tiles",
                 "showcases"
-            ]
+            ],
+            "path": "/showcases/google-photorealistic-3d-tiles"
         },
         {
             "url": "gallery/imagery-assets-available-from-ion",
@@ -1445,7 +1548,8 @@
             "description": "Global imagery assets available from Cesium ion.",
             "labels": [
                 "showcases"
-            ]
+            ],
+            "path": "/showcases/imagery-assets-available-from-ion"
         },
         {
             "url": "gallery/imodel-mesh-export-service",
@@ -1458,7 +1562,8 @@
             "labels": [
                 "showcases",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/showcases/imodel-mesh-export-service"
         },
         {
             "url": "gallery/itwin-feature-service",
@@ -1473,7 +1578,8 @@
                 "point-clouds",
                 "photogrammetry",
                 "classification"
-            ]
+            ],
+            "path": "/showcases/itwin-feature-service"
         },
         {
             "url": "gallery/japan-buildings",
@@ -1487,7 +1593,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/showcases/japan-buildings"
         },
         {
             "url": "gallery/mars",
@@ -1501,7 +1608,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/showcases/mars"
         },
         {
             "url": "gallery/moon",
@@ -1515,7 +1623,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/showcases/moon"
         },
         {
             "url": "gallery/drape-imagery-on-3d-tiles",
@@ -1530,7 +1639,8 @@
                 "showcases",
                 "3d-tiles",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/showcases/overlay-imagery-on-3d-tiles"
         },
         {
             "url": "gallery/3d-tiles-vertical-exaggeration",
@@ -1543,7 +1653,8 @@
             "labels": [
                 "3d-tiles",
                 "showcases"
-            ]
+            ],
+            "path": "/showcases/vertical-exaggeration-with-3d-tiles"
         },
         {
             "url": "gallery/voxels",
@@ -1558,7 +1669,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/showcases/voxel-rendering"
         }
     ],
     "widgets": [
@@ -1573,7 +1685,8 @@
             "labels": [
                 "3d-tiles",
                 "widgets"
-            ]
+            ],
+            "path": "/widgets/3d-tiles-inspector"
         },
         {
             "url": "gallery/custom-geocoder",
@@ -1585,7 +1698,8 @@
             "description": "Attach a custom data source to the geocoder widget.",
             "labels": [
                 "widgets"
-            ]
+            ],
+            "path": "/widgets/custom-geocoder"
         }
     ],
     "photogrammetry": [
@@ -1600,7 +1714,8 @@
             "labels": [
                 "3d-tiles",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/photogrammetry/3d-tiles-photogrammetry"
         },
         {
             "url": "gallery/3d-tiles-1.1-photogrammetry-classification",
@@ -1617,7 +1732,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/photogrammetry/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-1.1-photogrammetry",
@@ -1631,7 +1747,8 @@
                 "3d-tiles",
                 "photogrammetry",
                 "performance"
-            ]
+            ],
+            "path": "/photogrammetry/3d-tiles-photogrammetry-with-ktx2"
         },
         {
             "url": "gallery/aerometrex-san-francisco",
@@ -1645,7 +1762,8 @@
                 "3d-tiles",
                 "photogrammetry",
                 "ion-assets"
-            ]
+            ],
+            "path": "/photogrammetry/aerometrex-san-francisco"
         },
         {
             "url": "gallery/classification",
@@ -1659,7 +1777,8 @@
                 "3d-tiles",
                 "classification",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/photogrammetry/classification"
         },
         {
             "url": "gallery/classification-types",
@@ -1673,7 +1792,8 @@
                 "3d-tiles",
                 "classification",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/photogrammetry/classification-types"
         },
         {
             "url": "gallery/itwin-feature-service",
@@ -1688,7 +1808,8 @@
                 "point-clouds",
                 "photogrammetry",
                 "classification"
-            ]
+            ],
+            "path": "/photogrammetry/itwin-feature-service"
         },
         {
             "url": "gallery/drape-imagery-on-3d-tiles",
@@ -1703,7 +1824,8 @@
                 "showcases",
                 "3d-tiles",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/photogrammetry/overlay-imagery-on-3d-tiles"
         }
     ],
     "classification": [
@@ -1722,7 +1844,8 @@
                 "metadata",
                 "styling",
                 "picking"
-            ]
+            ],
+            "path": "/classification/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-photogrammetry-classification",
@@ -1735,7 +1858,8 @@
             "labels": [
                 "3d-tiles",
                 "classification"
-            ]
+            ],
+            "path": "/classification/3d-tiles-photogrammetry-classification"
         },
         {
             "url": "gallery/3d-tiles-point-cloud-classification",
@@ -1751,7 +1875,8 @@
                 "classification",
                 "picking",
                 "styling"
-            ]
+            ],
+            "path": "/classification/3d-tiles-point-cloud-classification"
         },
         {
             "url": "gallery/3d-tiles-terrain-classification",
@@ -1765,7 +1890,8 @@
                 "3d-tiles",
                 "classification",
                 "terrain"
-            ]
+            ],
+            "path": "/classification/3d-tiles-terrain-classification"
         },
         {
             "url": "gallery/classification",
@@ -1779,7 +1905,8 @@
                 "3d-tiles",
                 "classification",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/classification/classification"
         },
         {
             "url": "gallery/classification-types",
@@ -1793,7 +1920,8 @@
                 "3d-tiles",
                 "classification",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/classification/classification-types"
         },
         {
             "url": "gallery/google-photorealistic-3d-tiles-with-building-insert",
@@ -1806,7 +1934,8 @@
             "labels": [
                 "3d-tiles",
                 "classification"
-            ]
+            ],
+            "path": "/classification/google-photorealistic-3d-tiles-with-building-insert"
         },
         {
             "url": "gallery/itwin-feature-service",
@@ -1821,7 +1950,8 @@
                 "point-clouds",
                 "photogrammetry",
                 "classification"
-            ]
+            ],
+            "path": "/classification/itwin-feature-service"
         }
     ],
     "performance": [
@@ -1837,7 +1967,8 @@
                 "3d-tiles",
                 "photogrammetry",
                 "performance"
-            ]
+            ],
+            "path": "/performance/3d-tiles-photogrammetry-with-ktx2"
         },
         {
             "url": "gallery/scene-rendering-performance",
@@ -1849,7 +1980,8 @@
             "description": "Use explicit rendering to improve app performance.",
             "labels": [
                 "performance"
-            ]
+            ],
+            "path": "/performance/scene-rendering-performance"
         }
     ],
     "point-clouds": [
@@ -1864,7 +1996,8 @@
             "labels": [
                 "3d-tiles",
                 "point-clouds"
-            ]
+            ],
+            "path": "/point-clouds/3d-tiles-point-cloud"
         },
         {
             "url": "gallery/3d-tiles-point-cloud-classification",
@@ -1880,7 +2013,8 @@
                 "classification",
                 "picking",
                 "styling"
-            ]
+            ],
+            "path": "/point-clouds/3d-tiles-point-cloud-classification"
         },
         {
             "url": "gallery/itwin-feature-service",
@@ -1895,7 +2029,8 @@
                 "point-clouds",
                 "photogrammetry",
                 "classification"
-            ]
+            ],
+            "path": "/point-clouds/itwin-feature-service"
         },
         {
             "url": "gallery/time-dynamic-point-cloud",
@@ -1908,7 +2043,8 @@
             "labels": [
                 "3d-tiles",
                 "point-clouds"
-            ]
+            ],
+            "path": "/point-clouds/time-dynamic-point-cloud"
         }
     ],
     "terrain": [
@@ -1924,7 +2060,8 @@
                 "3d-tiles",
                 "classification",
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/3d-tiles-terrain-classification"
         },
         {
             "url": "gallery/arcgis-tiled-elevation-terrain",
@@ -1936,7 +2073,8 @@
             "description": "Add terrain from an ArcGIS Server.",
             "labels": [
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/arcgis-tiled-elevation-terrain"
         },
         {
             "url": "gallery/clamp-entities-to-ground",
@@ -1951,7 +2089,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/terrain/clamp-entities-to-ground"
         },
         {
             "url": "gallery/clamp-model-to-ground",
@@ -1966,7 +2105,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/terrain/clamp-model-to-ground"
         },
         {
             "url": "gallery/clipping-regions",
@@ -1979,7 +2119,8 @@
             "labels": [
                 "terrain",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/terrain/clipping-regions"
         },
         {
             "url": "gallery/aec-clipping",
@@ -1994,7 +2135,8 @@
                 "showcases",
                 "clipping",
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/design-model-–-terrain-inset"
         },
         {
             "url": "gallery/drawing-on-terrain",
@@ -2006,7 +2148,8 @@
             "description": "Draw lines and polygons on terrain with mouse clicks.",
             "labels": [
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/drawing-on-terrain"
         },
         {
             "url": "gallery/elevation-band-material",
@@ -2019,7 +2162,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/terrain/elevation-band-material"
         },
         {
             "url": "gallery/bathymetry",
@@ -2033,7 +2177,8 @@
                 "showcases",
                 "ion-assets",
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/global-bathymetry"
         },
         {
             "url": "gallery/globe-materials",
@@ -2046,7 +2191,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/terrain/globe-materials"
         },
         {
             "url": "gallery/globe-materials-3d-tiles-terrain",
@@ -2060,7 +2206,8 @@
                 "3d-tiles",
                 "terrain",
                 "showcases"
-            ]
+            ],
+            "path": "/terrain/globe-materials-–-3d-tiles-terrain"
         },
         {
             "url": "gallery/globe-materials-water-mask-elevation-map",
@@ -2073,7 +2220,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/terrain/globe-materials-–-water-mask-elevation-map"
         },
         {
             "url": "gallery/globe-translucency",
@@ -2086,7 +2234,8 @@
             "labels": [
                 "terrain",
                 "styling"
-            ]
+            ],
+            "path": "/terrain/globe-translucency"
         },
         {
             "url": "gallery/procedural-terrain",
@@ -2098,7 +2247,8 @@
             "description": "Generate procedural heightmap terrain.",
             "labels": [
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/procedural-terrain"
         },
         {
             "url": "gallery/3d-tiles-1.1-s2-globe",
@@ -2111,7 +2261,8 @@
             "labels": [
                 "3d-tiles",
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/s2-globe-with-3d-tiles"
         },
         {
             "url": "gallery/terrain",
@@ -2124,7 +2275,8 @@
             "labels": [
                 "terrain",
                 "ion-assets"
-            ]
+            ],
+            "path": "/terrain/terrain"
         },
         {
             "url": "gallery/terrain-clipping-planes",
@@ -2136,7 +2288,8 @@
             "description": "User-defined clipping planes applied to terrain.",
             "labels": [
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/terrain-clipping-planes"
         },
         {
             "url": "gallery/terrain-exaggeration",
@@ -2148,7 +2301,8 @@
             "description": "Exaggerate terrain.",
             "labels": [
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/terrain-exaggeration"
         },
         {
             "url": "gallery/underground-color",
@@ -2160,7 +2314,8 @@
             "description": "Use Viewer to start building new applications or easily embed Cesium into existing applications.",
             "labels": [
                 "terrain"
-            ]
+            ],
+            "path": "/terrain/underground-color"
         }
     ],
     "ion-assets": [
@@ -2176,7 +2331,8 @@
                 "3d-tiles",
                 "photogrammetry",
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/aerometrex-san-francisco"
         },
         {
             "url": "gallery/arcticdem",
@@ -2188,7 +2344,8 @@
             "description": "High-resolution arctic terrain from the Arctic DEM project (Release 4) and hosted by Cesium ion.",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/arcticdem"
         },
         {
             "url": "gallery/blue-marble",
@@ -2200,7 +2357,8 @@
             "description": "Blue Marble Next Generation July, 2004 imagery from NASA and hosted by Cesium ion.",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/blue-marble"
         },
         {
             "url": "gallery/cesium-osm-buildings",
@@ -2213,7 +2371,8 @@
             "labels": [
                 "3d-tiles",
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/cesium-osm-buildings"
         },
         {
             "url": "gallery/cesium-world-terrain",
@@ -2225,7 +2384,8 @@
             "description": "High-resolution global terrain tileset curated from several datasources and hosted by Cesium ion.",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/cesium-world-terrain"
         },
         {
             "url": "gallery/earth-at-night",
@@ -2237,7 +2397,8 @@
             "description": "NASA-generated imagery of the earth at night hosted on Cesium ion. Also known as Black Marble and Night Lights.",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/earth-at-night"
         },
         {
             "url": "gallery/bathymetry",
@@ -2251,7 +2412,8 @@
                 "showcases",
                 "ion-assets",
                 "terrain"
-            ]
+            ],
+            "path": "/ion-assets/global-bathymetry"
         },
         {
             "url": "gallery/japan-buildings",
@@ -2265,7 +2427,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/ion-assets/japan-buildings"
         },
         {
             "url": "gallery/mars",
@@ -2279,7 +2442,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/ion-assets/mars"
         },
         {
             "url": "gallery/montreal-point-cloud",
@@ -2291,7 +2455,8 @@
             "description": "Point cloud of the city of Montreal, Canada captured in 2015 with a resolution of 20 cm. Tiled and hosted by Cesium ion.",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/montreal-point-cloud"
         },
         {
             "url": "gallery/moon",
@@ -2305,7 +2470,8 @@
                 "showcases",
                 "ion-assets",
                 "3d-tiles"
-            ]
+            ],
+            "path": "/ion-assets/moon"
         },
         {
             "url": "gallery/natural-earth-ii",
@@ -2317,7 +2483,8 @@
             "description": "Natural Earth II with Shaded Relief, Water, and Drainages hosted by Cesium ion.",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/natural-earth-ii"
         },
         {
             "url": "gallery/pamap-terrain",
@@ -2329,7 +2496,8 @@
             "description": "High resolution terrain of Pennsylvania curated by PASDA and hosted on Cesium ion.",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/pamap-terrain"
         },
         {
             "url": "gallery/sentinel-2",
@@ -2341,7 +2509,8 @@
             "description": "Sentinel-2 cloudless by EOX IT Services GmbH (Contains modified Copernicus Sentinel data 2016 and 2017). Hosted by Cesium ion",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/sentinel-2"
         },
         {
             "url": "gallery/terrain",
@@ -2354,7 +2523,8 @@
             "labels": [
                 "terrain",
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/terrain"
         },
         {
             "url": "gallery/washington-dc-2017",
@@ -2366,7 +2536,8 @@
             "description": "3 inch/0.08 meter pixel resolution imagery of the District of Columbia. Hosted by Cesium ion",
             "labels": [
                 "ion-assets"
-            ]
+            ],
+            "path": "/ion-assets/washington-dc-2017"
         }
     ],
     "post-processing": [
@@ -2382,7 +2553,8 @@
                 "styling",
                 "post-processing",
                 "graphics"
-            ]
+            ],
+            "path": "/post-processing/ambient-occlusion"
         },
         {
             "url": "gallery/bloom",
@@ -2395,7 +2567,8 @@
             "labels": [
                 "post-processing",
                 "graphics"
-            ]
+            ],
+            "path": "/post-processing/bloom"
         },
         {
             "url": "gallery/custom-per-feature-post-process",
@@ -2407,7 +2580,8 @@
             "description": "Custom per-feature post processing effect.",
             "labels": [
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/custom-per-feature-post-process"
         },
         {
             "url": "gallery/custom-post-process",
@@ -2419,7 +2593,8 @@
             "description": "Custom post processing effect.",
             "labels": [
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/custom-post-process"
         },
         {
             "url": "gallery/depth-of-field",
@@ -2431,7 +2606,8 @@
             "description": "Depth of field.",
             "labels": [
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/depth-of-field"
         },
         {
             "url": "gallery/fxaa",
@@ -2443,7 +2619,8 @@
             "description": "Add FXAA to the scene.",
             "labels": [
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/fxaa"
         },
         {
             "url": "gallery/high-dynamic-range",
@@ -2455,7 +2632,8 @@
             "description": "Toggle High Dynamic Range (HDR).",
             "labels": [
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/high-dynamic-range"
         },
         {
             "url": "gallery/lensflare",
@@ -2468,7 +2646,8 @@
             "labels": [
                 "atmosphere",
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/lensflare"
         },
         {
             "url": "gallery/per-feature-post-processing",
@@ -2480,7 +2659,8 @@
             "description": "Post processing effects.",
             "labels": [
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/per-feature-post-processing"
         },
         {
             "url": "gallery/post-processing",
@@ -2492,7 +2672,8 @@
             "description": "Post processing effects.",
             "labels": [
                 "post-processing"
-            ]
+            ],
+            "path": "/post-processing/post-processing"
         }
     ],
     "graphics": [
@@ -2508,7 +2689,8 @@
                 "styling",
                 "post-processing",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/ambient-occlusion"
         },
         {
             "url": "gallery/bloom",
@@ -2521,7 +2703,8 @@
             "labels": [
                 "post-processing",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/bloom"
         },
         {
             "url": "gallery/cloud-parameters",
@@ -2534,7 +2717,8 @@
             "labels": [
                 "graphics",
                 "atmosphere"
-            ]
+            ],
+            "path": "/graphics/cloud-parameters"
         },
         {
             "url": "gallery/clouds",
@@ -2547,7 +2731,8 @@
             "labels": [
                 "graphics",
                 "atmosphere"
-            ]
+            ],
+            "path": "/graphics/clouds"
         },
         {
             "url": "gallery/fog",
@@ -2560,7 +2745,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/fog"
         },
         {
             "url": "gallery/fog-post-process",
@@ -2573,7 +2759,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/fog-post-process"
         },
         {
             "url": "gallery/geometry-and-appearances",
@@ -2585,7 +2772,8 @@
             "description": "Demonstrates the wide variety of available geometry and appearances.",
             "labels": [
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/geometry-and-appearances"
         },
         {
             "url": "gallery/image-based-lighting",
@@ -2598,7 +2786,8 @@
             "labels": [
                 "3d-models",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/image-based-lighting"
         },
         {
             "url": "gallery/imagery-layers-texture-filters",
@@ -2611,7 +2800,8 @@
             "labels": [
                 "imagery",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/imagery-layers-texture-filters"
         },
         {
             "url": "gallery/lighting",
@@ -2624,7 +2814,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/lighting"
         },
         {
             "url": "gallery/material-with-custom-glsl",
@@ -2636,7 +2827,8 @@
             "description": "Browse Cesium's built in materials and define new ones using the Fabric schema.",
             "labels": [
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/material-with-custom-glsl"
         },
         {
             "url": "gallery/msaa",
@@ -2648,7 +2840,8 @@
             "description": "Add MSAA to the scene.",
             "labels": [
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/msaa"
         },
         {
             "url": "gallery/particle-system",
@@ -2660,7 +2853,8 @@
             "description": "Particle systems.",
             "labels": [
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/particle-system"
         },
         {
             "url": "gallery/particle-system-fireworks",
@@ -2672,7 +2866,8 @@
             "description": "Particle system fireworks.",
             "labels": [
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/particle-system-fireworks"
         },
         {
             "url": "gallery/particle-system-tails",
@@ -2684,7 +2879,8 @@
             "description": "Particle systems for rocket and comet tails.",
             "labels": [
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/particle-system-tails"
         },
         {
             "url": "gallery/particle-system-weather",
@@ -2696,7 +2892,8 @@
             "description": "Particle systems for rain and snow.",
             "labels": [
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/particle-system-weather"
         },
         {
             "url": "gallery/shadows",
@@ -2709,7 +2906,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/shadows"
         },
         {
             "url": "gallery/volumecloud",
@@ -2722,7 +2920,8 @@
             "labels": [
                 "voxels",
                 "graphics"
-            ]
+            ],
+            "path": "/graphics/volumetric-cloud"
         }
     ],
     "imagery": [
@@ -2736,7 +2935,8 @@
             "description": "Add imagery from an ArcGIS MapServer.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/arcgis-mapserver"
         },
         {
             "url": "gallery/azure-2d-tiles",
@@ -2748,7 +2948,8 @@
             "description": "Global imagery data from Azure Maps.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/azure-2d-tiles"
         },
         {
             "url": "gallery/bing-maps-labels-only",
@@ -2761,7 +2962,8 @@
             "labels": [
                 "imagery",
                 "labels"
-            ]
+            ],
+            "path": "/imagery/bing-maps-labels-only"
         },
         {
             "url": "gallery/cartographic-limit-rectangle",
@@ -2774,7 +2976,8 @@
             "labels": [
                 "imagery",
                 "clipping"
-            ]
+            ],
+            "path": "/imagery/cartographic-limit-rectangle"
         },
         {
             "url": "gallery/globe-interior",
@@ -2786,7 +2989,8 @@
             "description": "View the interior of the globe by enabling translucency on imagery layers.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/globe-interior"
         },
         {
             "url": "gallery/google-2d-tiles",
@@ -2799,7 +3003,8 @@
             "labels": [
                 "imagery",
                 "showcases"
-            ]
+            ],
+            "path": "/imagery/google-2d-tiles"
         },
         {
             "url": "gallery/google-2d-tiles-with-custom-styles",
@@ -2812,7 +3017,8 @@
             "labels": [
                 "imagery",
                 "showcases"
-            ]
+            ],
+            "path": "/imagery/google-2d-tiles-with-custom-styles"
         },
         {
             "url": "gallery/google-earth-enterprise",
@@ -2824,7 +3030,8 @@
             "description": "Add imagery from a Web Map Service (WMS) server.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/google-earth-enterprise"
         },
         {
             "url": "gallery/imagery-adjustment",
@@ -2837,7 +3044,8 @@
             "labels": [
                 "imagery",
                 "styling"
-            ]
+            ],
+            "path": "/imagery/imagery-adjustment"
         },
         {
             "url": "gallery/imagery-color-to-alpha",
@@ -2850,7 +3058,8 @@
             "labels": [
                 "imagery",
                 "clipping"
-            ]
+            ],
+            "path": "/imagery/imagery-color-to-alpha"
         },
         {
             "url": "gallery/imagery-cutout",
@@ -2863,7 +3072,8 @@
             "labels": [
                 "imagery",
                 "clipping"
-            ]
+            ],
+            "path": "/imagery/imagery-cutout"
         },
         {
             "url": "gallery/imagery-layers",
@@ -2875,7 +3085,8 @@
             "description": "Create imagery layers from multiple sources.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/imagery-layers"
         },
         {
             "url": "gallery/imagery-layers-manipulation",
@@ -2887,7 +3098,8 @@
             "description": "Layer imagery from multiple sources, including WMS servers, Bing Maps, ArcGIS Online, OpenStreetMaps, and more, and adjust the alpha of each independently.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/imagery-layers-manipulation"
         },
         {
             "url": "gallery/imagery-layers-split",
@@ -2899,7 +3111,8 @@
             "description": "Use the split property to only show layers on one side of a slider.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/imagery-layers-split"
         },
         {
             "url": "gallery/imagery-layers-texture-filters",
@@ -2912,7 +3125,8 @@
             "labels": [
                 "imagery",
                 "graphics"
-            ]
+            ],
+            "path": "/imagery/imagery-layers-texture-filters"
         },
         {
             "url": "gallery/drape-imagery-on-3d-tiles",
@@ -2927,7 +3141,8 @@
                 "showcases",
                 "3d-tiles",
                 "photogrammetry"
-            ]
+            ],
+            "path": "/imagery/overlay-imagery-on-3d-tiles"
         },
         {
             "url": "gallery/web-map-service-wms",
@@ -2939,7 +3154,8 @@
             "description": "Add imagery from a Web Map Service (WMS) server.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/web-map-service-(wms)"
         },
         {
             "url": "gallery/web-map-tile-service-with-time",
@@ -2951,7 +3167,8 @@
             "description": "Use Viewer to start building new applications or easily embed Cesium into existing applications.",
             "labels": [
                 "imagery"
-            ]
+            ],
+            "path": "/imagery/web-map-tile-service-with-time"
         }
     ],
     "atmosphere": [
@@ -2965,7 +3182,8 @@
             "description": "Modify atmospheric scattering parameters.",
             "labels": [
                 "atmosphere"
-            ]
+            ],
+            "path": "/atmosphere/atmosphere"
         },
         {
             "url": "gallery/cloud-parameters",
@@ -2978,7 +3196,8 @@
             "labels": [
                 "graphics",
                 "atmosphere"
-            ]
+            ],
+            "path": "/atmosphere/cloud-parameters"
         },
         {
             "url": "gallery/clouds",
@@ -2991,7 +3210,8 @@
             "labels": [
                 "graphics",
                 "atmosphere"
-            ]
+            ],
+            "path": "/atmosphere/clouds"
         },
         {
             "url": "gallery/fog",
@@ -3004,7 +3224,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/atmosphere/fog"
         },
         {
             "url": "gallery/fog-post-process",
@@ -3017,7 +3238,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/atmosphere/fog-post-process"
         },
         {
             "url": "gallery/lensflare",
@@ -3030,7 +3252,8 @@
             "labels": [
                 "atmosphere",
                 "post-processing"
-            ]
+            ],
+            "path": "/atmosphere/lensflare"
         },
         {
             "url": "gallery/lighting",
@@ -3043,7 +3266,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/atmosphere/lighting"
         },
         {
             "url": "gallery/shadows",
@@ -3056,7 +3280,8 @@
             "labels": [
                 "atmosphere",
                 "graphics"
-            ]
+            ],
+            "path": "/atmosphere/shadows"
         }
     ],
     "entities": [
@@ -3070,7 +3295,8 @@
             "description": "Add billboard images and markers to the scene.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/billboards"
         },
         {
             "url": "gallery/callback-position-property",
@@ -3082,7 +3308,8 @@
             "description": "Use a CallbackPositionProperty when your data can't be pre-computed or needs to be derived from other properties at runtime.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/callback-position-property"
         },
         {
             "url": "gallery/callback-property",
@@ -3094,7 +3321,8 @@
             "description": "Use Viewer to start building new applications or easily embed Cesium into existing applications.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/callback-property"
         },
         {
             "url": "gallery/cesium-inspector",
@@ -3106,7 +3334,8 @@
             "description": "Use the cesium inspector as a debugging tool for different primitives.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/cesium-inspector"
         },
         {
             "url": "gallery/clamp-entities-to-ground",
@@ -3121,7 +3350,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/entities/clamp-entities-to-ground"
         },
         {
             "url": "gallery/clamp-model-to-ground",
@@ -3136,7 +3366,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/entities/clamp-model-to-ground"
         },
         {
             "url": "gallery/clamp-to-3d-model",
@@ -3150,7 +3381,8 @@
                 "3d-models",
                 "clamping",
                 "entities"
-            ]
+            ],
+            "path": "/entities/clamp-to-3d-model"
         },
         {
             "url": "gallery/clustering",
@@ -3163,7 +3395,8 @@
             "labels": [
                 "entities",
                 "labels"
-            ]
+            ],
+            "path": "/entities/clustering"
         },
         {
             "url": "gallery/3d-models-coloring",
@@ -3177,7 +3410,8 @@
                 "3d-models",
                 "entities",
                 "styling"
-            ]
+            ],
+            "path": "/entities/coloring-and-styling-gltf-models"
         },
         {
             "url": "gallery/custom-datasource",
@@ -3189,7 +3423,8 @@
             "description": "A custom DataSource implementation.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/custom-datasource"
         },
         {
             "url": "gallery/czml",
@@ -3202,7 +3437,8 @@
             "labels": [
                 "datasources",
                 "entities"
-            ]
+            ],
+            "path": "/entities/czml"
         },
         {
             "url": "gallery/distance-display-conditions",
@@ -3216,7 +3452,8 @@
                 "entities",
                 "styling",
                 "labels"
-            ]
+            ],
+            "path": "/entities/distance-display-conditions"
         },
         {
             "url": "gallery/entity-tracking",
@@ -3229,7 +3466,8 @@
             "labels": [
                 "entities",
                 "camera"
-            ]
+            ],
+            "path": "/entities/entity-tracking"
         },
         {
             "url": "gallery/star-burst",
@@ -3241,7 +3479,8 @@
             "description": "Expand a cluster of overlapping billboards with a star burst display.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/expand-clustered-billboards"
         },
         {
             "url": "gallery/export-kml",
@@ -3254,7 +3493,8 @@
             "labels": [
                 "datasources",
                 "entities"
-            ]
+            ],
+            "path": "/entities/export-kml"
         },
         {
             "url": "gallery/geojson-and-topojson",
@@ -3266,7 +3506,8 @@
             "description": "Load GeoJSON or TopoJSON data and apply custom styling.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/geojson-and-topojson"
         },
         {
             "url": "gallery/geojson-simplestyle",
@@ -3279,7 +3520,8 @@
             "labels": [
                 "styling",
                 "entities"
-            ]
+            ],
+            "path": "/entities/geojson-simplestyle"
         },
         {
             "url": "gallery/3d-models",
@@ -3293,7 +3535,8 @@
                 "3d-models",
                 "entities",
                 "animation"
-            ]
+            ],
+            "path": "/entities/gltf-models"
         },
         {
             "url": "gallery/gpx",
@@ -3305,7 +3548,8 @@
             "description": "A simple GPX example.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/gpx"
         },
         {
             "url": "gallery/headingpitchroll",
@@ -3318,7 +3562,8 @@
             "labels": [
                 "entities",
                 "transformations"
-            ]
+            ],
+            "path": "/entities/headingpitchroll"
         },
         {
             "url": "gallery/interpolation",
@@ -3331,7 +3576,8 @@
             "labels": [
                 "entities",
                 "animation"
-            ]
+            ],
+            "path": "/entities/interpolation"
         },
         {
             "url": "gallery/kml",
@@ -3344,7 +3590,8 @@
             "labels": [
                 "entities",
                 "datasources"
-            ]
+            ],
+            "path": "/entities/kml"
         },
         {
             "url": "gallery/kml-tours",
@@ -3357,7 +3604,8 @@
             "labels": [
                 "entities",
                 "datasources"
-            ]
+            ],
+            "path": "/entities/kml-tours"
         },
         {
             "url": "gallery/labels",
@@ -3370,7 +3618,8 @@
             "labels": [
                 "entities",
                 "labels"
-            ]
+            ],
+            "path": "/entities/labels"
         },
         {
             "url": "gallery/map-pins",
@@ -3383,7 +3632,8 @@
             "labels": [
                 "entities",
                 "styling"
-            ]
+            ],
+            "path": "/entities/map-pins"
         },
         {
             "url": "gallery/materials",
@@ -3395,7 +3645,8 @@
             "description": "Browse Cesium's built in materials and define new ones using the Fabric schema.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/materials"
         },
         {
             "url": "gallery/multi-part-czml",
@@ -3408,7 +3659,8 @@
             "labels": [
                 "czml",
                 "entities"
-            ]
+            ],
+            "path": "/entities/multi-part-czml"
         },
         {
             "url": "gallery/points",
@@ -3420,7 +3672,8 @@
             "description": "Add points to the scene.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/points"
         },
         {
             "url": "gallery/show-or-hide-entities",
@@ -3432,7 +3685,8 @@
             "description": "Show or hide groups of entities.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/show-or-hide-entities"
         },
         {
             "url": "gallery/splitdirection",
@@ -3444,7 +3698,8 @@
             "description": "Using the SplitDirection parameter to hide or draw Points or Billboards depending on the position of the slider.",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/splitdirection"
         },
         {
             "url": "gallery/video",
@@ -3456,7 +3711,8 @@
             "description": "Use a video element as a material",
             "labels": [
                 "entities"
-            ]
+            ],
+            "path": "/entities/video"
         }
     ],
     "labels": [
@@ -3471,7 +3727,8 @@
             "labels": [
                 "imagery",
                 "labels"
-            ]
+            ],
+            "path": "/labels/bing-maps-labels-only"
         },
         {
             "url": "gallery/clustering",
@@ -3484,7 +3741,8 @@
             "labels": [
                 "entities",
                 "labels"
-            ]
+            ],
+            "path": "/labels/clustering"
         },
         {
             "url": "gallery/distance-display-conditions",
@@ -3498,7 +3756,8 @@
                 "entities",
                 "styling",
                 "labels"
-            ]
+            ],
+            "path": "/labels/distance-display-conditions"
         },
         {
             "url": "gallery/labels",
@@ -3511,7 +3770,8 @@
             "labels": [
                 "entities",
                 "labels"
-            ]
+            ],
+            "path": "/labels/labels"
         }
     ],
     "geometries": [
@@ -3525,7 +3785,8 @@
             "description": "Draw a box.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/box"
         },
         {
             "url": "gallery/circles-and-ellipses",
@@ -3537,7 +3798,8 @@
             "description": "Draw circles, ellipses, and extruded volumes that conform to the surface of the globe.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/circles-and-ellipses"
         },
         {
             "url": "gallery/corridor",
@@ -3549,7 +3811,8 @@
             "description": "Draw a corridor.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/corridor"
         },
         {
             "url": "gallery/cylinders-and-cones",
@@ -3561,7 +3824,8 @@
             "description": "Draw a cylinder or cone.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/cylinders-and-cones"
         },
         {
             "url": "gallery/geometry-height-reference",
@@ -3573,7 +3837,8 @@
             "description": "An example for how to use the HeightReference property on different geometry entities.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/geometry-height-reference"
         },
         {
             "url": "gallery/parallels-and-meridians",
@@ -3585,7 +3850,8 @@
             "description": "Use polylines to draw parallels and meridians on the globe.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/parallels-and-meridians"
         },
         {
             "url": "gallery/partial-ellipsoids",
@@ -3597,7 +3863,8 @@
             "description": "Draw whole/partial spheres and ellipsoids.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/partial-ellipsoids"
         },
         {
             "url": "gallery/plane",
@@ -3609,7 +3876,8 @@
             "description": "Draw a plane geometry.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/plane"
         },
         {
             "url": "gallery/polygon",
@@ -3621,7 +3889,8 @@
             "description": "Draw a polygon or extruded polygon on the globe surface.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/polygon"
         },
         {
             "url": "gallery/polyline",
@@ -3633,7 +3902,8 @@
             "description": "Draw polylines with various widths and materials.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/polyline"
         },
         {
             "url": "gallery/polyline-dash",
@@ -3645,7 +3915,8 @@
             "description": "Draw dashed polylines.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/polyline-dash"
         },
         {
             "url": "gallery/polyline-volume",
@@ -3657,7 +3928,8 @@
             "description": "Draw a polyline volume, which is a shape extruded along a polyline.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/polyline-volume"
         },
         {
             "url": "gallery/rectangle",
@@ -3669,7 +3941,8 @@
             "description": "Draw a rectangle or extruded rectangle that conforms to the surface of the globe.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/rectangle"
         },
         {
             "url": "gallery/spheres-and-ellipsoids",
@@ -3681,7 +3954,8 @@
             "description": "Draw spheres and ellipsoids.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/spheres-and-ellipsoids"
         },
         {
             "url": "gallery/wall",
@@ -3693,7 +3967,8 @@
             "description": "Draw a wall on the globe surface.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/wall"
         },
         {
             "url": "gallery/z-indexing-geometry",
@@ -3705,7 +3980,8 @@
             "description": "Draw a rectangle or extruded rectangle that conforms to the surface of the globe.",
             "labels": [
                 "geometries"
-            ]
+            ],
+            "path": "/geometries/z-indexing-geometry"
         }
     ],
     "getting-started": [
@@ -3720,7 +3996,8 @@
             "labels": [
                 "getting-started",
                 "camera"
-            ]
+            ],
+            "path": "/getting-started/camera"
         },
         {
             "url": "gallery/cesium-widget",
@@ -3732,7 +4009,8 @@
             "description": "A minimal CesiumJS example that initializes a 3D globe and loads default imagery. Use the CesiumWidget to create a 3D view without the default UI widgets.",
             "labels": [
                 "getting-started"
-            ]
+            ],
+            "path": "/getting-started/cesium-widget"
         },
         {
             "url": "gallery/hello-world",
@@ -3744,7 +4022,8 @@
             "description": "A minimal CesiumJS example that initializes a 3D globe and loads default imagery. Use the Cesium Viewer Widget to start building new applications or embed Cesium into existing applications including starter UI like the timeline and geocoding.",
             "labels": [
                 "getting-started"
-            ]
+            ],
+            "path": "/getting-started/hello-world"
         },
         {
             "url": "gallery/html-overlays",
@@ -3756,7 +4035,8 @@
             "description": "Add HTML overlay using canvas coordinates.",
             "labels": [
                 "getting-started"
-            ]
+            ],
+            "path": "/getting-started/html-overlays"
         },
         {
             "url": "gallery/offline",
@@ -3768,7 +4048,8 @@
             "description": "Demo the minimum set of options needed to remove all external dependencies, for offline operation.",
             "labels": [
                 "getting-started"
-            ]
+            ],
+            "path": "/getting-started/offline"
         },
         {
             "url": "gallery/resolution-scaling",
@@ -3780,14 +4061,15 @@
             "description": "Set a custom resolution scale and/or toggle the browser's recommended resolution.",
             "labels": [
                 "getting-started"
-            ]
+            ],
+            "path": "/getting-started/resolution-scaling"
         }
     ],
     "camera": [
         {
             "url": "gallery/camera",
             "id": "camera",
-            "title": "camera_camera-fly",
+            "title": "camera_camera",
             "thumbnail": "gallery/camera/thumbnail.jpg",
             "sourceUrl": "https:/github.com/CesiumGS/cesium/blob/main/packages/sandcastle/gallery/camera",
             "lineCount": 415,
@@ -3795,7 +4077,8 @@
             "labels": [
                 "getting-started",
                 "camera"
-            ]
+            ],
+            "path": "/camera/camera"
         },
         {
             "url": "gallery/camera-tutorial",
@@ -3807,7 +4090,8 @@
             "description": "Use the camera to control the view, and create custom event handlers for input.",
             "labels": [
                 "camera"
-            ]
+            ],
+            "path": "/camera/camera-tutorial"
         },
         {
             "url": "gallery/cardboard",
@@ -3819,7 +4103,8 @@
             "description": "Configure viewer to add a button enabling look at a mobile device with cardboard.",
             "labels": [
                 "camera"
-            ]
+            ],
+            "path": "/camera/cardboard"
         },
         {
             "url": "gallery/entity-tracking",
@@ -3832,7 +4117,8 @@
             "labels": [
                 "entities",
                 "camera"
-            ]
+            ],
+            "path": "/camera/entity-tracking"
         },
         {
             "url": "gallery/multiple-synced-views",
@@ -3845,7 +4131,8 @@
             "labels": [
                 "2d-view",
                 "camera"
-            ]
+            ],
+            "path": "/camera/multiple-synced-views"
         }
     ],
     "clipping": [
@@ -3860,7 +4147,8 @@
             "labels": [
                 "imagery",
                 "clipping"
-            ]
+            ],
+            "path": "/clipping/cartographic-limit-rectangle"
         },
         {
             "url": "gallery/aec-clipping",
@@ -3875,7 +4163,8 @@
                 "showcases",
                 "clipping",
                 "terrain"
-            ]
+            ],
+            "path": "/clipping/design-model-–-terrain-inset"
         },
         {
             "url": "gallery/imagery-color-to-alpha",
@@ -3888,7 +4177,8 @@
             "labels": [
                 "imagery",
                 "clipping"
-            ]
+            ],
+            "path": "/clipping/imagery-color-to-alpha"
         },
         {
             "url": "gallery/imagery-cutout",
@@ -3901,7 +4191,8 @@
             "labels": [
                 "imagery",
                 "clipping"
-            ]
+            ],
+            "path": "/clipping/imagery-cutout"
         }
     ],
     "clamping": [
@@ -3918,7 +4209,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/clamping/clamp-entities-to-ground"
         },
         {
             "url": "gallery/clamp-model-to-ground",
@@ -3933,7 +4225,8 @@
                 "terrain",
                 "entities",
                 "clamping"
-            ]
+            ],
+            "path": "/clamping/clamp-model-to-ground"
         },
         {
             "url": "gallery/clamp-to-3d-model",
@@ -3947,7 +4240,8 @@
                 "3d-models",
                 "clamping",
                 "entities"
-            ]
+            ],
+            "path": "/clamping/clamp-to-3d-model"
         }
     ],
     "3d-models": [
@@ -3963,7 +4257,8 @@
                 "3d-models",
                 "clamping",
                 "entities"
-            ]
+            ],
+            "path": "/3d-models/clamp-to-3d-model"
         },
         {
             "url": "gallery/3d-models-coloring",
@@ -3977,7 +4272,8 @@
                 "3d-models",
                 "entities",
                 "styling"
-            ]
+            ],
+            "path": "/3d-models/coloring-and-styling-gltf-models"
         },
         {
             "url": "gallery/3d-models",
@@ -3991,7 +4287,8 @@
                 "3d-models",
                 "entities",
                 "animation"
-            ]
+            ],
+            "path": "/3d-models/gltf-models"
         },
         {
             "url": "gallery/gltf-pbr-extensions",
@@ -4004,7 +4301,8 @@
             "labels": [
                 "showcases",
                 "3d-models"
-            ]
+            ],
+            "path": "/3d-models/gltf-pbr-next"
         },
         {
             "url": "gallery/image-based-lighting",
@@ -4017,7 +4315,8 @@
             "labels": [
                 "3d-models",
                 "graphics"
-            ]
+            ],
+            "path": "/3d-models/image-based-lighting"
         },
         {
             "url": "gallery/manually-controlled-animation",
@@ -4030,7 +4329,8 @@
             "labels": [
                 "animation",
                 "3d-models"
-            ]
+            ],
+            "path": "/3d-models/manually-controlled-animation"
         },
         {
             "url": "gallery/physically-based-materials",
@@ -4042,7 +4342,8 @@
             "description": "Create 3D models with realistic materials using glTF 2.0.",
             "labels": [
                 "3d-models"
-            ]
+            ],
+            "path": "/3d-models/physically-based-materials"
         },
         {
             "url": "gallery/projection",
@@ -4054,7 +4355,8 @@
             "description": "Change the projection between perspective and orthographic.",
             "labels": [
                 "3d-models"
-            ]
+            ],
+            "path": "/3d-models/projection"
         },
         {
             "url": "gallery/time-dynamic-wheels",
@@ -4067,7 +4369,8 @@
             "labels": [
                 "3d-models",
                 "animation"
-            ]
+            ],
+            "path": "/3d-models/time-dynamic-wheels"
         }
     ],
     "animation": [
@@ -4081,7 +4384,8 @@
             "description": "Configure the Viewer clock.",
             "labels": [
                 "animation"
-            ]
+            ],
+            "path": "/animation/clock"
         },
         {
             "url": "gallery/3d-models",
@@ -4095,7 +4399,8 @@
                 "3d-models",
                 "entities",
                 "animation"
-            ]
+            ],
+            "path": "/animation/gltf-models"
         },
         {
             "url": "gallery/interpolation",
@@ -4108,7 +4413,8 @@
             "labels": [
                 "entities",
                 "animation"
-            ]
+            ],
+            "path": "/animation/interpolation"
         },
         {
             "url": "gallery/manually-controlled-animation",
@@ -4121,7 +4427,8 @@
             "labels": [
                 "animation",
                 "3d-models"
-            ]
+            ],
+            "path": "/animation/manually-controlled-animation"
         },
         {
             "url": "gallery/time-dynamic-wheels",
@@ -4134,7 +4441,8 @@
             "labels": [
                 "3d-models",
                 "animation"
-            ]
+            ],
+            "path": "/animation/time-dynamic-wheels"
         }
     ],
     "datasources": [
@@ -4149,7 +4457,8 @@
             "labels": [
                 "datasources",
                 "entities"
-            ]
+            ],
+            "path": "/datasources/czml"
         },
         {
             "url": "gallery/datasource-ordering",
@@ -4161,7 +4470,8 @@
             "description": "Change the order in which DataSources draw ground primitives",
             "labels": [
                 "datasources"
-            ]
+            ],
+            "path": "/datasources/datasource-ordering"
         },
         {
             "url": "gallery/export-kml",
@@ -4174,7 +4484,8 @@
             "labels": [
                 "datasources",
                 "entities"
-            ]
+            ],
+            "path": "/datasources/export-kml"
         },
         {
             "url": "gallery/i3s-building-scene-layer",
@@ -4186,7 +4497,8 @@
             "description": "Add I3S Building Scene Layer from a service.",
             "labels": [
                 "datasources"
-            ]
+            ],
+            "path": "/datasources/i3s-building-scene-cesium-demo"
         },
         {
             "url": "gallery/i3s-3d-object-layer",
@@ -4198,7 +4510,8 @@
             "description": "Add I3S 3D Object Layer from a service.",
             "labels": [
                 "datasources"
-            ]
+            ],
+            "path": "/datasources/i3s-consumption-cesium-demo"
         },
         {
             "url": "gallery/i3s-integratedmesh-layer",
@@ -4210,7 +4523,8 @@
             "description": "Add I3S IntegratedMesh Layer from a service.",
             "labels": [
                 "datasources"
-            ]
+            ],
+            "path": "/datasources/i3s-consumption-cesium-demo"
         },
         {
             "url": "gallery/i3s-feature-picking",
@@ -4222,7 +4536,8 @@
             "description": "Pick features from an I3S 3D Object Layer.",
             "labels": [
                 "datasources"
-            ]
+            ],
+            "path": "/datasources/i3s-feature-picking-cesium-demo"
         },
         {
             "url": "gallery/kml",
@@ -4235,7 +4550,8 @@
             "labels": [
                 "entities",
                 "datasources"
-            ]
+            ],
+            "path": "/datasources/kml"
         },
         {
             "url": "gallery/kml-tours",
@@ -4248,7 +4564,8 @@
             "labels": [
                 "entities",
                 "datasources"
-            ]
+            ],
+            "path": "/datasources/kml-tours"
         }
     ],
     "czml": [
@@ -4262,7 +4579,8 @@
             "description": "CZML Model",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-3d-tiles"
         },
         {
             "url": "gallery/czml-billboard-and-label",
@@ -4274,7 +4592,8 @@
             "description": "Basic CZML billboard and label.",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-billboard-and-label"
         },
         {
             "url": "gallery/czml-box",
@@ -4286,7 +4605,8 @@
             "description": "CZML Circles and Ellipses",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-box"
         },
         {
             "url": "gallery/czml-circles-and-ellipses",
@@ -4298,7 +4618,8 @@
             "description": "CZML Circles and Ellipses",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-circles-and-ellipses"
         },
         {
             "url": "gallery/czml-colors",
@@ -4310,7 +4631,8 @@
             "description": "CZML Colors",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-colors"
         },
         {
             "url": "gallery/czml-cones-and-cylinders",
@@ -4322,7 +4644,8 @@
             "description": "CZML Cones and Cylinders",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-cones-and-cylinders"
         },
         {
             "url": "gallery/czml-corridor",
@@ -4334,7 +4657,8 @@
             "description": "CZML Polyline",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-corridor"
         },
         {
             "url": "gallery/czml-custom-properties",
@@ -4346,7 +4670,8 @@
             "description": "CZML Custom Properties",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-custom-properties"
         },
         {
             "url": "gallery/czml-model",
@@ -4358,7 +4683,8 @@
             "description": "CZML Model",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-model"
         },
         {
             "url": "gallery/czml-model-node-transformations",
@@ -4370,7 +4696,8 @@
             "description": "CZML Model - Node Transformations",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-model---node-transformations"
         },
         {
             "url": "gallery/czml-model-articulations",
@@ -4382,7 +4709,8 @@
             "description": "CZML Model Articulations",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-model-articulations"
         },
         {
             "url": "gallery/czml-model-data-url",
@@ -4394,7 +4722,8 @@
             "description": "CZML Model Data URL",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-model-data-url"
         },
         {
             "url": "gallery/czml-path",
@@ -4406,7 +4735,8 @@
             "description": "CZML Path",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-path"
         },
         {
             "url": "gallery/czml-point",
@@ -4418,7 +4748,8 @@
             "description": "CZML Point",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-point"
         },
         {
             "url": "gallery/czml-point-time-dynamic",
@@ -4430,7 +4761,8 @@
             "description": "CZML Point - Time Dynamic",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-point---time-dynamic"
         },
         {
             "url": "gallery/czml-polygon",
@@ -4442,7 +4774,8 @@
             "description": "CZML Polygon",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-polygon"
         },
         {
             "url": "gallery/czml-polygon-interpolating-references",
@@ -4454,7 +4787,8 @@
             "description": "CZML Polygon - Interpolating References",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-polygon---interpolating-references"
         },
         {
             "url": "gallery/czml-polygon-intervals-availability",
@@ -4466,7 +4800,8 @@
             "description": "CZML Dynamic Polygon - Intervals and Availability",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-polygon---intervals,-availability"
         },
         {
             "url": "gallery/czml-polyline",
@@ -4478,7 +4813,8 @@
             "description": "CZML Polyline",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-polyline"
         },
         {
             "url": "gallery/czml-polyline-volume",
@@ -4490,7 +4826,8 @@
             "description": "CZML Polyline Volume",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-polyline-volume"
         },
         {
             "url": "gallery/czml-position-definitions",
@@ -4502,7 +4839,8 @@
             "description": "CZML Position Definitions",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-position-definitions"
         },
         {
             "url": "gallery/czml-rectangle",
@@ -4514,7 +4852,8 @@
             "description": "CZML Rectangle",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-rectangle"
         },
         {
             "url": "gallery/czml-reference-properties",
@@ -4526,7 +4865,8 @@
             "description": "CZML Reference Properties",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-reference-properties"
         },
         {
             "url": "gallery/czml-spheres-and-ellipsoids",
@@ -4538,7 +4878,8 @@
             "description": "CZML Spheres and Ellipsoids",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-spheres-and-ellipsoids"
         },
         {
             "url": "gallery/czml-wall",
@@ -4550,7 +4891,8 @@
             "description": "CZML Wall",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-wall"
         },
         {
             "url": "gallery/czml-zindex",
@@ -4562,7 +4904,8 @@
             "description": "CZML Z-indexing",
             "labels": [
                 "czml"
-            ]
+            ],
+            "path": "/czml/czml-zindex"
         },
         {
             "url": "gallery/multi-part-czml",
@@ -4575,7 +4918,8 @@
             "labels": [
                 "czml",
                 "entities"
-            ]
+            ],
+            "path": "/czml/multi-part-czml"
         }
     ],
     "transformations": [
@@ -4590,7 +4934,8 @@
             "labels": [
                 "entities",
                 "transformations"
-            ]
+            ],
+            "path": "/transformations/headingpitchroll"
         },
         {
             "url": "gallery/localtofixedframe",
@@ -4602,7 +4947,8 @@
             "description": "Use localFrameToFixedFrameGenerator for adequate rotation.",
             "labels": [
                 "transformations"
-            ]
+            ],
+            "path": "/transformations/localtofixedframe"
         },
         {
             "url": "gallery/3d-tiles-adjust-height",
@@ -4615,7 +4961,8 @@
             "labels": [
                 "3d-tiles",
                 "transformations"
-            ]
+            ],
+            "path": "/transformations/offset-3d-tileset-height"
         }
     ],
     "2d-view": [
@@ -4630,7 +4977,8 @@
             "labels": [
                 "2d-view",
                 "camera"
-            ]
+            ],
+            "path": "/2d-view/multiple-synced-views"
         },
         {
             "url": "gallery/rotatable-2d-map",
@@ -4642,7 +4990,8 @@
             "description": "Configure viewer to make the 2D map rotatable.",
             "labels": [
                 "2d-view"
-            ]
+            ],
+            "path": "/2d-view/rotatable-2d-map"
         }
     ],
     "voxels": [
@@ -4657,7 +5006,8 @@
             "labels": [
                 "voxels",
                 "graphics"
-            ]
+            ],
+            "path": "/voxels/volumetric-cloud"
         },
         {
             "url": "gallery/voxel-picking",
@@ -4672,7 +5022,8 @@
                 "picking",
                 "styling",
                 "metadata"
-            ]
+            ],
+            "path": "/voxels/voxel-picking"
         },
         {
             "url": "gallery/voxels",
@@ -4687,7 +5038,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/voxels/voxel-rendering"
         },
         {
             "url": "gallery/voxels-in-3d-tiles",
@@ -4702,7 +5054,8 @@
                 "voxels",
                 "metadata",
                 "styling"
-            ]
+            ],
+            "path": "/voxels/voxels-in-3d-tiles"
         }
     ]
 }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { transformGalleryDataToMap, generateHomeListData } from "@/utils/transformGalleryData";
+import { getGalleryMapData } from "@/utils/transformGalleryData";
 import type { galleryData } from "@/types/api/home";
 import { translateRouteTitle } from "@/lang/utils";
 import Card from "./components/Card.vue";
@@ -15,10 +15,9 @@ async function getSandCastleList() {
   const data = await res.json();
   const entries = data.entries;
   // 处理原始数据
-  const dataMap = transformGalleryDataToMap(entries);
-  // 给数据添加 path属性, 方便后续跳转
-  const dataList = generateHomeListData(dataMap);
-  const keys = Object.keys(dataList);
+  const dataMap = getGalleryMapData(entries);
+  console.log("dataMap", dataMap);
+  const keys = Object.keys(dataMap);
   // 生成select的options
   options.value = keys.map((key) => {
     return {
@@ -27,22 +26,21 @@ async function getSandCastleList() {
     };
   });
   // 保存源数据和 主页展示的数据
-  originData = dataList;
-  homeData.value = dataList;
-  console.log(dataList);
+  originData = dataMap;
+  visibleData.value = dataMap;
 }
 
 const searchValue = ref(""); // 搜索框的输入值
 const selectValue = ref(""); // select选择器的选中值
 let originData: Record<string, galleryData[]>; // 主页原始数据
-const homeData = shallowRef<Record<string, galleryData[]>>(); //展示的数据
+const visibleData = shallowRef<Record<string, galleryData[]>>(); //展示的数据
 const options = ref<SelectOption[]>([]); // 数据的labels选项
 
 // 按照title的值进行匹配
 const handleSearch = () => {
   // 获取输入的搜索内容
   const searchContent = searchValue.value;
-  if (!searchContent) homeData.value = originData;
+  if (!searchContent) visibleData.value = originData;
   const tempObj: any = {};
   for (const key in originData) {
     const res = originData[key].filter((item) => {
@@ -52,15 +50,15 @@ const handleSearch = () => {
       tempObj[key] = res;
     }
   }
-  homeData.value = tempObj;
+  visibleData.value = tempObj;
 };
 // 监听select选择器的变化
 const handleLabelChange = (value: string) => {
   //确保value对应的key,在originData中存在
   if (value in originData) {
-    homeData.value = { [value]: originData[value] };
+    visibleData.value = { [value]: originData[value] };
   } else {
-    homeData.value = originData;
+    visibleData.value = originData;
   }
 };
 
@@ -102,7 +100,7 @@ onMounted(() => {
 
     <!-- 主内容 -->
     <div>
-      <section v-for="(value, key) in homeData" :key="key" class="mb-4">
+      <section v-for="(value, key) in visibleData" :key="key" class="mb-4">
         <h2 class="mb-4 text-lg font-semibold text-gray-800">
           {{ translateRouteTitle(key) }}
         </h2>
