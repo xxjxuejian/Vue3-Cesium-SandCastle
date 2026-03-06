@@ -122,6 +122,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "showcases_google-photorealistic-3d-tiles" }, // Google 照片级真实三维瓦片数据
         component: "ShowCases/GooglePhotorealistic3dTiles.vue",
       },
+      {
+        path: "google-2d-tiles",
+        name: "sc_google-2d-tiles",
+        meta: { title: "showcases_google-2d-tiles" }, // 加载Google Maps 2D 地图瓦片数据
+        component: "ShowCases/Google2DTiles.vue",
+      },
     ],
   },
   {

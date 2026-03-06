@@ -21,6 +21,7 @@ export default {
       "3D Tiles Gaussian Splatting – Mesh Comparison",
     "showcases_vertical-exaggeration-with-3d-tiles": "Vertical Exaggeration with 3D Tiles",
     "showcases_google-photorealistic-3d-tiles": "Google Photorealistic 3D Tiles",
+    "showcases_google-2d-tiles": "Google 2D Tiles",
 
     // 2D View
     "2d-view": "2D View",
