@@ -208,6 +208,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "camera_camera-fly" },
         component: "Camera/CameraFly.vue",
       },
+      {
+        path: "camera-tutorial",
+        name: "camera-tutorial",
+        meta: { title: "camera_camera-tutorial" },
+        component: "Camera/CameraTutorial.vue",
+      },
     ],
   },
 ];
