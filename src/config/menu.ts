@@ -134,6 +134,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "showcases_imagery-assets-available-from-ion" }, // 从Cesium Ion 加载imagery影像图层
         component: "ShowCases/ImageryAssetsFromIon.vue",
       },
+      {
+        path: "google-2d-tiles-with-custom-styles",
+        name: "sc_google-2d-tiles-with-custom-styles",
+        meta: { title: "showcases_google-2d-tiles-with-custom-styles" }, //
+        component: "ShowCases/Google2DTilesWithCustomStyles.vue",
+      },
     ],
   },
   {

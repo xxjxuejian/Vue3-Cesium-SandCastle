@@ -23,6 +23,7 @@ export default {
     "showcases_google-photorealistic-3d-tiles": "Google Photorealistic 3D Tiles",
     "showcases_google-2d-tiles": "Google 2D Tiles",
     "showcases_imagery-assets-available-from-ion": "Imagery Assets Available from Cesium Ion",
+    "showcases_google-2d-tiles-with-custom-styles": "Google 2D Tiles with Custom Styles",
 
     // 2D View
     "2d-view": "2D View",

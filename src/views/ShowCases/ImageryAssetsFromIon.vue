@@ -27,7 +27,7 @@ const selectOptions = [
   //   { label: "Azure Maps Labels Only", assetId: 3891170 },
   { label: "Sentinel-2", assetId: 3954 },
 ];
-// 加载 Google Maps 2D 地图瓦片数据
+// 加载地形
 async function loadTerrain(viewer: Cesium.Viewer) {
   viewer.terrainProvider = await Cesium.CesiumTerrainProvider.fromIonAssetId(1);
 }
