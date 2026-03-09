@@ -20,6 +20,7 @@ export default {
     "showcases_vertical-exaggeration-with-3d-tiles": "3D 瓦片垂直拉伸",
     "showcases_google-photorealistic-3d-tiles": "Google照片级真实感3D Tiles数据",
     "showcases_google-2d-tiles": "Google Maps 2D 地图瓦片数据",
+    "showcases_imagery-assets-available-from-ion": "Cesium Ion 可用的影像资产",
 
     // 2D View
     "2d-view": "2D 视图",

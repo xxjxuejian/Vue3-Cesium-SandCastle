@@ -128,6 +128,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "showcases_google-2d-tiles" }, // 加载Google Maps 2D 地图瓦片数据
         component: "ShowCases/Google2DTiles.vue",
       },
+      {
+        path: "imagery-assets-available-from-ion",
+        name: "sc_imagery-assets-available-from-ion",
+        meta: { title: "showcases_imagery-assets-available-from-ion" }, // 从Cesium Ion 加载imagery影像图层
+        component: "ShowCases/ImageryAssetsFromIon.vue",
+      },
     ],
   },
   {
