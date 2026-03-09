@@ -68,9 +68,9 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="p-4 wh-full overflow-auto">
+  <div class="p-4 wh-full overflow-auto relative">
     <!-- 按标签搜索-->
-    <div class="flex items-center gap-x-4">
+    <div class="flex items-center gap-x-4 sticky top-0 bg-white p-4 rounded-md">
       <span class="font-700 text-xl">Gallery</span>
       <el-input
         v-model="searchValue"
