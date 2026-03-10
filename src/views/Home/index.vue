@@ -15,7 +15,7 @@ function filterDataMap(dataMap: Record<string, galleryData[]>) {
 }
 
 async function getSandCastleList() {
-  const res = await fetch(import.meta.env.BASE_URL + "public/mock/galleryList.json");
+  const res = await fetch(import.meta.env.BASE_URL + "mock/galleryList.json");
   const data = await res.json();
   const entries = data.entries;
   // 处理原始数据
