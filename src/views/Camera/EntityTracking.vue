@@ -93,6 +93,7 @@ const handleTrackEntity = (type: string = "Satellites") => {
 //切换不同 参考坐标系（reference frame）
 const handleChangeTrackFrame = (value: string) => {
   if (!viewerInstance.value) return;
+  if (!satellite || !drone) return;
 
   switch (value) {
     case "Auto-detect": //自动判断
