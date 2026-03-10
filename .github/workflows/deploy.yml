@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      CESIUM_ION_TOKEN: ${{ secrets.CESIUM_ION_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

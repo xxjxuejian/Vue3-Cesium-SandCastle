@@ -20,7 +20,7 @@ window.CESIUM_BASE_URL = `${baseUrl}${cesiumFolder}/`;
 // 4. 配置 Cesium Token，这个VITE_CESIUM_TOKEN从 .env.local 文件中获取，这个文件优先级最高，而且通常在.gitignore 文件中忽略，token不会泄露
 // vite环境变量的加载顺序：.env.local > .env.development > .env.production > .env
 // 如果同一个变量在多个文件中定义，Vue 会使用优先级更高的文件中的值。
-const token = import.meta.env.VITE_CESIUM_TOKEN;
+const token = import.meta.env.VITE_CESIUM_ION_TOKEN;
 if (token) {
   Cesium.Ion.defaultAccessToken = token;
 } else {
