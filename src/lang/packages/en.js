@@ -40,8 +40,9 @@ export default {
 
     // Camera
     camera: "Camera",
-    "camera_camera-fly": "Camera Fly",
+    camera_camera: "Camera Fly",
     "camera_camera-tutorial": "Camera Tutorial",
+    "camera_entity-tracking": "Entity Tracking",
   },
 
   langSelect: {

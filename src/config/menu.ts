@@ -200,19 +200,25 @@ const menuConfig: MenuItem[] = [
     path: "camera",
     name: "camera",
     meta: { title: "camera", icon: "el-icon-Camera" },
-    redirect: "/camera/camera-fly",
+    redirect: "/camera/camera",
     children: [
       {
-        path: "camera-fly",
+        path: "camera",
         name: "camera-fly",
-        meta: { title: "camera_camera-fly" },
+        meta: { title: "camera_camera" }, // 相机飞行
         component: "Camera/CameraFly.vue",
       },
       {
         path: "camera-tutorial",
         name: "camera-tutorial",
-        meta: { title: "camera_camera-tutorial" },
+        meta: { title: "camera_camera-tutorial" }, // 相机教程
         component: "Camera/CameraTutorial.vue",
+      },
+      {
+        path: "entity-tracking",
+        name: "entity-tracking",
+        meta: { title: "camera_entity-tracking" }, // 实体跟踪
+        component: "Camera/EntityTracking.vue",
       },
     ],
   },

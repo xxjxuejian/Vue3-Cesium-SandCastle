@@ -38,8 +38,9 @@ export default {
 
     // 相机 Camera
     camera: "相机",
-    "camera_camera-fly": "相机飞行",
+    camera_camera: "相机飞行",
     "camera_camera-tutorial": "相机教程",
+    "camera_entity-tracking": "实体跟踪",
   },
   langSelect: {
     message: {
