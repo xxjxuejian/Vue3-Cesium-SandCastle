@@ -220,6 +220,18 @@ const menuConfig: MenuItem[] = [
         meta: { title: "camera_entity-tracking" }, // 实体跟踪
         component: "Camera/EntityTracking.vue",
       },
+      {
+        path: "multiple-synced-views",
+        name: "camera_multiple-synced-views",
+        meta: { title: "camera_multiple-synced-views" }, // 同步视图
+        component: "Camera/MultipleSyncedViews.vue",
+      },
+      {
+        path: "cardboard",
+        name: "camera_cardboard",
+        meta: { title: "camera_cardboard" }, // 同步视图
+        component: "Camera/Cardboard.vue",
+      },
     ],
   },
 ];

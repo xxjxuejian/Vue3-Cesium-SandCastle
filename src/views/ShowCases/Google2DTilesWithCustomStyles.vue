@@ -12,7 +12,7 @@ const viewerConfig: Cesium.Viewer.ConstructorOptions = {
   navigationHelpButton: false,
   homeButton: false,
 };
-const assetId = 3830184;
+const assetId = "3830184";
 
 // 加载地形
 async function loadTerrain(viewer: Cesium.Viewer) {
@@ -25,7 +25,7 @@ function addImageryLayer(viewer: Cesium.Viewer) {
     Cesium.Google2DImageryProvider.fromIonAssetId({
       assetId,
       mapType: "satellite",
-    })
+    }) as Promise<Cesium.ImageryProvider>
   );
 
   const overlay = Cesium.ImageryLayer.fromProviderAsync(
@@ -51,7 +51,7 @@ function addImageryLayer(viewer: Cesium.Viewer) {
           stylers: [{ visibility: "off" }],
         },
       ],
-    })
+    }) as Promise<Cesium.ImageryProvider>
   );
   viewer.imageryLayers.add(base);
   viewer.imageryLayers.add(overlay);
@@ -72,7 +72,7 @@ const handleMapLoaded = async (viewer: Cesium.Viewer) => {
   //   调整相机位置，飞行到指定区域
   viewer.scene.camera.flyTo({
     duration: 0,
-    destination: new Cesium.Rectangle.fromDegrees(
+    destination: Cesium.Rectangle.fromDegrees(
       //Philly
       -75.280266,
       39.867004,

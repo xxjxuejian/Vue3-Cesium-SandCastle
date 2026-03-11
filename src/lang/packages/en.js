@@ -43,6 +43,8 @@ export default {
     camera_camera: "Camera Fly",
     "camera_camera-tutorial": "Camera Tutorial",
     "camera_entity-tracking": "Entity Tracking",
+    "camera_multiple-synced-views": "Multiple Synced Views",
+    camera_cardboard: "Cardboard",
   },
 
   langSelect: {

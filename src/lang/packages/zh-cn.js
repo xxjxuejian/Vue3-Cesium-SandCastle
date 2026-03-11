@@ -41,6 +41,8 @@ export default {
     camera_camera: "相机飞行",
     "camera_camera-tutorial": "相机教程",
     "camera_entity-tracking": "实体跟踪",
+    "camera_multiple-synced-views": "同步视图",
+    camera_cardboard: "卡片",
   },
   langSelect: {
     message: {
