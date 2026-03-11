@@ -59,8 +59,10 @@ async function loadDataSource(viewer: Cesium.Viewer) {
 
   // 定义相机跟踪实体时的默认位置偏移。
   // 相机相对于卫星的位置：x:-300,y:20,z:100； 相当于 相机在卫星后上方
-  satellite.viewFrom = new Cesium.Cartesian3(-300, 20, 100);
-  drone.viewFrom = new Cesium.Cartesian3(-50, 0, 5);
+  // satellite.viewFrom = new Cesium.Cartesian3(-300, 20, 100);
+  // drone.viewFrom = new Cesium.Cartesian3(-50, 0, 5);
+  satellite!.viewFrom = new Cesium.ConstantProperty(new Cesium.Cartesian3(-300, 20, 100));
+  drone!.viewFrom = new Cesium.ConstantProperty(new Cesium.Cartesian3(-50, 0, 5));
 }
 
 // 跟踪实体, 卫星或者是无人机
