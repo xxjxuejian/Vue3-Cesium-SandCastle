@@ -43,6 +43,10 @@ export default {
     "camera_entity-tracking": "实体跟踪",
     "camera_multiple-synced-views": "同步视图",
     camera_cardboard: "卡片",
+
+    // Entities
+    entities: "实体",
+    "entities_show-or-hide-entities": "显示或隐藏实体",
   },
   langSelect: {
     message: {

@@ -234,6 +234,21 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // Entity 实体
+  {
+    path: "entities",
+    name: "entities",
+    meta: { title: "entities", icon: "el-icon-Van" },
+    redirect: "/entities/show-or-hide-entities",
+    children: [
+      {
+        path: "show-or-hide-entities",
+        name: "show-or-hide-entities",
+        meta: { title: "entities_show-or-hide-entities" }, // 实体
+        component: "Entities/ShowOrHiddenEntities.vue",
+      },
+    ],
+  },
 ];
 
 export default menuConfig;

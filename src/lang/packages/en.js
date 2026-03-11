@@ -45,6 +45,10 @@ export default {
     "camera_entity-tracking": "Entity Tracking",
     "camera_multiple-synced-views": "Multiple Synced Views",
     camera_cardboard: "Cardboard",
+
+    // Entities
+    entities: "Entities",
+    "entities_show-or-hide-entities": "Show or Hide Entities",
   },
 
   langSelect: {
