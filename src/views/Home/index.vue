@@ -15,11 +15,17 @@ function filterDataMap(dataMap: Record<string, galleryData[]>) {
 }
 
 async function getSandCastleList() {
-  const res = await fetch(import.meta.env.BASE_URL + "mock/galleryList.json");
-  const data = await res.json();
-  const entries = data.entries;
-  // 处理原始数据
-  const dataMap = getGalleryMapData(entries);
+  // const res = await fetch(import.meta.env.BASE_URL + "mock/galleryList.json");
+  // const data = await res.json();
+  // const entries = data.entries;
+  // // 处理原始数据
+  // const dataMap = getGalleryMapData(entries);
+  // filterDataMap(dataMap);
+  // console.log("dataMap", dataMap);
+
+  const res = await fetch(import.meta.env.BASE_URL + "mock/galleryListData.json");
+  const dataMap = await res.json();
+
   filterDataMap(dataMap);
   console.log("dataMap", dataMap);
 
