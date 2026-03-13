@@ -47,6 +47,7 @@ export default {
     // Entities
     entities: "实体",
     "entities_show-or-hide-entities": "显示或隐藏实体",
+    entities_video: "视频",
   },
   langSelect: {
     message: {

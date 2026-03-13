@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// 空实体示例，展示如何通过分组节点，批量控制实体的显示隐藏，而不需要一个个去控制实体
 import CesiumViewer from "@/components/Cesium/CesiumViewer.vue";
 import * as Cesium from "cesium";
 

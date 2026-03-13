@@ -49,6 +49,7 @@ export default {
     // Entities
     entities: "Entities",
     "entities_show-or-hide-entities": "Show or Hide Entities",
+    entities_video: "Video",
   },
 
   langSelect: {

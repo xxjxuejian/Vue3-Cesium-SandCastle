@@ -244,8 +244,14 @@ const menuConfig: MenuItem[] = [
       {
         path: "show-or-hide-entities",
         name: "show-or-hide-entities",
-        meta: { title: "entities_show-or-hide-entities" }, // 实体
+        meta: { title: "entities_show-or-hide-entities" }, // 显示与隐藏实体
         component: "Entities/ShowOrHiddenEntities.vue",
+      },
+      {
+        path: "video",
+        name: "entities_video",
+        meta: { title: "entities_video" }, // 视频
+        component: "Entities/Video.vue",
       },
     ],
   },
