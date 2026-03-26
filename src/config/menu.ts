@@ -253,6 +253,18 @@ const menuConfig: MenuItem[] = [
         meta: { title: "entities_video" }, // 视频
         component: "Entities/Video.vue",
       },
+      {
+        path: "gltf-models",
+        name: "entities_gltf-models",
+        meta: { title: "entities_gltf-models" }, // glTF 模型
+        component: "Entities/GltfModels.vue", // 假设在 src/views/MultipleSyncedViews.vue
+      },
+      {
+        path: "coloring-and-styling-gltf-models",
+        name: "entities_coloring-and-styling-gltf-models",
+        meta: { title: "entities_coloring-and-styling-gltf-models" }, // glTF 模型
+        component: "Entities/ColoringGltfModels.vue", // 假设在 src/views/MultipleSyncedViews.vue
+      },
     ],
   },
 ];

@@ -48,6 +48,8 @@ export default {
     entities: "实体",
     "entities_show-or-hide-entities": "显示或隐藏实体",
     entities_video: "视频",
+    "entities_gltf-models": "GLTF 模型",
+    "entities_coloring-and-styling-gltf-models": "GLTF 模型着色和样式",
   },
   langSelect: {
     message: {

@@ -50,6 +50,8 @@ export default {
     entities: "Entities",
     "entities_show-or-hide-entities": "Show or Hide Entities",
     entities_video: "Video",
+    "entities_gltf-models": "GLTF Models",
+    "entities_coloring-and-styling-gltf-models": "Coloring and Styling GLTF Models",
   },
 
   langSelect: {
