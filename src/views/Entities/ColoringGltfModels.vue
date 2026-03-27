@@ -1,4 +1,7 @@
 <script setup lang="ts">
+/**
+ * 主要演示了，修改模型的实体颜色，以及修改模型实体的轮廓颜色等
+ */
 import CesiumViewer from "@/components/Cesium/CesiumViewer.vue";
 import * as Cesium from "cesium";
 
@@ -15,6 +18,26 @@ interface ModelOption {
   url: string;
   height: number;
 }
+
+// 颜色映射
+const colorMap = {
+  White: Cesium.Color.WHITE,
+  Red: Cesium.Color.RED,
+  Green: Cesium.Color.GREEN,
+  Blue: Cesium.Color.BLUE,
+  Yellow: Cesium.Color.YELLOW,
+  Gray: Cesium.Color.GRAY,
+} as const;
+type ColorOption = keyof typeof colorMap;
+// blend选项映射
+const blendMap = {
+  Highlight: Cesium.ColorBlendMode.HIGHLIGHT,
+  Replace: Cesium.ColorBlendMode.REPLACE,
+  Mix: Cesium.ColorBlendMode.MIX,
+} as const;
+type BlendOption = keyof typeof blendMap;
+// type ColorOption = "White" | "Red" | "Green" | "Blue" | "Yellow" | "Gray";
+// type BlendOption = "Highlight" | "Replace" | "Mix";
 // 模型选项
 const modelOptions: ModelOption[] = [
   { text: "Aircraft", url: "/SampleData/models/CesiumAir/Cesium_Air.glb", height: 5000 },
@@ -27,38 +50,57 @@ const modelOptions: ModelOption[] = [
   { text: "Milk Truck", url: "/SampleData/models/CesiumMilkTruck/CesiumMilkTruck.glb", height: 0 },
   { text: "Skinned Character", url: "/SampleData/models/CesiumMan/Cesium_Man.glb", height: 0 },
 ];
-// 颜色列表
-const colorOptions = ["White", "Red", "Green", "Blue", "Yellow", "Gray"];
-const colorBlendModeOptions = ["Highlight", "Replace", "Mix"];
 
-let viewer = null;
-let currentEntity: Cesium.Entity | undefined;
+interface State {
+  model: string;
+  color: ColorOption;
+  alpha: number;
+  colorBlendMode: BlendOption;
+  mix: number;
+  silhouetteColor: ColorOption;
+  silhouetteAlpha: number;
+  silhouetteSize: number;
+  shadows: boolean;
+}
+
+// 颜色列表
+const colorOptions: ColorOption[] = ["White", "Red", "Green", "Blue", "Yellow", "Gray"];
+const colorBlendModeOptions: BlendOption[] = ["Highlight", "Replace", "Mix"];
+
+let viewer: Cesium.Viewer | null = null;
+let currentEntity: Cesium.Entity | null;
 const handleMapLoaded = (viewerInstance: Cesium.Viewer) => {
   viewer = viewerInstance;
   updateModel();
 };
 
+/*
+一个奇怪的问题是：如果设置 silhouetteAlpha: 0.66,（小数时） 然后直接修改silhouetteColor时，反而是修改了
+model.color值，
+但是如果把 silhouetteAlpha: 1,就正常了
+即使是官网的 demo，也存在同样的问题
+*/
 // 控制面板数据源
-const state = reactive({
-  model: modelOptions[1].url, // 默认地面车辆模型
+const state = reactive<State>({
+  model: modelOptions[0].url, // 默认地面车辆模型
   color: "Red", // 模型颜色
   alpha: 1.0, // 模型颜色不透明度
   colorBlendMode: "Highlight", // 模型颜色混合模式
   mix: 0.5, // 模型颜色混合程度参数
   silhouetteColor: "Red", // 模型轮廓颜色
-  silhouetteAlpha: 0.66, // 模型轮廓不透明度
-  silhouetteSize: 3.99, // 模型轮廓大小
+  silhouetteAlpha: 1, // 模型轮廓不透明度
+  silhouetteSize: 2, // 模型轮廓大小
   shadows: true,
 });
 
-function getColorBlendMode(colorBlendMode) {
-  return Cesium.ColorBlendMode[colorBlendMode.toUpperCase()];
+function getColorBlendMode(colorBlendMode: BlendOption): number {
+  return blendMap[colorBlendMode];
 }
 
 // 转换颜色字符串和透明度为 Cesium.Color
-function getColor(colorName, alpha) {
-  const color = Cesium.Color[colorName.toUpperCase()];
-  return Cesium.Color.fromAlpha(color, parseFloat(alpha));
+function getColor(colorName: ColorOption, alpha: number) {
+  const color = colorMap[colorName];
+  return Cesium.Color.fromAlpha(color, alpha);
 }
 
 // 更新或创建模型
@@ -91,6 +133,85 @@ const updateModel = () => {
 
   viewer.trackedEntity = currentEntity;
 };
+
+// 监听器;
+// 监听 model 改变时更新模型
+watch(
+  () => state.model,
+  () => {
+    updateModel();
+  }
+);
+
+// 监听模型颜色相关属性
+watch([() => state.color, () => state.alpha], ([newColor, newAlpha]) => {
+  if (currentEntity?.model) {
+    const colorValue = getColor(newColor, newAlpha);
+    currentEntity.model.color = new Cesium.ConstantProperty(colorValue);
+  }
+});
+
+watch(
+  () => state.colorBlendMode,
+  (newMode) => {
+    if (currentEntity?.model) {
+      const modeValue = getColorBlendMode(newMode);
+      currentEntity.model.colorBlendMode = new Cesium.ConstantProperty(modeValue);
+    }
+  }
+);
+
+watch(
+  () => state.mix,
+  (newValue) => {
+    if (currentEntity?.model) {
+      currentEntity.model.colorBlendAmount = new Cesium.ConstantProperty(newValue);
+    }
+  }
+);
+
+watch([() => state.silhouetteColor, () => state.silhouetteAlpha], ([newColor, newAlpha]) => {
+  if (currentEntity?.model) {
+    currentEntity.model.silhouetteColor = new Cesium.ConstantProperty(getColor(newColor, newAlpha));
+  }
+});
+
+watch(
+  () => state.silhouetteSize,
+  (newSize) => {
+    if (currentEntity?.model) {
+      currentEntity.model.silhouetteSize = new Cesium.ConstantProperty(newSize);
+    }
+  }
+);
+
+// shadows
+watch(
+  () => state.shadows,
+  (val) => {
+    if (viewer) viewer.shadows = val;
+  }
+);
+
+onBeforeUnmount(() => {
+  if (viewer) {
+    // 1. 停止追踪实体（如果有的话）
+    viewer.trackedEntity = undefined;
+
+    // 2. 清除所有实体和数据源
+    viewer.entities.removeAll();
+    viewer.dataSources.removeAll();
+
+    // 3. 销毁 Viewer（最关键的一步！）
+    // destroy 会释放 WebGL 上下文、停止渲染循环、释放内存和显存
+    viewer.destroy();
+
+    // 4. 将变量置为空，辅助垃圾回收 (GC)
+    // (如果是 let 定义的 viewer)
+    viewer = null;
+    currentEntity = null;
+  }
+});
 </script>
 
 <template>
@@ -133,6 +254,7 @@ const updateModel = () => {
               type="number"
               :min="0"
               :max="1"
+              :step="0.01"
               placeholder="Please input"
               style="width: 60px"
             />
@@ -142,7 +264,7 @@ const updateModel = () => {
         <el-form-item label="Mix" :disabled="state.colorBlendMode !== 'Mix'">
           <div class="flex items-center gap-x-6">
             <el-slider
-              v-model="state.colorBlendMode"
+              v-model="state.mix"
               :min="0"
               :max="1"
               :step="0.01"
@@ -154,6 +276,7 @@ const updateModel = () => {
               type="number"
               :min="0"
               :max="1"
+              :step="0.01"
               placeholder="Please input"
               style="width: 60px"
             />
@@ -168,7 +291,7 @@ const updateModel = () => {
           </el-select>
         </el-form-item>
 
-        <el-form-item label="Alpha">
+        <el-form-item label="Silhouette Alpha">
           <div class="flex items-center gap-x-6">
             <el-slider
               v-model="state.silhouetteAlpha"
@@ -182,6 +305,7 @@ const updateModel = () => {
               type="number"
               :min="0"
               :max="1"
+              :step="0.01"
               placeholder="Please input"
               style="width: 60px"
             />
@@ -202,6 +326,7 @@ const updateModel = () => {
               type="number"
               :min="0"
               :max="10"
+              :step="0.01"
               placeholder="Please input"
               style="width: 60px"
             />
