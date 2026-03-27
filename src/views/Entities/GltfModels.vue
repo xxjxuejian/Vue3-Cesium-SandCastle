@@ -26,8 +26,8 @@ function createModel(url: string, height: number) {
 
   const entity = viewer.entities.add({
     name: url,
-    position: position,
-    orientation: orientation,
+    position,
+    orientation,
     model: {
       uri: getPublicAssets(url), // glTF/GLB 文件路径
       minimumPixelSize: 128, // 最小屏幕像素尺寸： 就算你把相机拉得很远，模型在屏幕上也至少有 128px 大小
