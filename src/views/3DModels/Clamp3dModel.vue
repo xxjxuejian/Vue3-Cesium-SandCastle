@@ -15,6 +15,7 @@
 // const longitude = -2.1480545852753163;
 // const latitude = 0.7688240036937101;
 // const range = 0.000001;
+// // 持续时间，代表多少秒之内，完成一次循环
 // const duration = 4.0;
 
 // let pointEntity: Cesium.Entity | undefined;
@@ -66,6 +67,8 @@
 
 // // 实时更新位置的回调函数
 // function updatePosition(time: Cesium.JulianDate, result?: Cesium.Cartesian3): Cesium.Cartesian3 {
+//   // (time.secondsOfDay % duration) 取余数，结果不会超过duration的值: [0,4)之间的浮点数
+//   // 再除以duration的值，结果会变成一个在[0,1)之间的浮点数，表示当前时间在整个周期中的位置
 //   const offset = (time.secondsOfDay % duration) / duration;
 //   cartographic.longitude = longitude - range + offset * range * 2.0;
 //   cartographic.latitude = latitude;
