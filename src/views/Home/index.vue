@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getGalleryMapData } from "@/utils/transformGalleryData";
+// import { getGalleryMapData } from "@/utils/transformGalleryData";
 import type { galleryData } from "@/types/api/home";
 import { translateRouteTitle } from "@/lang/utils";
 import Card from "./components/Card.vue";

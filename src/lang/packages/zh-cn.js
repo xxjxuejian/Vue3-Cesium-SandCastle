@@ -35,6 +35,8 @@ export default {
     // 3D Models
     "3d-models": "3D 模型",
     "3d-models_gltf-models": "glTF 模型",
+    "3d-models_coloring-and-styling-gltf-models": "glTF 模型着色和样式",
+    "3d-models_clamp-to-3d-model": "贴合3D模型表面（实时高度采样）",
 
     // 相机 Camera
     camera: "相机",
@@ -50,6 +52,10 @@ export default {
     entities_video: "视频",
     "entities_gltf-models": "GLTF 模型",
     "entities_coloring-and-styling-gltf-models": "GLTF 模型着色和样式",
+
+    // Metadata
+    metadata: "元数据",
+    "metadata_3d-tiles-styling": "3D Tiles 样式",
   },
   langSelect: {
     message: {

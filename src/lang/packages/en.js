@@ -37,6 +37,8 @@ export default {
     // 3D Models
     "3d-models": "3D Models",
     "3d-models_gltf-models": "glTF Models",
+    "3d-models_coloring-and-styling-gltf-models": "Coloring and Styling glTF Models",
+    "3d-models_clamp-to-3d-model": "Clamp to 3D Model (Real-time Height Sampling)",
 
     // Camera
     camera: "Camera",
@@ -52,6 +54,10 @@ export default {
     entities_video: "Video",
     "entities_gltf-models": "GLTF Models",
     "entities_coloring-and-styling-gltf-models": "Coloring and Styling GLTF Models",
+
+    // Metadata
+    metadata: "Metadata",
+    "metadata_3d-tiles-styling": "3D Tiles Styling",
   },
 
   langSelect: {

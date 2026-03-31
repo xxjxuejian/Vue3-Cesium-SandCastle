@@ -193,6 +193,18 @@ const menuConfig: MenuItem[] = [
         meta: { title: "3d-models_gltf-models" }, // glTF 模型
         component: "3DModels/GltfModels.vue", // 假设在 src/views/MultipleSyncedViews.vue
       },
+      {
+        path: "coloring-and-styling-gltf-models",
+        name: "3d-models_coloring-and-styling-gltf-models",
+        meta: { title: "3d-models_coloring-and-styling-gltf-models" }, // glTF 模型 着色和样式
+        component: "3DModels/ColoringGltfModels.vue",
+      },
+      {
+        path: "clamp-to-3d-model",
+        name: "3d-models_clamp-to-3d-model",
+        meta: { title: "3d-models_clamp-to-3d-model" }, // glTF 模型 着色和样式
+        component: "3DModels/Clamp3dModel.vue",
+      },
     ],
   },
   // Camera 相机
@@ -262,8 +274,23 @@ const menuConfig: MenuItem[] = [
       {
         path: "coloring-and-styling-gltf-models",
         name: "entities_coloring-and-styling-gltf-models",
-        meta: { title: "entities_coloring-and-styling-gltf-models" }, // glTF 模型
+        meta: { title: "entities_coloring-and-styling-gltf-models" }, // glTF 模型 着色和样式
         component: "Entities/ColoringGltfModels.vue", // 假设在 src/views/MultipleSyncedViews.vue
+      },
+    ],
+  },
+  // Metadata
+  {
+    path: "metadata",
+    name: "metadata",
+    meta: { title: "metadata", icon: "el-icon-Dish" },
+    redirect: "/metadata/3d-tiles-styling",
+    children: [
+      {
+        path: "3d-tiles-styling",
+        name: "metadata_3d-tiles-styling",
+        meta: { title: "metadata_3d-tiles-styling" }, // 3D Tiles 样式
+        component: "Metadata/3DTilesStyling.vue",
       },
     ],
   },
