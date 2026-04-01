@@ -3,8 +3,26 @@ import SideBar from "./components/SideBar/index.vue";
 import AppMain from "./components/AppMain/index.vue";
 import NavBar from "./components/NavBar/index.vue";
 
+import { DeviceEnum } from "@/enums/settings/device-enum";
+
 import { useAppStore } from "@/stores/modules/app.store";
 const appStore = useAppStore();
+
+// 获取窗口尺寸
+const width = useWindowSize().width;
+// 常量
+const WIDTH_DESKTOP = 992; // 响应式布局容器固定宽度（大屏 >=1200px，中屏 >=992px，小屏 >=768px）
+
+// 监听窗口宽度变化，调整设备类型和侧边栏状态
+watchEffect(() => {
+  const isDesktop = width.value >= WIDTH_DESKTOP;
+  appStore.toggleDevice(isDesktop ? DeviceEnum.DESKTOP : DeviceEnum.MOBILE);
+  if (isDesktop) {
+    appStore.openSideBar();
+  } else {
+    appStore.closeSideBar();
+  }
+});
 </script>
 
 <template>
