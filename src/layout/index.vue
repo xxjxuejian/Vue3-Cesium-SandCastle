@@ -2,32 +2,35 @@
 import SideBar from "./components/SideBar/index.vue";
 import AppMain from "./components/AppMain/index.vue";
 import NavBar from "./components/NavBar/index.vue";
-
-import { DeviceEnum } from "@/enums/settings/device-enum";
-
 import { useAppStore } from "@/stores/modules/app.store";
+import { useDeviceDetection } from "@/hooks/useDeviceDetection";
+
 const appStore = useAppStore();
 
-// 获取窗口尺寸
-const width = useWindowSize().width;
-// 常量
-const WIDTH_DESKTOP = 992; // 响应式布局容器固定宽度（大屏 >=1200px，中屏 >=992px，小屏 >=768px）
+/// Device detection for responsive layout
+const { isMobile } = useDeviceDetection();
 
-// 监听窗口宽度变化，调整设备类型和侧边栏状态
-watchEffect(() => {
-  const isDesktop = width.value >= WIDTH_DESKTOP;
-  appStore.toggleDevice(isDesktop ? DeviceEnum.DESKTOP : DeviceEnum.MOBILE);
-  if (isDesktop) {
-    appStore.openSideBar();
-  } else {
-    appStore.closeSideBar();
-  }
-});
+const handleCloseOverlay = () => {
+  appStore.closeSideBar();
+};
 </script>
 
 <template>
   <div class="layout">
-    <aside class="layout_sidebar" :class="appStore.isCollapse ? 'hideSidebar' : ''">
+    <!-- 移动端遮罩 -->
+    <div
+      v-if="isMobile && !appStore.isCollapse"
+      class="mobile__overlay"
+      @click="handleCloseOverlay"
+    ></div>
+
+    <aside
+      class="layout_sidebar"
+      :class="{
+        hideSidebar: appStore.isCollapse,
+        mobile: isMobile,
+      }"
+    >
       <SideBar></SideBar>
     </aside>
 
@@ -52,10 +55,24 @@ watchEffect(() => {
   .layout_sidebar {
     width: $sidebar-width;
     height: 100%;
+    background-color: rgb(255, 255, 255);
     transition: width 0.28s;
 
     &.hideSidebar {
       width: $sidebar-width-collapsed;
+    }
+    // 移动端侧边栏覆盖在内容上
+    &.mobile {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 999;
+
+      &.hideSidebar {
+        width: 0;
+        overflow: hidden;
+      }
     }
   }
 
@@ -77,5 +94,15 @@ watchEffect(() => {
       height: calc(100% - $navbar-height);
     }
   }
+}
+
+.mobile__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 </style>
