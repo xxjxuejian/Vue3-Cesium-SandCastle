@@ -24,6 +24,7 @@ const handleCloseOverlay = () => {
       @click="handleCloseOverlay"
     ></div>
 
+    <!-- 侧边栏 -->
     <aside
       class="layout_sidebar"
       :class="{
@@ -34,6 +35,7 @@ const handleCloseOverlay = () => {
       <SideBar></SideBar>
     </aside>
 
+    <!-- 主体 -->
     <div class="layout_main">
       <div class="layout_navbar">
         <NavBar></NavBar>
@@ -69,6 +71,7 @@ const handleCloseOverlay = () => {
       left: 0;
       z-index: 999;
 
+      // 移动端，同时侧边栏折叠时，直接隐藏
       &.hideSidebar {
         width: 0;
         overflow: hidden;

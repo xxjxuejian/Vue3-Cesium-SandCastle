@@ -83,8 +83,8 @@ onMounted(() => {
 <template>
   <div class="p-4 wh-full overflow-auto relative">
     <!-- 按标签搜索-->
-    <div class="flex items-center gap-x-4 sticky top-0 bg-white p-4 rounded-md">
-      <span class="font-700 text-xl">Gallery</span>
+    <div class="flex flex-col sm:flex-row items-center gap-4 sticky top-0 bg-white p-4 rounded-md">
+      <span class="hidden font-700 text-xl sm:inline">Gallery</span>
       <el-input
         v-model="searchValue"
         placeholder="Search gallery"
@@ -120,7 +120,7 @@ onMounted(() => {
 
         <div>
           <!-- class="w-243 mx-auto grid gap-6 grid-cols-[repeat(auto-fit,225px)]" -->
-          <div class="grid gap-6 grid-cols-[repeat(auto-fit,225px)] justify-start px-4">
+          <div class="grid gap-6 grid-cols-[repeat(auto-fill,225px)] justify-center px-4">
             <Card v-for="item in value" :key="item.id" :case-info="item" />
           </div>
         </div>
