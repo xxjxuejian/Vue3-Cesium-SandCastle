@@ -31,12 +31,16 @@ export default {
     // Animation
     animation: "动画",
     animation_clock: "时钟",
+    "animation_base-animation": "基础动画",
 
     // 3D Models
     "3d-models": "3D 模型",
     "3d-models_gltf-models": "glTF 模型",
     "3d-models_coloring-and-styling-gltf-models": "glTF 模型着色和样式",
     "3d-models_clamp-to-3d-model": "贴合3D模型表面（实时高度采样）",
+    "3d-models_projection": "投影",
+    "3d-models_physically-based-materials": "基于物理的材质",
+    "3d-models_time-dynamic-wheels": "时间动态车轮",
 
     // 相机 Camera
     camera: "相机",

@@ -17,7 +17,10 @@ const handleCloseOverlay = () => {
 
 <template>
   <div class="layout">
-    <!-- 移动端遮罩 -->
+    <!-- 移动端遮罩 
+    遮罩只有在 ，处于移动端，并且侧边栏未折叠时，才显示
+ 
+    -->
     <div
       v-if="isMobile && !appStore.isCollapse"
       class="mobile__overlay"

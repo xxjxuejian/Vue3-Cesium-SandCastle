@@ -33,12 +33,16 @@ export default {
     // Animation
     animation: "Animation",
     animation_clock: "Clock",
+    "animation_base-animation": "Base Animation",
 
     // 3D Models
     "3d-models": "3D Models",
     "3d-models_gltf-models": "glTF Models",
     "3d-models_coloring-and-styling-gltf-models": "Coloring and Styling glTF Models",
     "3d-models_clamp-to-3d-model": "Clamp to 3D Model (Real-time Height Sampling)",
+    "3d-models_projection": "Projection",
+    "3d-models_physically-based-materials": "Physically-Based Materials",
+    "3d-models_time-dynamic-wheels": "Time-Dynamic Wheels",
 
     // Camera
     camera: "Camera",

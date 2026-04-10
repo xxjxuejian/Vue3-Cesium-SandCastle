@@ -177,6 +177,13 @@ const menuConfig: MenuItem[] = [
         meta: { title: "animation_clock" }, // 时钟
         component: "Animation/Clock.vue", // 假设在 src/views/MultipleSyncedViews.vue
       },
+      // 自定义补充的demo,动画基础案例
+      {
+        path: "base-animation",
+        name: "animation_base-animation",
+        meta: { title: "animation_base-animation" }, // 基础动画
+        component: "Animation/BaseAnimation.vue", // 假设在 src/views/MultipleSyncedViews.vue
+      },
     ],
   },
   // 3D 模型
@@ -204,6 +211,24 @@ const menuConfig: MenuItem[] = [
         name: "3d-models_clamp-to-3d-model",
         meta: { title: "3d-models_clamp-to-3d-model" }, // glTF 模型 着色和样式
         component: "3DModels/Clamp3dModel.vue",
+      },
+      {
+        path: "projection",
+        name: "3d-models_projection",
+        meta: { title: "3d-models_projection" }, //projection
+        component: "3DModels/Projection.vue",
+      },
+      {
+        path: "physically-based-materials",
+        name: "3d-models_physically-based-materials",
+        meta: { title: "3d-models_physically-based-materials" }, //Physically-Based Materials
+        component: "3DModels/PhysicallyBasedMaterials.vue",
+      },
+      {
+        path: "time-dynamic-wheels",
+        name: "3d-models_time-dynamic-wheels",
+        meta: { title: "3d-models_time-dynamic-wheels" }, //Time-Dynamic Wheels
+        component: "3DModels/TimeDynamicWheels.vue",
       },
     ],
   },
