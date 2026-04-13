@@ -182,7 +182,13 @@ const menuConfig: MenuItem[] = [
         path: "base-animation",
         name: "animation_base-animation",
         meta: { title: "animation_base-animation" }, // 基础动画
-        component: "Animation/BaseAnimation.vue", // 假设在 src/views/MultipleSyncedViews.vue
+        component: "Animation/BaseAnimation.vue",
+      },
+      {
+        path: "accelarate-animation",
+        name: "animation_accelarate-animation",
+        meta: { title: "animation_accelarate-animation" }, // 加速动画
+        component: "Animation/AccelarateAnimation.vue",
       },
     ],
   },

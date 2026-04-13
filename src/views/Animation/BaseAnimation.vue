@@ -7,6 +7,7 @@ const mapConfig: Cesium.Viewer.ConstructorOptions = {
 };
 /*
     Cesium 的动画本质是 时间驱动（Time-based animation）
+    这里演示汽车匀速动画
 */
 const start = Cesium.JulianDate.now();
 //addSeconds:在一个时间基础上，加上若干秒，得到一个新的时间对象
