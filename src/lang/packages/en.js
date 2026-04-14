@@ -34,7 +34,8 @@ export default {
     animation: "Animation",
     animation_clock: "Clock",
     "animation_base-animation": "Base Animation",
-    "animation_accelarate-animation": "Accelerate Animation",
+    "animation_accelerate-animation": "Accelerate Animation",
+    "animation_time-dynamic-wheels": "Time-Dynamic Wheels",
 
     // 3D Models
     "3d-models": "3D Models",

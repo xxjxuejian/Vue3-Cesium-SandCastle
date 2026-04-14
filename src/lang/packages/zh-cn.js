@@ -32,7 +32,8 @@ export default {
     animation: "动画",
     animation_clock: "时钟",
     "animation_base-animation": "基础动画",
-    "animation_accelarate-animation": "加速动画",
+    "animation_accelerate-animation": "加速动画",
+    "animation_time-dynamic-wheels": "时间动态轮子",
 
     // 3D Models
     "3d-models": "3D 模型",

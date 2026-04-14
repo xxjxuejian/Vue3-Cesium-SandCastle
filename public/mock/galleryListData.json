@@ -4443,6 +4443,30 @@
                 "animation"
             ],
             "path": "/animation/time-dynamic-wheels"
+        },
+       
+        {
+            "url": "gallery/base-animation",
+            "id": "base-animation",
+            "title": "animation_base-animation",
+            "thumbnail": "gallery/time-dynamic-wheels/thumbnail.jpg",
+            "description": "Animation of a car moving at a constant speed.",
+            "labels": [
+                "animation"
+            ],
+            "path": "/animation/base-animation"
+        },
+       
+        {
+            "url": "gallery/accelerate-animation",
+            "id": "accelerate-animation",
+            "title": "animation_accelerate-animation",
+            "thumbnail": "gallery/time-dynamic-wheels/thumbnail.jpg",
+            "description": "Animation of a car accelerating and moving forward.",
+            "labels": [
+                "animation"
+            ],
+            "path": "/animation/accelerate-animation"
         }
     ],
     "datasources": [

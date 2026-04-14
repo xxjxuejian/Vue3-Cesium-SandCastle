@@ -185,10 +185,16 @@ const menuConfig: MenuItem[] = [
         component: "Animation/BaseAnimation.vue",
       },
       {
-        path: "accelarate-animation",
-        name: "animation_accelarate-animation",
-        meta: { title: "animation_accelarate-animation" }, // 加速动画
-        component: "Animation/AccelarateAnimation.vue",
+        path: "accelerate-animation",
+        name: "animation_accelerate-animation",
+        meta: { title: "animation_accelerate-animation" }, // 加速动画
+        component: "Animation/AccelerateAnimation.vue",
+      },
+      {
+        path: "time-dynamic-wheels",
+        name: "animation_time-dynamic-wheels",
+        meta: { title: "animation_time-dynamic-wheels" }, // 时间动态轮子
+        component: "Animation/TimeDynamicWheels.vue",
       },
     ],
   },

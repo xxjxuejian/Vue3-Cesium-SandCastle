@@ -26,16 +26,18 @@ const velocityVectorProperty = new Cesium.VelocityVectorProperty(position, false
 // 作为“复用的结果容器”，用来接收速度向量，避免重复创建对象
 const velocityVector = new Cesium.Cartesian3();
 
-// 设置100个关键帧
+// 设置100个关键帧，那就是99个帧间隔
 const numberOfSamples = 100;
-for (let i = 0; i <= numberOfSamples; ++i) {
-  const factor = i / numberOfSamples; // 第x个关键帧
+for (let i = 0; i < numberOfSamples; ++i) {
+  const factor = i / (numberOfSamples - 1); // 第x个关键帧 的“时间因子”，范围从0到1,他是均匀变化的
   // 关键帧的时间;factor * totalSeconds表示这个关键帧在 totalSeconds 内,对应的时间刻度
   const time = Cesium.JulianDate.addSeconds(start, factor * totalSeconds, new Cesium.JulianDate());
 
-  // Lerp using a non-linear factor so that the vehicle accelerates.
-  const locationFactor = Math.pow(factor, 2); // 幂运算
+  // 让位置插值变成“非匀速”，模拟加速运动。
+  const locationFactor = Math.pow(factor, 2);
   // 插值计算关键帧的位置
+  // 时间：均匀推进（factor）
+  // 距离：通过 factor² 变成加速推进
   const location = Cesium.Cartesian3.lerp(
     startPosition,
     endPosition,
@@ -44,17 +46,15 @@ for (let i = 0; i <= numberOfSamples; ++i) {
   );
   // 添加关键帧:时间、位置 到关键帧集合中
   position.addSample(time, location);
-
-  // 在 time 时刻计算速度;把结果写入 velocityVector
-  // velocityVector：不是返回新对象，而是“写进你传进去的对象”，避免重复创建对象
-  // velocityVectorProperty.getValue(time, velocityVector);
 }
 
 // 更新速度标签
-function updateSpeedLabel(time: Cesium.JulianDate | undefined, result: any) {
-  // if (!time) return "";
-
+// result: 返回 Cesium 的“可复用对象类型”时，用它来避免频繁 new 对象。
+function updateSpeedLabel(time: Cesium.JulianDate | undefined) {
+  // 在 time 时刻计算速度;把结果写入 velocityVector
+  // velocityVector：不是返回新对象，而是“写进你传进去的对象”，避免重复创建对象
   velocityVectorProperty.getValue(time, velocityVector);
+  // magnitude: 计算一个三维向量的长度（模长 / 速度大小） 等价于：Math.sqrt(x*x + y*y + z*z)
   const metersPerSecond = Cesium.Cartesian3.magnitude(velocityVector);
   const kmPerHour = Math.round(metersPerSecond * 3.6);
 
@@ -74,12 +74,11 @@ async function loadModel() {
   if (!viewer) return;
   // Add our vehicle model.
   const vehicleEntity = viewer.entities.add({
-    position: position,
-    orientation: new Cesium.VelocityOrientationProperty(position), // Automatically set the vehicle's orientation to the direction it's facing.
+    position,
+    orientation: new Cesium.VelocityOrientationProperty(position),
     model: {
       uri: modelPath,
-      runAnimations: false,
-      // nodeTransformations: nodeTransformations,
+      runAnimations: false, // gltf模型的动画（如果有）会自动播放；这里是加速动画，车轮速度不匹配
     },
     label: {
       text: new Cesium.CallbackProperty(updateSpeedLabel, false),
@@ -95,7 +94,7 @@ async function loadModel() {
 }
 const handleMapLoaded = async (vw: Cesium.Viewer) => {
   viewer = vw;
-  //   initClock();
+
   await loadModel();
 
   initClock();
