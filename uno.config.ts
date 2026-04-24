@@ -68,6 +68,12 @@ export default defineConfig({
       },
     }),
   ],
+  theme: {
+    colors: {
+      "toolbar-bg": "var(--toolbar-bg)",
+      "toolbar-text": "var(--toolbar-text)",
+    },
+  },
   safelist: generateSafeList(),
   transformers: [transformerDirectives(), transformerVariantGroup()],
 });

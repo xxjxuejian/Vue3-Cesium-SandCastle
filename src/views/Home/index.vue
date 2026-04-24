@@ -10,9 +10,9 @@ interface SelectOption {
   value: string | number;
 }
 // 临时过滤一些demo,因为这些demo我没有对应的模型文件,无法实现
-function filterDataMap(dataMap: Record<string, galleryData[]>) {
-  delete dataMap["3d-tiles"];
-}
+// function filterDataMap(dataMap: Record<string, galleryData[]>) {
+//   delete dataMap["3d-tiles"];
+// }
 
 async function getSandCastleList() {
   // const res = await fetch(import.meta.env.BASE_URL + "mock/galleryList.json");
@@ -26,7 +26,7 @@ async function getSandCastleList() {
   const res = await fetch(import.meta.env.BASE_URL + "mock/galleryListData.json");
   const dataMap = await res.json();
 
-  filterDataMap(dataMap);
+  // filterDataMap(dataMap);
   console.log("dataMap", dataMap);
 
   // 生成select的options

@@ -344,6 +344,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "3d-tiles_offset-3d-tileset-height" }, // 3D Tiles 偏移高度
         component: "3DTiles/Offset3DTilesetHeight.vue",
       },
+      {
+        path: "3d-tiles-styling",
+        name: "3d-tiles_3d-tiles-styling",
+        meta: { title: "3d-tiles_3d-tiles-styling" }, // 3D Tiles 偏移高度
+        component: "3DTiles/3DTilesStyling.vue",
+      },
     ],
   },
 ];
