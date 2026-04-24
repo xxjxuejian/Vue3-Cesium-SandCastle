@@ -62,6 +62,10 @@ export default {
     // Metadata
     metadata: "元数据",
     "metadata_3d-tiles-styling": "3D Tiles 样式",
+
+    // 3D Tiles
+    "3d-tiles": "3D 瓦片",
+    "3d-tiles_offset-3d-tileset-height": "3D 瓦片高度偏移",
   },
   langSelect: {
     message: {

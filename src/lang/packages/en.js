@@ -64,6 +64,9 @@ export default {
     // Metadata
     metadata: "Metadata",
     "metadata_3d-tiles-styling": "3D Tiles Styling",
+
+    "3d-tiles": "3D Tiles",
+    "3d-tiles_offset-3d-tileset-height": "Offset 3D Tileset Height",
   },
 
   langSelect: {

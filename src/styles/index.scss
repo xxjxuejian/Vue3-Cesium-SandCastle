@@ -1,2 +1,12 @@
 @use "./reset";
 @use "./element-plus";
+
+:root {
+  // 工具栏背景色
+  --toolbar-bg: #1f2023;
+  --toolbar-text: #ffffff;
+}
+
+// .dark {
+//   --toolbar-bg: #ffffff;
+// }

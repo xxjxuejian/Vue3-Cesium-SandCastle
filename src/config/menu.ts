@@ -331,6 +331,21 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // 3D Tiles 3D 瓦片
+  {
+    path: "3d-tiles",
+    name: "3d-tiles",
+    meta: { title: "3d-tiles", icon: "el-icon-Memo" },
+    redirect: "/3d-tiles/3d-tiles-styling",
+    children: [
+      {
+        path: "offset-3d-tileset-height",
+        name: "3d-tiles_offset-3d-tileset-height",
+        meta: { title: "3d-tiles_offset-3d-tileset-height" }, // 3D Tiles 偏移高度
+        component: "3DTiles/Offset3DTilesetHeight.vue",
+      },
+    ],
+  },
 ];
 
 export default menuConfig;
