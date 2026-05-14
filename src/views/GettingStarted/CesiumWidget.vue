@@ -20,6 +20,7 @@ const mapConfig = {
 const { widget } = useCesiumWidget(mapRef, mapConfig);
 const { isExpandTips, tipsContainerClasses, toggleTips } = useTips();
 
+const modelURI = import.meta.env.BASE_URL + "SampleData/models/CesiumAir/Cesium_Air.glb";
 /**
  *  加载模型
  */
@@ -43,7 +44,7 @@ function loadModel(v: Cesium.CesiumWidget | Cesium.Viewer) {
     // 实体的旋转
     orientation: orientation,
     model: {
-      uri: "/SampleData/models/CesiumAir/Cesium_Air.glb",
+      uri: modelURI,
       minimumPixelSize: 128,
       maximumScale: 20000,
     },
