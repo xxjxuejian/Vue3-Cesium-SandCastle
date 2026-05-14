@@ -1,6 +1,10 @@
 export default {
   route: {
     home: "首页",
+    // 文档
+    documents: "文档",
+    documents_introduction: "项目说明",
+
     // Getting Started
     "getting-started": "快速开始",
     "getting-started_hello-world": "Hello World案例",

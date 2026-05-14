@@ -10,12 +10,31 @@ export interface MenuItem {
   path: string; // 路由路径片段 (不带 /)
   meta?: MenuMeta;
   component?: string; // 具体的 vue 文件路径 (相对 src/views)
+  document?: string; // Markdown document path relative to src/documents
   children?: MenuItem[]; // 子菜单
   redirect?: string;
 }
 //todo: 约定：如果含有子级路由，但是没有设置component，在路由注册时，会自动注册ParentView作为容器
 // todo: Vue Router 在内部是用 name 做唯一索引 的，必须全局唯一
 const menuConfig: MenuItem[] = [
+  // 文档
+  {
+    path: "documents",
+    name: "documents",
+    meta: {
+      title: "documents", // 文档
+      icon: "el-icon-Document",
+    },
+    redirect: "/documents/introduction",
+    children: [
+      {
+        path: "introduction",
+        name: "documents_introduction",
+        meta: { title: "documents_introduction" }, //
+        document: "README.md",
+      },
+    ],
+  },
   // getting started : 快速开始
   {
     path: "getting-started", // 建议：小写+短横线

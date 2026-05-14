@@ -1,11 +1,12 @@
 // src/router/generator.ts
-import { type RouteRecordRaw, RouterView } from "vue-router";
+import { type RouteRecordRaw } from "vue-router";
 import type { MenuItem } from "@/config/menu";
 
 // 1. 获取 views 目录下所有 vue 文件
 // Vite 的 Glob 导入：Key 是路径，Value 是动态 import 函数
 const viewsModules = import.meta.glob("@/views/**/*.vue");
 const ParentView = () => import("@/components/ParentView/index.vue");
+const MarkdownViewer = () => import("@/views/Documents/MarkdownViewer.vue");
 /**
  * 简单的 ParentView 组件
  * 作用：仅仅渲染 router-view，让子路由显示出来
@@ -31,8 +32,15 @@ export const generateRoutes = (menus: MenuItem[]): RouteRecordRaw[] => {
 
     // ---------------- 核心逻辑开始 ----------------
 
+    if (item.document) {
+      route.component = MarkdownViewer;
+      route.meta = {
+        ...route.meta,
+        document: item.document,
+      };
+    }
     // 情况 1: 如果有具体的 component 路径，尝试加载组件
-    if (item.component) {
+    else if (item.component) {
       // 拼接完整路径，需与 import.meta.glob 的 key 匹配
       // 假设你的 component 字段是 'ShowCases/3DTiles.vue'
       const fullPath = `/src/views/${item.component}`;

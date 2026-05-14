@@ -1,6 +1,8 @@
 export default {
   route: {
     home: "Home",
+    documents: "Documents",
+    documents_introduction: "Project Introduction",
 
     // Getting Started
     "getting-started": "Getting Started",
