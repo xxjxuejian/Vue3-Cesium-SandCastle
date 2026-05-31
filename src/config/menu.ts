@@ -35,6 +35,27 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // 低空安全
+  {
+    path: "low-altitude-safety",
+    name: "low-altitude-safety",
+    meta: { title: "low-altitude-safety", icon: "el-icon-Promotion" },
+    redirect: "/low-altitude-safety/basic-electronic-fence",
+    children: [
+      {
+        path: "basic-electronic-fence",
+        name: "basic-electronic-fence",
+        meta: { title: "basic-electronic-fence" }, // 3D Tiles 样式
+        component: "LowAltitudeSafety/BasicElectronicFence.vue",
+      },
+      {
+        path: "shape-draw",
+        name: "shape-draw",
+        meta: { title: "shape-draw" }, // 形状绘制
+        component: "LowAltitudeSafety/ShapeDraw.vue",
+      },
+    ],
+  },
   // getting started : 快速开始
   {
     path: "getting-started", // 建议：小写+短横线
@@ -161,6 +182,7 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  // 2D 视图
   {
     path: "2d-view", // 修正：去掉了空格
     name: "2d-view",

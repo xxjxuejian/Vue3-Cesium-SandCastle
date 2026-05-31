@@ -70,6 +70,11 @@ export default {
     "3d-tiles": "3D Tiles",
     "3d-tiles_offset-3d-tileset-height": "Offset 3D Tileset Height",
     "3d-tiles_3d-tiles-styling": "3D Tiles Styling",
+
+    // Low Altitude Safety
+    "low-altitude-safety": "Low Altitude Safety",
+    "basic-electronic-fence": "Basic Electronic Fence",
+    "shape-draw": "Shape Draw",
   },
 
   langSelect: {

@@ -71,6 +71,11 @@ export default {
     "3d-tiles": "3D 瓦片",
     "3d-tiles_offset-3d-tileset-height": "3D 瓦片高度偏移",
     "3d-tiles_3d-tiles-styling": "3D Tiles 样式",
+
+    // 低空安全
+    "low-altitude-safety": "低空安全",
+    "basic-electronic-fence": "基础电子围栏",
+    "shape-draw": "形状绘制",
   },
   langSelect: {
     message: {
