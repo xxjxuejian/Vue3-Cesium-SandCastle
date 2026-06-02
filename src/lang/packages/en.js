@@ -75,6 +75,10 @@ export default {
     "low-altitude-safety": "Low Altitude Safety",
     "basic-electronic-fence": "Basic Electronic Fence",
     "shape-draw": "Shape Draw",
+
+    // 性能优化
+    performance: "Performance Optimization",
+    "massive-point-rendering": "Massive Point Rendering",
   },
 
   langSelect: {

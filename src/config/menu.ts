@@ -119,6 +119,26 @@ const menuConfig: MenuItem[] = [
       },
     ],
   },
+  //性能优化
+  {
+    path: "Performance", // 建议：小写+短横线
+    name: "performance",
+    meta: {
+      title: "performance", // 快速开始
+      icon: "el-icon-Odometer",
+    },
+    redirect: "/performance/massive-point-rendering",
+    children: [
+      {
+        path: "massive-point-rendering", // 建议：小写+短横线
+        name: "massive-point-rendering",
+        meta: {
+          title: "massive-point-rendering", // 快速开始
+        },
+        component: "Performance/demo1.vue",
+      },
+    ],
+  },
   // showcases : 案例展示
   {
     path: "showcases", // 建议：小写+短横线

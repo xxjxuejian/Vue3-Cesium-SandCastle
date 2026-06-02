@@ -14,6 +14,9 @@ const back = () => router.push("/");
       <div class="info text-gray mb-7 text-[0.8125rem]">
         请确认您输入的网址是否正确，或者点击下方按钮返回首页。
       </div>
+      <div class="info text-violet mb-7 text-[0.8125rem]">
+        也许你是对的，当前页面还在开发中，请耐心等待O(∩_∩)O~~
+      </div>
       <el-button round type="primary" class="btn h-9 w-28 mb-10" @click="back">返回首页</el-button>
     </div>
   </div>

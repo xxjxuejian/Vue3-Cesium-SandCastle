@@ -76,6 +76,10 @@ export default {
     "low-altitude-safety": "低空安全",
     "basic-electronic-fence": "基础电子围栏",
     "shape-draw": "形状绘制",
+
+    // 性能优化
+    performance: "性能优化",
+    "massive-point-rendering": "海量点渲染",
   },
   langSelect: {
     message: {
