@@ -135,7 +135,7 @@ const menuConfig: MenuItem[] = [
         meta: {
           title: "massive-point-rendering", // 快速开始
         },
-        component: "Performance/demo1.vue",
+        component: "Performance/MassivePointRendering.vue",
       },
     ],
   },
