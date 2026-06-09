@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sandcastle 示例迁移"
+  short_description: "将 Cesium Sandcastle 示例迁移为当前 Vue3 项目页面"
+  default_prompt: "Use $sandcastle-port-demo to port a Cesium Sandcastle example into the Vue3 Cesium SandCastle project."
