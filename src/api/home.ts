@@ -1,8 +1,8 @@
 import request from "@/utils/request";
 
-export function getSandCastleListApi() {
+export function getGalleryList() {
   return request({
-    url: "/gallery/list.json",
+    url: "/api/gallery/list",
     method: "get",
   });
 }

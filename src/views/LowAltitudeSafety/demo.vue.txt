@@ -1,0 +1,390 @@
+<script setup lang="ts">
+// @ts-nocheck
+import { Cesium } from "/@/utils/cesium";
+import { onMounted, onUnmounted, reactive, ref } from "vue";
+import { debounce } from "lodash";
+
+const props = defineProps(["viewer"]);
+
+const dialogFormVisible = ref(false);
+
+var handler: any = null;
+
+const formRef = ref();
+
+const rules = {
+  title: { required: true, message: "请输入电子围栏名称", trigger: "blur" },
+};
+
+// 视点名称
+const form = reactive({
+  title: "",
+  height: 100,
+});
+
+var flyOption = {
+  offset: {
+    heading: Cesium.Math.toRadians(1.0114629015290062),
+    pitch: Cesium.Math.toRadians(-23.53661660731824),
+    roll: Cesium.Math.toRadians(0.00324596311071617),
+  },
+};
+/**
+ * 添加电子围栏
+ */
+var addElectronicFence = (name: string, positions: any) => {
+  let material = getCustomMaterialWall({
+    image: "/src/assets/cesium/wall.png",
+    freely: "vertical",
+    direction: "+",
+    count: 2,
+    color: Cesium.Color.RED,
+    duration: 2000,
+  });
+
+  var geometry = props.viewer.entities.add({
+    id: new Date().getTime(),
+    name: name,
+    wall: {
+      positions: Cesium.Cartesian3.fromDegreesArrayHeights(positions),
+      material: material,
+    },
+  });
+
+  entities.push(geometry);
+  dataList.push({
+    id: geometry.id,
+    name: geometry.name,
+    positions: positions,
+  });
+};
+
+var getCustomMaterialWall = (options: any) => {
+  if (props.viewer && options && options.image) {
+    return _initWallCustomMaterialProperty(options);
+  }
+};
+
+// 动态初始化材质线
+var _initWallCustomMaterialProperty = (options: any) => {
+  var Color = Cesium.Color,
+    defaultValue = Cesium.defaultValue,
+    defined = Cesium.defined,
+    defineProperties = Object.defineProperties,
+    Event = Cesium.Event,
+    createPropertyDescriptor = Cesium.createPropertyDescriptor,
+    Property = Cesium.Property,
+    Material = Cesium.Material,
+    MaterialType = options.MaterialType || "wallType" + parseInt(Math.random() * 1000);
+
+  function WallLinkCustomMaterialProperty(options) {
+    options = defaultValue(options, defaultValue.EMPTY_OBJECT);
+    this._definitionChanged = new Event();
+    this._color = undefined;
+    this._colorSubscription = undefined;
+    this.color = options.color || Color.BLUE;
+    this.duration = options.duration || 3000;
+    this._time = new Date().getTime();
+  }
+
+  defineProperties(WallLinkCustomMaterialProperty.prototype, {
+    isvarant: {
+      get: function () {
+        return false;
+      },
+    },
+    definitionChanged: {
+      get: function () {
+        return this._definitionChanged;
+      },
+    },
+    color: createPropertyDescriptor("color"),
+  });
+  WallLinkCustomMaterialProperty.prototype.getType = function (time) {
+    return MaterialType;
+  };
+  WallLinkCustomMaterialProperty.prototype.getValue = function (time, result) {
+    if (!defined(result)) {
+      result = {};
+    }
+    result.color = Property.getValueOrClonedDefault(this._color, time, Color.WHITE, result.color);
+    result.image = options.image;
+    result.time = ((new Date().getTime() - this._time) % this.duration) / this.duration;
+    return result;
+  };
+  WallLinkCustomMaterialProperty.prototype.equals = function (other) {
+    return (
+      this === other ||
+      (other instanceof WallLinkCustomMaterialProperty &&
+        Property.equals(this._color, other._color))
+    );
+  };
+  //动态墙
+  Material._materialCache.addMaterial(MaterialType, {
+    fabric: {
+      type: MaterialType,
+      uniforms: {
+        color: new Color(1.0, 0.0, 0.0, 0.5),
+        image: options.image,
+        time: 0,
+      },
+      source: _getDirectionWallShader({
+        get: true,
+        count: options.count,
+        freely: options.freely,
+        direction: options.direction,
+      }),
+    },
+    translucent: function (material) {
+      return true;
+    },
+  });
+
+  return new WallLinkCustomMaterialProperty(options);
+};
+
+var _getDirectionWallShader = (options: any) => {
+  if (options && options.get) {
+    var materail =
+      "czm_material czm_getMaterial(czm_materialInput materialInput)\n\
+                    {\n\
+                    czm_material material = czm_getDefaultMaterial(materialInput);\n\
+                    vec2 st = materialInput.st;\n\
+                    \n\ ";
+    if (options.freely == "vertical") {
+      //（由下到上）
+
+      materail +=
+        "vec4 colorImage = texture2D(image, vec2(fract(float(" +
+        options.count +
+        ")*st.t " +
+        options.direction +
+        " time), fract(st.s)));\n\ ";
+    } else {
+      //（逆时针）
+
+      materail +=
+        "vec4 colorImage = texture2D(image, vec2(fract(float(" +
+        options.count +
+        ")*st.s " +
+        options.direction +
+        " time), fract(st.t)));\n\ ";
+    }
+    //泛光
+    materail +=
+      "vec4 fragColor;\n\
+                    fragColor.rgb = (colorImage.rgb+color.rgb) / 1.0;\n\
+                    fragColor = czm_gammaCorrect(fragColor);\n\ ";
+
+    materail +=
+      " material.diffuse = colorImage.rgb;\n\
+                    material.alpha = colorImage.a;\n\
+                    material.emission = fragColor.rgb;\n\
+                    \n\
+                    return material;\n\
+                    }\n\
+                    ";
+
+    return materail;
+  }
+};
+
+const drawing = ref(false);
+
+// 电子围栏列表数据
+const dataList: any = reactive([]);
+
+// 电子围栏实体列表
+var entities: any = [];
+
+// 电子围栏point实体列表
+var pointEntities: any = [];
+
+// 当前选中实体索引
+var geometryIndex: any = null;
+
+/**
+ * 点击绘制按钮
+ */
+const draw = () => {
+  drawing.value = true;
+};
+
+/**
+ * 点击表格一行
+ */
+const rowClick = (row: any, column: any, event: Event) => {
+  if (column && column.property) {
+    let index = dataList.findIndex((v: any) => v.id === row.id);
+    if (index !== -1) {
+      geometryIndex = index;
+      props.viewer.flyTo(entities[index], flyOption);
+    }
+  }
+};
+
+/**
+ * 删除已绘制的图形
+ */
+const delEntity = (item: any, index: number) => {
+  props.viewer.entities.remove(entities[index]);
+  entities.splice(index, 1);
+  dataList.splice(index, 1);
+};
+
+/**
+ * 点击确定绘制
+ */
+const submitForm = async (formEl: any) => {
+  const valid = await formEl.validate();
+  if (valid) {
+    var pointList: any = [];
+    pointEntities.forEach((entity: any) => {
+      var { longitude, latitude } = getPosition(entity);
+      pointList.push(longitude, latitude, form.height);
+      props.viewer.entities.remove(entity);
+    });
+    var { longitude, latitude } = getPosition(pointEntities[0]);
+    pointList.push(longitude, latitude, form.height);
+    pointEntities = [];
+    addElectronicFence(form.title, pointList);
+    dialogFormVisible.value = false;
+    formEl.resetFields();
+  }
+};
+
+/**
+ * 添加鼠标事件
+ */
+const addClickHandler = () => {
+  handler = new Cesium.ScreenSpaceEventHandler(props.viewer.scene.canvas);
+  // 单击绘制
+  handler.setInputAction((event: any) => {
+    leftClickHandler(event);
+  }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+  // 双击结束point绘制，开始围栏绘制
+  handler.setInputAction((event: any) => {
+    if (drawing.value) {
+      drawing.value = false;
+    }
+
+    if (pointEntities.length) {
+      dialogFormVisible.value = true;
+    }
+  }, Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+};
+
+/**
+ * 单击左键
+ */
+const leftClickHandler = debounce((event: any) => {
+  if (drawing.value) {
+    let cartesian = props.viewer.scene.pickPosition(event.position);
+    let cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+    let coordinate = {
+      longitude: Cesium.Math.toDegrees(cartographic.longitude),
+      latitude: Cesium.Math.toDegrees(cartographic.latitude),
+      height: cartographic.height + 1,
+    };
+    var pointGeometry = new Cesium.Entity({
+      name: "Sample Label",
+      position: Cesium.Cartesian3.fromDegrees(
+        coordinate.longitude,
+        coordinate.latitude,
+        coordinate.height
+      ),
+      point: {
+        // 实体是一个点
+        pixelSize: 10, // 点的大小
+        color: Cesium.Color.RED, // 点的颜色
+      },
+    });
+    props.viewer.entities.add(pointGeometry);
+    pointEntities.push(pointGeometry);
+  }
+}, 100);
+
+/**
+ * 获取实体的经纬度
+ */
+const getPosition = (entity: any) => {
+  // 获取点实体的位置
+  var position = entity.position.getValue(Cesium.JulianDate.now());
+  // 转换Cartesian3到经纬度
+  var cartographic = Cesium.Cartographic.fromCartesian(
+    position,
+    props.viewer.scene.globe.ellipsoid
+  );
+  var longitude = Cesium.Math.toDegrees(cartographic.longitude);
+  var latitude = Cesium.Math.toDegrees(cartographic.latitude);
+  return {
+    longitude,
+    latitude,
+  };
+};
+
+onMounted(() => {
+  addClickHandler();
+});
+
+onUnmounted(() => {
+  entities.forEach((entity: any) => {
+    props.viewer.entities.remove(entity);
+  });
+  handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+  handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK);
+});
+</script>
+
+<template>
+  <div class="page">
+    <el-button @click="draw">绘制</el-button>
+    <el-table :data="dataList" border @row-click="rowClick">
+      <el-table-column prop="name" label="名称" align="center" />
+      <el-table-column prop="action" label="操作" align="center">
+        <template #default="scope">
+          <el-button link type="primary" size="small" @click="delEntity(scope.row, scope.$index)">
+            <el-icon :size="16"><ele-Delete /></el-icon>
+          </el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+  </div>
+  <el-dialog
+    v-model="dialogFormVisible"
+    title="配置"
+    width="500"
+    :close-on-press-escape="false"
+    :close-on-click-modal="false"
+    :show-close="false"
+  >
+    <el-form ref="formRef" :model="form" label-width="auto" :rules="rules">
+      <el-form-item label="电子围栏名称" prop="title">
+        <el-input v-model="form.title" placeholder="请输入" />
+      </el-form-item>
+      <el-form-item label="电子围栏高度">
+        <el-input-number :min="0" v-model="form.height" placeholder="请输入" />
+      </el-form-item>
+    </el-form>
+
+    <template #footer>
+      <div class="dialog-footer">
+        <el-button type="primary" @click="submitForm(formRef)">确定</el-button>
+      </div>
+    </template>
+  </el-dialog>
+</template>
+
+<style scoped>
+.page {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #fff;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 300px;
+}
+</style>

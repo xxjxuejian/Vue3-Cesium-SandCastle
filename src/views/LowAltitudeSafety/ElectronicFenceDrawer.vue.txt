@@ -1,0 +1,476 @@
+<script setup lang="ts">
+import { computed, onBeforeUnmount, ref, shallowRef } from "vue";
+import { Delete, Location, VideoPause, VideoPlay } from "@element-plus/icons-vue";
+import * as Cesium from "cesium";
+
+type FenceShape = "rectangle" | "polygon" | "circle";
+
+interface FencePoint {
+  lon: number;
+  lat: number;
+}
+
+interface FenceRecord {
+  id: string;
+  name: string;
+  type: FenceShape;
+  positions: FencePoint[];
+  height: number;
+  primitives: Cesium.Primitive[];
+  entities: Cesium.Entity[];
+}
+
+const props = defineProps<{
+  viewer: Cesium.Viewer | null;
+}>();
+
+const FENCE_HEIGHT = 60;
+const CIRCLE_SEGMENTS = 72;
+const shapeLabelMap: Record<FenceShape, string> = {
+  rectangle: "矩形",
+  polygon: "多边形",
+  circle: "圆形",
+};
+
+const activeShape = ref<FenceShape>("rectangle");
+const drawing = ref(false);
+const drawPoints = ref<FencePoint[]>([]);
+const cursorPoint = ref<FencePoint | null>(null);
+const fences = ref<FenceRecord[]>([]);
+const handler = shallowRef<Cesium.ScreenSpaceEventHandler | null>(null);
+const previewEntities: Cesium.Entity[] = [];
+
+const startButtonText = computed(() => (drawing.value ? "进行中" : "开始绘制"));
+const getShapeLabel = (shape: FenceShape) => shapeLabelMap[shape];
+
+const createGlowMaterial = () => {
+  return new Cesium.Material({
+    fabric: {
+      type: `ElectronicFenceGlow${Date.now()}${Math.floor(Math.random() * 1000)}`,
+      source: `
+        czm_material czm_getMaterial(czm_materialInput materialInput)
+        {
+          czm_material material = czm_getDefaultMaterial(materialInput);
+          vec2 st = materialInput.st;
+          float t = czm_frameNumber * 0.008;
+          float v = st.t;
+          float band1Center = fract(0.15 + t);
+          float band2Center = fract(0.50 + t);
+          float band3Center = fract(0.85 + t);
+          float dist1 = abs(v - band1Center);
+          float dist2 = abs(v - band2Center);
+          float dist3 = abs(v - band3Center);
+          dist1 = min(dist1, 1.0 - dist1);
+          dist2 = min(dist2, 1.0 - dist2);
+          dist3 = min(dist3, 1.0 - dist3);
+          float bandWidth = 0.08;
+          float fadeWidth = 0.08;
+          float intensity1 = smoothstep(bandWidth + fadeWidth, bandWidth, dist1);
+          float intensity2 = smoothstep(bandWidth + fadeWidth, bandWidth, dist2);
+          float intensity3 = smoothstep(bandWidth + fadeWidth, bandWidth, dist3);
+          float gradient1 = 1.0 - smoothstep(0.0, 1.0, band1Center);
+          float gradient2 = 1.0 - smoothstep(0.0, 1.0, band2Center);
+          float gradient3 = 1.0 - smoothstep(0.0, 1.0, band3Center);
+          intensity1 *= mix(0.3, 1.0, gradient1);
+          intensity2 *= mix(0.3, 1.0, gradient2);
+          intensity3 *= mix(0.3, 1.0, gradient3);
+          float totalIntensity = max(intensity1, max(intensity2, intensity3));
+          vec3 techBlueColor = vec3(0.0, 0.8, 1.0);
+          material.diffuse = techBlueColor;
+          material.alpha = totalIntensity * 0.9;
+          material.emission = techBlueColor * totalIntensity * 2.5;
+          return material;
+        }
+      `,
+    },
+    translucent: true,
+  });
+};
+
+const getScenePosition = (position: Cesium.Cartesian2): FencePoint | null => {
+  if (!props.viewer) return null;
+
+  const pickedPosition = props.viewer.scene.pickPositionSupported
+    ? props.viewer.scene.pickPosition(position)
+    : undefined;
+  const cartesian = Cesium.defined(pickedPosition)
+    ? pickedPosition
+    : props.viewer.camera.pickEllipsoid(position, props.viewer.scene.globe.ellipsoid);
+
+  if (!cartesian) return null;
+
+  const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+  return {
+    lon: Cesium.Math.toDegrees(cartographic.longitude),
+    lat: Cesium.Math.toDegrees(cartographic.latitude),
+  };
+};
+
+const toCartesianPositions = (points: FencePoint[], height = 0) => {
+  const degrees: number[] = [];
+  points.forEach((point) => {
+    degrees.push(point.lon, point.lat, height);
+  });
+  return Cesium.Cartesian3.fromDegreesArrayHeights(degrees);
+};
+
+const closePoints = (points: FencePoint[]) => {
+  if (points.length === 0) return [];
+  return [...points, points[0]];
+};
+
+const buildRectanglePoints = (start: FencePoint, end: FencePoint): FencePoint[] => {
+  return [start, { lon: end.lon, lat: start.lat }, end, { lon: start.lon, lat: end.lat }];
+};
+
+const getDistanceMeters = (start: FencePoint, end: FencePoint) => {
+  const startCartographic = Cesium.Cartographic.fromDegrees(start.lon, start.lat);
+  const endCartographic = Cesium.Cartographic.fromDegrees(end.lon, end.lat);
+  const geodesic = new Cesium.EllipsoidGeodesic(startCartographic, endCartographic);
+  return geodesic.surfaceDistance;
+};
+
+const buildCirclePoints = (center: FencePoint, edge: FencePoint): FencePoint[] => {
+  const radius = getDistanceMeters(center, edge);
+  if (radius <= 0) return [];
+
+  const points: FencePoint[] = [];
+  const centerCartographic = Cesium.Cartographic.fromDegrees(center.lon, center.lat);
+  const localFrame = Cesium.Transforms.eastNorthUpToFixedFrame(
+    Cesium.Cartesian3.fromRadians(centerCartographic.longitude, centerCartographic.latitude)
+  );
+
+  for (let index = 0; index < CIRCLE_SEGMENTS; index += 1) {
+    const angle = (Cesium.Math.TWO_PI * index) / CIRCLE_SEGMENTS;
+    const offset = new Cesium.Cartesian3(Math.cos(angle) * radius, Math.sin(angle) * radius, 0);
+    const cartesian = Cesium.Matrix4.multiplyByPoint(localFrame, offset, new Cesium.Cartesian3());
+    const cartographic = Cesium.Cartographic.fromCartesian(cartesian);
+    points.push({
+      lon: Cesium.Math.toDegrees(cartographic.longitude),
+      lat: Cesium.Math.toDegrees(cartographic.latitude),
+    });
+  }
+
+  return points;
+};
+
+const getPreviewPoints = () => {
+  if (activeShape.value === "rectangle") {
+    if (drawPoints.value.length === 0 || !cursorPoint.value) return [];
+    return buildRectanglePoints(drawPoints.value[0], cursorPoint.value);
+  }
+
+  if (activeShape.value === "circle") {
+    if (drawPoints.value.length === 0 || !cursorPoint.value) return [];
+    return buildCirclePoints(drawPoints.value[0], cursorPoint.value);
+  }
+
+  if (drawPoints.value.length === 0) return [];
+  return cursorPoint.value ? [...drawPoints.value, cursorPoint.value] : [...drawPoints.value];
+};
+
+const clearPreview = () => {
+  if (!props.viewer) return;
+  previewEntities.forEach((entity) => props.viewer?.entities.remove(entity));
+  previewEntities.length = 0;
+};
+
+const renderPreview = () => {
+  if (!props.viewer || !drawing.value) return;
+  clearPreview();
+
+  drawPoints.value.forEach((point) => {
+    const entity = props.viewer?.entities.add({
+      position: Cesium.Cartesian3.fromDegrees(point.lon, point.lat, 1),
+      point: {
+        pixelSize: 8,
+        color: Cesium.Color.fromCssColorString("#00ccff"),
+        outlineColor: Cesium.Color.WHITE,
+        outlineWidth: 1,
+      },
+    });
+    if (entity) previewEntities.push(entity);
+  });
+
+  const previewPoints = getPreviewPoints();
+  if (previewPoints.length < 2) return;
+
+  const entity = props.viewer.entities.add({
+    polyline: {
+      positions: toCartesianPositions(closePoints(previewPoints), 1),
+      width: 3,
+      material: new Cesium.PolylineDashMaterialProperty({
+        color: Cesium.Color.fromCssColorString("#00ccff"),
+        dashLength: 16,
+      }),
+      clampToGround: false,
+    },
+  });
+  previewEntities.push(entity);
+};
+
+const addOutlineLine = (points: FencePoint[], height: number, width: number, glowPower: number) => {
+  if (!props.viewer) return null;
+
+  return props.viewer.entities.add({
+    polyline: {
+      positions: toCartesianPositions(closePoints(points), height),
+      width,
+      material: new Cesium.PolylineGlowMaterialProperty({
+        glowPower,
+        color: Cesium.Color.fromCssColorString("#00ccff"),
+      }),
+    },
+  });
+};
+
+const createFence = (positions: FencePoint[]) => {
+  if (!props.viewer || positions.length < 3) return;
+
+  const primitives: Cesium.Primitive[] = [];
+  const entities: Cesium.Entity[] = [];
+  const id = `${Date.now()}-${Math.floor(Math.random() * 1000)}`;
+
+  positions.forEach((start, index) => {
+    const end = positions[(index + 1) % positions.length];
+    const wallGeometry = new Cesium.WallGeometry({
+      positions: Cesium.Cartesian3.fromDegreesArray([start.lon, start.lat, end.lon, end.lat]),
+      maximumHeights: [FENCE_HEIGHT, FENCE_HEIGHT],
+      minimumHeights: [0, 0],
+      vertexFormat: Cesium.VertexFormat.POSITION_AND_ST,
+    });
+    const wallInstance = new Cesium.GeometryInstance({
+      geometry: wallGeometry,
+    });
+    const wallPrimitive = new Cesium.Primitive({
+      geometryInstances: wallInstance,
+      appearance: new Cesium.MaterialAppearance({
+        material: createGlowMaterial(),
+        closed: false,
+        flat: false,
+        renderState: {
+          blending: Cesium.BlendingState.ALPHA_BLEND,
+          depthTest: { enabled: true },
+          depthMask: false,
+        },
+      }),
+    });
+
+    props.viewer?.scene.primitives.add(wallPrimitive);
+    primitives.push(wallPrimitive);
+  });
+
+  const bottomLine = addOutlineLine(positions, 0.1, 4, 0.5);
+  const middleLine = addOutlineLine(positions, FENCE_HEIGHT / 2, 3, 0.3);
+  const topLine = addOutlineLine(positions, FENCE_HEIGHT, 4, 0.4);
+  [bottomLine, middleLine, topLine].forEach((entity) => {
+    if (entity) entities.push(entity);
+  });
+
+  fences.value.push({
+    id,
+    name: `电子围栏 ${fences.value.length + 1}`,
+    type: activeShape.value,
+    positions,
+    height: FENCE_HEIGHT,
+    primitives,
+    entities,
+  });
+};
+
+const resetDrawing = () => {
+  drawing.value = false;
+  drawPoints.value = [];
+  cursorPoint.value = null;
+  clearPreview();
+};
+
+const finishDrawing = () => {
+  if (!drawing.value) return;
+
+  const previewPoints = getPreviewPoints();
+  const finalPoints = activeShape.value === "polygon" ? drawPoints.value : previewPoints;
+
+  if (finalPoints.length >= 3) {
+    createFence(finalPoints);
+  }
+
+  resetDrawing();
+};
+
+const handleLeftClick = (movement: Cesium.ScreenSpaceEventHandler.PositionedEvent) => {
+  if (!drawing.value) return;
+
+  const point = getScenePosition(movement.position);
+  if (!point) return;
+
+  if (activeShape.value === "rectangle" || activeShape.value === "circle") {
+    if (drawPoints.value.length === 0) {
+      drawPoints.value = [point];
+      cursorPoint.value = point;
+      renderPreview();
+      return;
+    }
+
+    cursorPoint.value = point;
+    finishDrawing();
+    return;
+  }
+
+  drawPoints.value = [...drawPoints.value, point];
+  cursorPoint.value = point;
+  renderPreview();
+};
+
+const handleMouseMove = (movement: Cesium.ScreenSpaceEventHandler.MotionEvent) => {
+  if (!drawing.value || drawPoints.value.length === 0) return;
+
+  const point = getScenePosition(movement.endPosition);
+  if (!point) return;
+
+  cursorPoint.value = point;
+  renderPreview();
+};
+
+const ensureHandler = () => {
+  if (!props.viewer || handler.value) return;
+
+  handler.value = new Cesium.ScreenSpaceEventHandler(props.viewer.scene.canvas);
+  handler.value.setInputAction(handleLeftClick, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+  handler.value.setInputAction(handleMouseMove, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+  handler.value.setInputAction(finishDrawing, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
+};
+
+const startDrawing = () => {
+  if (!props.viewer || drawing.value) return;
+
+  resetDrawing();
+  drawing.value = true;
+  ensureHandler();
+};
+
+const stopDrawing = () => {
+  finishDrawing();
+};
+
+const removeFence = (fence: FenceRecord) => {
+  if (!props.viewer) return;
+
+  fence.primitives.forEach((primitive) => props.viewer?.scene.primitives.remove(primitive));
+  fence.entities.forEach((entity) => props.viewer?.entities.remove(entity));
+  fences.value = fences.value.filter((item) => item.id !== fence.id);
+};
+
+const flyToFence = (fence: FenceRecord) => {
+  if (!props.viewer || fence.entities.length === 0) return;
+
+  props.viewer.flyTo(fence.entities, {
+    offset: new Cesium.HeadingPitchRange(0, Cesium.Math.toRadians(-35), 500),
+  });
+};
+
+onBeforeUnmount(() => {
+  resetDrawing();
+  handler.value?.destroy();
+  handler.value = null;
+  fences.value.forEach((fence) => removeFence(fence));
+});
+</script>
+
+<template>
+  <el-card class="fence-panel" shadow="always">
+    <template #header>
+      <div class="panel-title">电子围栏</div>
+    </template>
+
+    <div class="panel-body">
+      <el-radio-group v-model="activeShape" :disabled="drawing" size="small">
+        <el-radio-button label="rectangle">矩形</el-radio-button>
+        <el-radio-button label="polygon">多边形</el-radio-button>
+        <el-radio-button label="circle">圆形</el-radio-button>
+      </el-radio-group>
+
+      <div class="action-row">
+        <el-button type="primary" :icon="VideoPlay" :loading="drawing" @click="startDrawing">
+          {{ startButtonText }}
+        </el-button>
+        <el-button :icon="VideoPause" :disabled="!drawing" @click="stopDrawing">结束绘制</el-button>
+      </div>
+
+      <el-table :data="fences" size="small" height="260" empty-text="暂无围栏" border>
+        <el-table-column prop="name" label="名称" min-width="100" show-overflow-tooltip />
+        <el-table-column label="类型" width="76" align="center">
+          <template #default="{ row }">
+            {{ getShapeLabel(row.type) }}
+          </template>
+        </el-table-column>
+        <el-table-column label="操作" width="96" align="center">
+          <template #default="{ row }">
+            <el-button link type="primary" :icon="Location" @click="flyToFence(row)" />
+            <el-button link type="danger" :icon="Delete" @click="removeFence(row)" />
+          </template>
+        </el-table-column>
+      </el-table>
+    </div>
+  </el-card>
+</template>
+
+<style scoped lang="scss">
+.fence-panel {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  width: 340px;
+  border: 1px solid rgb(255 255 255 / 18%);
+  color: #eaf7ff;
+  background: rgb(9 22 32 / 82%);
+  backdrop-filter: blur(8px);
+
+  :deep(.el-card__header) {
+    padding: 12px 14px;
+    border-bottom-color: rgb(255 255 255 / 14%);
+  }
+
+  :deep(.el-card__body) {
+    padding: 14px;
+  }
+
+  :deep(.el-table) {
+    --el-table-border-color: rgb(255 255 255 / 12%);
+    --el-table-header-bg-color: rgb(20 48 66 / 88%);
+    --el-table-tr-bg-color: rgb(11 31 44 / 70%);
+    --el-table-row-hover-bg-color: rgb(25 75 99 / 82%);
+    --el-table-text-color: #d8f4ff;
+    --el-table-header-text-color: #ffffff;
+
+    background: transparent;
+  }
+
+  :deep(.el-table__inner-wrapper::before) {
+    background-color: rgb(255 255 255 / 12%);
+  }
+}
+
+.panel-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  .el-button {
+    margin-left: 0;
+  }
+}
+</style>

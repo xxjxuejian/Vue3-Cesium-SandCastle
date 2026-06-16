@@ -1,7 +1,7 @@
 import axios, { type InternalAxiosRequestConfig, type AxiosResponse } from "axios";
 
 const request = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL as string,
+  baseURL: "",
   timeout: 10000,
   headers: { "Content-Type": "application/json;charset=utf-8" },
 });
@@ -23,6 +23,8 @@ request.interceptors.response.use(
     return response.data;
   },
   (error) => {
+    // 统一处理错误
+    console.error("请求失败:", error.message);
     return Promise.reject(error);
   }
 );

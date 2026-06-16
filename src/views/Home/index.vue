@@ -1,9 +1,10 @@
 <script setup lang="ts">
-// import { getGalleryMapData } from "@/utils/transformGalleryData";
 import type { galleryData } from "@/types/api/home";
 import { translateRouteTitle } from "@/lang/utils";
 import Card from "./components/Card.vue";
 import { Search } from "@element-plus/icons-vue";
+
+import { getGalleryList } from "@/api/home.ts";
 
 interface SelectOption {
   label: string;
@@ -15,32 +16,28 @@ interface SelectOption {
 // }
 
 async function getSandCastleList() {
-  // const res = await fetch(import.meta.env.BASE_URL + "mock/galleryList.json");
-  // const data = await res.json();
-  // const entries = data.entries;
-  // // 处理原始数据
-  // const dataMap = getGalleryMapData(entries);
-  // filterDataMap(dataMap);
-  // console.log("dataMap", dataMap);
+  try {
+    const res = await getGalleryList();
+    const dataMap = res.data;
 
-  const res = await fetch(import.meta.env.BASE_URL + "mock/galleryListData.json");
-  const dataMap = await res.json();
+    // filterDataMap(dataMap);
+    console.log("dataMap", dataMap);
 
-  // filterDataMap(dataMap);
-  console.log("dataMap", dataMap);
+    // 生成select的options
+    const keys = Object.keys(dataMap);
+    options.value = keys.map((key) => {
+      return {
+        label: key,
+        value: key,
+      };
+    });
 
-  // 生成select的options
-  const keys = Object.keys(dataMap);
-  options.value = keys.map((key) => {
-    return {
-      label: key,
-      value: key,
-    };
-  });
-
-  // 保存源数据和 主页展示的数据
-  originData = dataMap;
-  visibleData.value = dataMap;
+    // 保存源数据和 主页展示的数据
+    originData = dataMap;
+    visibleData.value = dataMap;
+  } catch (err) {
+    console.log("err", err);
+  }
 }
 
 const searchValue = ref(""); // 搜索框的输入值
