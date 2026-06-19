@@ -27,6 +27,15 @@ if (token) {
   console.warn("Cesium Token 未配置，部分在线资源可能无法加载！");
 }
 
-const app = createApp(App);
-app.use(setupPlugins);
-app.mount("#app");
+async function bootstrap() {
+  if (import.meta.env.PROD) {
+    const { setupProdMockServer } = await import("./mockProdServer");
+    await setupProdMockServer();
+  }
+
+  const app = createApp(App);
+  app.use(setupPlugins);
+  app.mount("#app");
+}
+
+bootstrap();

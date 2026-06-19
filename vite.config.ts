@@ -15,7 +15,7 @@ import UnoCSS from "unocss/vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
 // https://vite.dev/config/
-export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
+export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const env = loadEnv(mode, process.cwd());
 
   return {
@@ -68,7 +68,8 @@ export default defineConfig(({ mode }: ConfigEnv): UserConfig => {
       }),
       viteMockServe({
         mockPath: "mock",
-        enable: true,
+        enable: command === "serve",
+        logger: true,
       }),
     ],
     resolve: {
