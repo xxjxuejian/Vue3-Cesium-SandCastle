@@ -54,6 +54,18 @@ const menuConfig: MenuItem[] = [
         meta: { title: "shape-draw" }, // 形状绘制
         component: "LowAltitudeSafety/ShapeDraw.vue",
       },
+      {
+        path: "detection-simulation",
+        name: "detection-simulation",
+        meta: { title: "detection-simulation" },
+        component: "LowAltitudeSafety/DetectionSimulation.vue",
+      },
+      {
+        path: "flight-monitoring",
+        name: "flight-monitoring",
+        meta: { title: "flight-monitoring" },
+        component: "LowAltitudeSafety/FlightMonitoring/index.vue",
+      },
     ],
   },
   // getting started : 快速开始

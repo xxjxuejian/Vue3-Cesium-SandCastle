@@ -75,6 +75,8 @@ export default {
     "low-altitude-safety": "Low Altitude Safety",
     "basic-electronic-fence": "Basic Electronic Fence",
     "shape-draw": "Shape Draw",
+    "detection-simulation": "Detection Simulation",
+    "flight-monitoring": "Flight Monitoring",
 
     // 性能优化
     performance: "Performance Optimization",

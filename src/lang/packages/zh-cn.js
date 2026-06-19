@@ -76,6 +76,8 @@ export default {
     "low-altitude-safety": "低空安全",
     "basic-electronic-fence": "基础电子围栏",
     "shape-draw": "形状绘制",
+    "detection-simulation": "探测仿真",
+    "flight-monitoring": "飞行监控",
 
     // 性能优化
     performance: "性能优化",
