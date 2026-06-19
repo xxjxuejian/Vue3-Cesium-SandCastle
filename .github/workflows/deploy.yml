@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       VITE_CESIUM_ION_TOKEN: ${{ secrets.VITE_CESIUM_ION_TOKEN }}
+      VITE_TIANDITU_TOKEN: ${{ secrets.VITE_TIANDITU_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
