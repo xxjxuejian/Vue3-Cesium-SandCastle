@@ -2,8 +2,14 @@ import droneIcon from "@/assets/icons/flight-monitoring/drone.svg?raw";
 import monitoringPointIcon from "@/assets/icons/flight-monitoring/monitoring-point.svg?raw";
 import safePassageIcon from "@/assets/icons/flight-monitoring/safe-passage.svg?raw";
 import weatherStationIcon from "@/assets/icons/flight-monitoring/weather-station.svg?raw";
-import type { FlightMonitoringPoint, FlightPointType } from "../types";
+import type { MonitoringPoint, MonitoringPointType, MonitoringPointTypeOption } from "../types";
 
+/**
+ * 将 SVG 源码转换为可直接用于 img 的 Data URI。
+ *
+ * @param svg SVG 源码。
+ * @returns 编码后的 SVG Data URI。
+ */
 const toSvgDataUri = (svg: string) => {
   const normalizedSvg = svg
     .replace(/<\?xml[\s\S]*?\?>/i, "")
@@ -12,15 +18,25 @@ const toSvgDataUri = (svg: string) => {
   return `data:image/svg+xml;charset=utf-8,${encodeURIComponent(normalizedSvg)}`;
 };
 
-const iconMap: Record<FlightPointType, string> = {
+const iconMap: Record<MonitoringPointType, string> = {
   drone: toSvgDataUri(droneIcon),
   "monitoring-point": toSvgDataUri(monitoringPointIcon),
   "safe-passage": toSvgDataUri(safePassageIcon),
   "weather-station": toSvgDataUri(weatherStationIcon),
 };
-console.log("icon", toSvgDataUri(droneIcon));
 
-export const monitoringPoints: FlightMonitoringPoint[] = [
+export const monitoringPointTypeOptions: MonitoringPointTypeOption[] = [
+  { value: "drone", label: "无人机", iconUrl: iconMap.drone },
+  {
+    value: "monitoring-point",
+    label: "监测点",
+    iconUrl: iconMap["monitoring-point"],
+  },
+  { value: "safe-passage", label: "安全通道", iconUrl: iconMap["safe-passage"] },
+  { value: "weather-station", label: "气象站", iconUrl: iconMap["weather-station"] },
+];
+
+export const monitoringPoints: MonitoringPoint[] = [
   {
     id: "drone-001",
     name: "巡航无人机 01",

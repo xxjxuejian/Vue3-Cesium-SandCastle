@@ -126,18 +126,4 @@ onMounted(() => {
   </div>
 </template>
 
-<style lang="scss" scoped>
-/* .parent {
-  .el-input {
-    border: 1px solid red;
-  }
-} */
-
-.parent {
-  .el-input {
-    :deep(.el-input__inner) {
-      background-color: blueviolet;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

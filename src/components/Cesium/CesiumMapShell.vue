@@ -6,6 +6,7 @@ import type {
   BaseLayerType,
   MapFlyToPointOptions,
   MapHomeView,
+  MapMarkerAddOptions,
   MapMarkerData,
   MapMarkerEvent,
   MapPoint,
@@ -54,6 +55,8 @@ const mapTools = useCesiumMapTools(viewerRef, {
 // Viewer 创建完成后初始化工具服务，再向业务层转发 ready/map-loaded。
 const handleMapLoaded = (viewer: Cesium.Viewer) => {
   mapTools.initMapTools(viewer);
+  // 点击实体marker,回调逻辑是什么，直接把这个回调传递过去，
+  // 回调的执行，是在底层
   mapTools.onMarkerClick((event) => emit("marker-click", event));
   mapTools.onMarkerHover((event) => emit("marker-hover", event));
   emit("map-loaded", viewer);
@@ -61,8 +64,12 @@ const handleMapLoaded = (viewer: Cesium.Viewer) => {
 };
 
 onMounted(() => {
-  const viewer = initViewer(containerId, props.config);
-  handleMapLoaded(viewer);
+  try {
+    const viewer = initViewer(containerId, props.config);
+    handleMapLoaded(viewer);
+  } catch (error) {
+    console.error("Cesium Viewer 初始化失败", error);
+  }
 });
 
 // 暴露给业务页面的最小地图接口，避免业务层直接操作大量 Cesium 细节。
@@ -70,9 +77,12 @@ defineExpose({
   viewer: viewerRef,
   flyToPoint: (point: MapPoint, options?: MapFlyToPointOptions) =>
     mapTools.flyToPoint(point, options),
-  addMarker: (markerData: MapMarkerData) => mapTools.addMarker(markerData),
+  addMarker: (markerData: MapMarkerData, options?: MapMarkerAddOptions) =>
+    mapTools.addMarker(markerData, options),
   removeMarker: (id: string) => mapTools.removeMarker(id),
   clearMarkers: () => mapTools.clearMarkers(),
+  setMarkerGroupVisible: (groupId: string, visible: boolean) =>
+    mapTools.setMarkerGroupVisible(groupId, visible),
   onMarkerClick: mapTools.onMarkerClick,
   onMarkerHover: mapTools.onMarkerHover,
 });

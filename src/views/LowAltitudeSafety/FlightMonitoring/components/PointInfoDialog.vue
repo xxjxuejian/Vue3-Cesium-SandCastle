@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import type { FlightMonitoringPoint } from "../types";
+import type { MonitoringPoint } from "../types";
 
 const visible = defineModel<boolean>({ default: false });
 
 const props = defineProps<{
-  point: FlightMonitoringPoint | null;
+  point: MonitoringPoint | null;
 }>();
 
 const coordinateText = computed(() => {
@@ -18,13 +18,7 @@ const closeDialog = () => {
 </script>
 
 <template>
-  <el-dialog
-    v-model="visible"
-    title="点位信息"
-    width="420px"
-    align-center
-    destroy-on-close
-  >
+  <el-dialog v-model="visible" title="点位信息" width="420px" align-center destroy-on-close>
     <div v-if="point" class="point-info">
       <div class="point-info__header">
         <img :src="point.iconUrl" :alt="point.typeName" class="point-info__icon" />

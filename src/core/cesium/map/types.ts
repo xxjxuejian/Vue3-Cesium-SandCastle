@@ -53,6 +53,10 @@ export interface MapMarkerData {
   payload?: unknown;
 }
 
+export interface MapMarkerAddOptions {
+  groupId?: string;
+}
+
 export interface MapMarkerEvent {
   id: string;
   entity: Cesium.Entity;

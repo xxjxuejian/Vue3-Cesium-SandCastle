@@ -1,16 +1,28 @@
 <script setup lang="ts">
-import type { FlightMonitoringPoint } from "../types";
+import PointTypeFilter from "./PointTypeFilter.vue";
+import type { MonitoringPoint, MonitoringPointType, MonitoringPointTypeOption } from "../types";
 
 defineProps<{
-  points: FlightMonitoringPoint[];
+  points: MonitoringPoint[];
+  allPoints: MonitoringPoint[];
+  typeOptions: MonitoringPointTypeOption[];
   selectedPointId?: string;
 }>();
 
+const visiblePointTypes = defineModel<MonitoringPointType[]>("visiblePointTypes", {
+  required: true,
+});
+
 const emit = defineEmits<{
-  "point-click": [point: FlightMonitoringPoint];
+  "point-click": [point: MonitoringPoint];
 }>();
 
-const emitPointClick = (point: FlightMonitoringPoint) => {
+/**
+ * 向上层发送点位点击数据。
+ *
+ * @param point 被点击的点位。
+ */
+const emitPointClick = (point: MonitoringPoint) => {
   emit("point-click", point);
 };
 </script>
@@ -20,11 +32,13 @@ const emitPointClick = (point: FlightMonitoringPoint) => {
     <div class="panel-header">
       <div>
         <h2>低空点位</h2>
-        <span>{{ points.length }} 个模拟点位</span>
+        <span>{{ points.length }} / {{ allPoints.length }} 个点位可见</span>
       </div>
     </div>
 
-    <div class="point-list">
+    <PointTypeFilter v-model="visiblePointTypes" :options="typeOptions" :points="allPoints" />
+
+    <div v-if="points.length" class="point-list">
       <article
         v-for="point in points"
         :key="point.id"
@@ -45,6 +59,11 @@ const emitPointClick = (point: FlightMonitoringPoint) => {
           <p>{{ point.address }}</p>
         </div>
       </article>
+    </div>
+    <div v-else class="point-list-empty">
+      <span class="point-list-empty__pulse" aria-hidden="true"></span>
+      <strong>暂无可见点位</strong>
+      <p>选择上方类型后，地图和列表将同步显示。</p>
     </div>
   </section>
 </template>
@@ -91,9 +110,42 @@ const emitPointClick = (point: FlightMonitoringPoint) => {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  max-height: calc(100vh - 200px);
+  max-height: calc(100vh - 330px);
   padding-top: 12px;
   overflow: auto;
+}
+
+.point-list-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 142px;
+  padding-top: 12px;
+  color: #64748b;
+  text-align: center;
+
+  strong {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #334155;
+  }
+
+  p {
+    margin: 5px 0 0;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+.point-list-empty__pulse {
+  width: 22px;
+  height: 22px;
+  border: 1px solid rgb(37 99 235 / 35%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 5px rgb(37 99 235 / 8%),
+    0 0 0 10px rgb(37 99 235 / 4%);
 }
 
 .point-item {
@@ -103,10 +155,10 @@ const emitPointClick = (point: FlightMonitoringPoint) => {
   align-items: start;
   padding: 10px;
   cursor: pointer;
+  outline: none;
   background: #f9fafb;
   border: 1px solid rgb(31 41 55 / 8%);
   border-radius: 8px;
-  outline: none;
   transition:
     background-color 0.2s ease,
     border-color 0.2s ease,
@@ -156,10 +208,10 @@ const emitPointClick = (point: FlightMonitoringPoint) => {
 
   span {
     overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 14px;
     font-weight: 600;
     color: #111827;
-    text-overflow: ellipsis;
     white-space: nowrap;
   }
 }

@@ -53,6 +53,7 @@ declare module 'vue' {
     ParentView: typeof import('./../components/ParentView/index.vue')['default']
     PointInfoDialog: typeof import('./../views/LowAltitudeSafety/FlightMonitoring/components/PointInfoDialog.vue')['default']
     PointListPanel: typeof import('./../views/LowAltitudeSafety/FlightMonitoring/components/PointListPanel.vue')['default']
+    PointTypeFilter: typeof import('./../views/LowAltitudeSafety/FlightMonitoring/components/PointTypeFilter.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SideBar: typeof import('./../layout/components/SideBar/index.vue')['default']
