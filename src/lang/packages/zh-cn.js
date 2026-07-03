@@ -4,6 +4,7 @@ export default {
     // 文档
     documents: "文档",
     documents_introduction: "项目说明",
+    "documents_user-management-frontend-design": "用户管理前端结构设计",
 
     // Getting Started
     "getting-started": "快速开始",
@@ -82,6 +83,10 @@ export default {
     // 性能优化
     performance: "性能优化",
     "massive-point-rendering": "海量点渲染",
+
+    // 系统管理
+    "system-management": "系统管理",
+    "system-management_user-management": "用户管理",
   },
   langSelect: {
     message: {

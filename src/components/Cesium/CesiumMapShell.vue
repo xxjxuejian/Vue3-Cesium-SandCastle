@@ -13,10 +13,10 @@ import type {
 } from "@/core/cesium/map/types";
 import type * as Cesium from "cesium";
 
-// 业务页面只需要配置初始视角/底图，并通过 expose 或事件使用点位能力。
+// 业务页面只需要配置初始化视角、底图，并通过 expose 或事件使用点位能力。
 const props = withDefaults(
   defineProps<{
-    // 透传给 CesiumViewer 的初始化配置。
+    // 透传给 Cesium Viewer 的初始化配置。
     config?: Cesium.Viewer.ConstructorOptions;
     // 重置视角使用的主页位置。
     homeView: MapHomeView;
@@ -24,11 +24,14 @@ const props = withDefaults(
     defaultBaseLayer?: BaseLayerType;
     // 是否显示右下角通用地图工具栏。
     showToolbar?: boolean;
+    // 是否显示地图报警边缘效果。
+    alarmActive?: boolean;
   }>(),
   {
     config: () => ({}),
     defaultBaseLayer: "tianditu-vector",
     showToolbar: true,
+    alarmActive: false,
   }
 );
 
@@ -55,8 +58,6 @@ const mapTools = useCesiumMapTools(viewerRef, {
 // Viewer 创建完成后初始化工具服务，再向业务层转发 ready/map-loaded。
 const handleMapLoaded = (viewer: Cesium.Viewer) => {
   mapTools.initMapTools(viewer);
-  // 点击实体marker,回调逻辑是什么，直接把这个回调传递过去，
-  // 回调的执行，是在底层
   mapTools.onMarkerClick((event) => emit("marker-click", event));
   mapTools.onMarkerHover((event) => emit("marker-hover", event));
   emit("map-loaded", viewer);
@@ -91,6 +92,7 @@ defineExpose({
 <template>
   <div class="cesium-map-shell">
     <div :id="containerId" class="wh-full overflow-hidden relative"></div>
+    <div v-show="alarmActive" class="map-alarm-overlay" aria-hidden="true"></div>
     <MapToolbar
       v-if="showToolbar"
       :state="mapTools.state"
@@ -107,5 +109,59 @@ defineExpose({
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+.map-alarm-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      90deg,
+      rgb(239 68 68 / 52%),
+      transparent 13%,
+      transparent 87%,
+      rgb(239 68 68 / 52%)
+    ),
+    linear-gradient(
+      180deg,
+      rgb(239 68 68 / 58%),
+      transparent 15%,
+      transparent 85%,
+      rgb(239 68 68 / 58%)
+    );
+  border: 1px solid rgb(248 113 113 / 86%);
+  box-shadow:
+    inset 0 0 26px rgb(248 113 113 / 72%),
+    inset 0 0 72px rgb(185 28 28 / 34%),
+    0 0 24px rgb(239 68 68 / 34%);
+  animation: map-alarm-pulse 1.25s ease-in-out infinite;
+}
+
+@keyframes map-alarm-pulse {
+  0%,
+  100% {
+    box-shadow:
+      inset 0 0 18px rgb(248 113 113 / 58%),
+      inset 0 0 56px rgb(185 28 28 / 28%),
+      0 0 18px rgb(239 68 68 / 22%);
+    opacity: 0.58;
+  }
+
+  50% {
+    box-shadow:
+      inset 0 0 34px rgb(248 113 113 / 88%),
+      inset 0 0 96px rgb(185 28 28 / 42%),
+      0 0 34px rgb(239 68 68 / 42%);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .map-alarm-overlay {
+    opacity: 0.82;
+    animation: none;
+  }
 }
 </style>

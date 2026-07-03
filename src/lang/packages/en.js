@@ -3,6 +3,7 @@ export default {
     home: "Home",
     documents: "Documents",
     documents_introduction: "Project Introduction",
+    "documents_user-management-frontend-design": "User Management Frontend Design",
 
     // Getting Started
     "getting-started": "Getting Started",
@@ -81,6 +82,10 @@ export default {
     // 性能优化
     performance: "Performance Optimization",
     "massive-point-rendering": "Massive Point Rendering",
+
+    // System Management
+    "system-management": "System Management",
+    "system-management_user-management": "User Management",
   },
 
   langSelect: {

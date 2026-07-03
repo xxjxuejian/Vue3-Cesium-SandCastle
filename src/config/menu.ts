@@ -33,6 +33,12 @@ const menuConfig: MenuItem[] = [
         meta: { title: "documents_introduction" }, //
         document: "README.md",
       },
+      {
+        path: "user-management-frontend-design",
+        name: "documents_user-management-frontend-design",
+        meta: { title: "documents_user-management-frontend-design" },
+        document: "用户管理前端结构设计.md",
+      },
     ],
   },
   // 低空安全
@@ -148,6 +154,24 @@ const menuConfig: MenuItem[] = [
           title: "massive-point-rendering", // 快速开始
         },
         component: "Performance/MassivePointRendering.vue",
+      },
+    ],
+  },
+  // 系统管理
+  {
+    path: "system-management",
+    name: "system-management",
+    meta: {
+      title: "system-management",
+      icon: "el-icon-Setting",
+    },
+    redirect: "/system-management/user-management",
+    children: [
+      {
+        path: "user-management",
+        name: "system-management_user-management",
+        meta: { title: "system-management_user-management" },
+        component: "SystemManagement/userManagement/UserManagement.vue",
       },
     ],
   },

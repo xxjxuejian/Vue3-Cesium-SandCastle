@@ -3,8 +3,10 @@ import MarkdownIt from "markdown-it";
 import { translateRouteTitle } from "@/lang/utils";
 
 type MarkdownModule = () => Promise<string>;
+type Mermaid = typeof import("mermaid").default;
 
 const route = useRoute();
+let mermaid: Mermaid | null = null;
 
 const markdownModules = import.meta.glob("@/documents/**/*.md", {
   query: "?raw",
@@ -16,10 +18,58 @@ const md = new MarkdownIt({
   linkify: true,
   typographer: true,
 });
+const defaultFenceRenderer = md.renderer.rules.fence;
+
+md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+  const token = tokens[idx];
+  const language = token.info.trim().split(/\s+/)[0];
+
+  if (language === "mermaid") {
+    return `<div class="mermaid">${md.utils.escapeHtml(token.content)}</div>`;
+  }
+
+  return defaultFenceRenderer
+    ? defaultFenceRenderer(tokens, idx, options, env, self)
+    : self.renderToken(tokens, idx, options);
+};
 
 const loading = ref(false);
 const errorMessage = ref("");
 const renderedHtml = ref("");
+
+async function getMermaid() {
+  if (!mermaid) {
+    const module = await import("mermaid");
+    mermaid = module.default;
+    mermaid.initialize({
+      startOnLoad: false,
+      securityLevel: "strict",
+      theme: "default",
+    });
+  }
+
+  return mermaid;
+}
+
+async function renderMermaidDiagrams() {
+  await nextTick();
+
+  try {
+    const hasMermaidDiagram = Boolean(document.querySelector(".markdown-body .mermaid"));
+
+    if (!hasMermaidDiagram) {
+      return;
+    }
+
+    const mermaidInstance = await getMermaid();
+
+    await mermaidInstance.run({
+      querySelector: ".markdown-body .mermaid",
+    });
+  } catch (error) {
+    console.error("[MarkdownViewer] Mermaid 图表渲染失败", error);
+  }
+}
 
 const routeTitle = computed(() => {
   const title = route.meta.title;
@@ -57,6 +107,10 @@ const loadMarkdown = async () => {
     errorMessage.value = "文档渲染失败，请查看控制台错误。";
   } finally {
     loading.value = false;
+  }
+
+  if (!errorMessage.value && renderedHtml.value) {
+    await renderMermaidDiagrams();
   }
 };
 
@@ -187,6 +241,21 @@ watch(
     padding: 0 16px;
     color: #57606a;
     border-left: 4px solid #d0d7de;
+  }
+
+  :deep(.mermaid) {
+    padding: 16px;
+    margin: 0 0 16px;
+    overflow-x: auto;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 6px;
+  }
+
+  :deep(.mermaid svg) {
+    max-width: 100%;
+    height: auto;
   }
 
   :deep(table) {

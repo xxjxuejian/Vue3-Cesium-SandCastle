@@ -3,6 +3,7 @@ import * as Cesium from "cesium";
 import App from "./App.vue";
 
 import "./styles/index.scss";
+import "element-plus/dist/index.css";
 import "virtual:uno.css";
 
 import "cesium/Build/Cesium/Widgets/widgets.css";

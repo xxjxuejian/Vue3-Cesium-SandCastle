@@ -30,6 +30,7 @@ declare module 'vue' {
     ElMenu: typeof import('element-plus/es')['ElMenu']
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElOption: typeof import('element-plus/es')['ElOption']
+    ElPagination: typeof import('element-plus/es')['ElPagination']
     ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
     ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
@@ -47,6 +48,7 @@ declare module 'vue' {
     Hamburger: typeof import('./../components/Hamburger/index.vue')['default']
     HelloWorld: typeof import('./../components/HelloWorld/index.vue')['default']
     LangSelect: typeof import('./../components/LangSelect/index.vue')['default']
+    MapStatusControlPanel: typeof import('./../views/LowAltitudeSafety/FlightMonitoring/components/MapStatusControlPanel.vue')['default']
     MapToolbar: typeof import('./../components/Cesium/MapToolbar.vue')['default']
     NavBar: typeof import('./../layout/components/NavBar/index.vue')['default']
     NavBarRight: typeof import('./../layout/components/NavBar/components/NavBarRight.vue')['default']
@@ -61,5 +63,10 @@ declare module 'vue' {
     SideBarMenu: typeof import('./../layout/components/SideBar/components/SideBarMenu.vue')['default']
     SideBarMenuItem: typeof import('./../layout/components/SideBar/components/SideBarMenuItem.vue')['default']
     SideBarMenuItemTitle: typeof import('./../layout/components/SideBar/components/SideBarMenuItemTitle.vue')['default']
+    UserFormDialog: typeof import('./../views/SystemManagement/userManagement/components/UserFormDialog.vue')['default']
+    UserTablePanel: typeof import('./../views/SystemManagement/userManagement/components/UserTablePanel.vue')['default']
+  }
+  export interface GlobalDirectives {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }

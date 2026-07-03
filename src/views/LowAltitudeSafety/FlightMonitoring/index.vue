@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, shallowRef, watch } from "vue";
 import CesiumMapShell from "@/components/Cesium/CesiumMapShell.vue";
+import MapStatusControlPanel from "./components/MapStatusControlPanel.vue";
 import PointListPanel from "./components/PointListPanel.vue";
 import PointInfoDialog from "./components/PointInfoDialog.vue";
 import { monitoringPoints, monitoringPointTypeOptions } from "./data/monitoringPoints";
@@ -34,6 +35,7 @@ const mapShellRef = shallowRef<InstanceType<typeof CesiumMapShell> | null>(null)
 const selectedPointId = ref<string>();
 const selectedPoint = ref<MonitoringPoint | null>(null);
 const pointDialogVisible = ref(false);
+const mapAlarmActive = ref(false);
 const visiblePointTypes = ref<MonitoringPointType[]>(
   monitoringPointTypeOptions.map((option) => option.value)
 );
@@ -116,6 +118,7 @@ watch(visiblePointTypes, () => {
       ref="mapShellRef"
       :config="viewerConfig"
       :home-view="HANGZHOU_HOME_VIEW"
+      :alarm-active="mapAlarmActive"
       default-base-layer="tianditu-vector"
       @ready="handleMapReady"
       @marker-click="handleMarkerClick"
@@ -128,6 +131,7 @@ watch(visiblePointTypes, () => {
         :selected-point-id="selectedPointId"
         @point-click="handlePointClick"
       />
+      <MapStatusControlPanel v-model:alarm-active="mapAlarmActive" />
       <PointInfoDialog v-model="pointDialogVisible" :point="selectedPoint" />
     </CesiumMapShell>
   </div>

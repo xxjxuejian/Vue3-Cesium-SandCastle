@@ -23,6 +23,7 @@
     "cesium": "^1.137.0",
     "element-plus": "^2.11.2",
     "markdown-it": "^14.1.1",
+    "mermaid": "^11.16.0",
     "mockjs": "^1.1.0",
     "pinia": "^3.0.3",
     "vue": "^3.5.18",
